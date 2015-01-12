@@ -1,0 +1,76 @@
+/****************
+
+	Tickets style
+
+****************/
+
+.tickets {
+	@extend %wrapper;
+	/* to center buttons */
+	text-align: center;
+	&:before {
+		@include x-divider;
+	}
+
+	p {
+		margin-bottom: $base-spacing-unit*2;
+	}
+}
+
+%ticket {
+	@include center-x;
+	display: inline-block;
+	border-radius: 50%;
+	padding: $base-spacing-unit*1.4;
+	margin: 0 0 $base-spacing-unit*2 0;
+	position: relative;
+	font-size: $h5-size;
+	transition: all .3s ease-in-out;
+	&:hover {
+		color: $main-white;
+	}
+
+	&:hover:before {
+		box-shadow: inset  0 0 0 100px $main-black,
+					inset  0 0 0 2px $main-white,
+					inset  0 0 0 3px $main-black,
+					inset  0 0 0 4px $main-white,
+					inset  0 0 0 5px $main-black,
+					inset  0 0 0 6px $main-white,
+					inset  0 0 0 7px $main-black,
+					inset  0 0 0 8px $main-white,
+					inset  0 0 0 9px $main-black,
+					inset  0 0 0 10px $main-white,
+					inset  0 0 0 11px $main-black;
+					
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		width: $base-spacing-unit*4;
+		height:$base-spacing-unit*4;
+		box-shadow: inset  0 0 0 1px $main-black,
+					inset  0 0 0 2px $main-white,
+					inset  0 0 0 3px $main-black,
+					inset  0 0 0 4px $main-white,
+					inset  0 0 0 5px $main-black,
+					inset  0 0 0 6px $main-white,
+					inset  0 0 0 7px $main-black,
+					inset  0 0 0 8px $main-white,
+					inset  0 0 0 9px $main-black,
+					inset  0 0 0 10px $main-white,
+					inset  0 0 0 11px $main-black;
+					
+					
+		border-radius: 50%;
+		@include center;
+		z-index: -1;
+		transition: all .5s ease-in-out;
+		
+	}
+}
+
+.ticket-list li {
+	@extend %ticket;
+}

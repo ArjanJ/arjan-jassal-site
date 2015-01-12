@@ -1,0 +1,16 @@
+/****************
+
+	Footer
+
+****************/
+
+footer {
+	padding: $base-spacing-unit 0;
+	background: $main-black;
+
+	p {
+		color: $main-white;		 
+		font-size: $h5-size;
+		margin: 0;
+	}
+}
