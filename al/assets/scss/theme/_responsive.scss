@@ -1,0 +1,10 @@
+/*------------------------------------*\
+    #THEME - RESPONSIVE
+\*------------------------------------*/
+
+@include breakpoint(760px) {
+
+	.testimonial {
+		position: static;
+	}
+}

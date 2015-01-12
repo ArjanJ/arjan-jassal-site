@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #COMPONENTS - FORM
+\*------------------------------------*/
+
+.c-form__input {
+	@include cf;
+	width: 100%;
+	clear: both;
+	padding: $spacing-fixed $spacing-fixed;
+	margin: 0 0 $spacing-fixed / 2 0;
+	background: transparent;
+	box-shadow:
+		inset 0 0 30px rgba(black, 0.25),
+		inset 0 0 0 $primary-color-dark;
+	color: white;
+	font-weight: $font-weight-light;
+	@include ease-out-fast;
+
+	&:focus {
+		box-shadow:
+		inset 600px 0 0 $primary-color-dark;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: white;
+}
+
+::-moz-placeholder {
+	color: white;
+}
+
+:-ms-input-placeholder {
+	color: white;
+}
+
+.c-form__input--half {
+	// For some reason using Elf here doesn't work properly in IE10
+	width: calc(50% - 3.5px);
+	float: left;
+	margin-right: 7px;
+	clear: none;
+
+	&:nth-child(2) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	&:focus {
+		box-shadow:
+			inset 300px 0 0 $primary-color-dark;
+	}
+}
+
+.c-form__input--textarea {
+	padding-top: 0;
+	min-height: $spacing-fixed * 10;
+}

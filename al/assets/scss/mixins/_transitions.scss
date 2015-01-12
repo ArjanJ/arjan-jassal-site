@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #MIXINS - TRANSITIONS
+\*------------------------------------*/
+
+@mixin ease-in-fast {
+	transition: all .25s ease-in;
+}
+
+@mixin ease-in-normal {
+	transition: all .35s ease-in;
+}
+
+@mixin ease-in-slow {
+	transition: all .45s ease-in;
+}
+
+@mixin ease-fast {
+	transition: all .25s ease-in-out;
+}
+
+@mixin ease-normal {
+	transition: all .35s ease-in-out;
+}
+
+@mixin ease-slow {
+	transition: all .45s ease-in-out;
+}
+
+@mixin ease-out-fast {
+	transition: all .25s ease-out;
+}
+
+@mixin ease-out-normal {
+	transition: all .35s ease-out;
+}
+
+@mixin ease-out-slow {
+	transition: all .45s ease-out;
+}
+
+@mixin ease-bounce {
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@mixin ease-bounce-out {
+	transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin ease-bounce-in {
+	transition: all 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}

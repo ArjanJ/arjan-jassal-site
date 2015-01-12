@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #COMPONENTS - SIDEKICKS
+\*------------------------------------*/
+
+.c-sidekick {
+	@include cf;
+	width: 100%;
+	text-align: center;
+}
+
+.c-sidekick__sidekick {
+	@include column(1/3, $gutter: $spacing-fixed * 5);
+
+	@include large {
+		@include span(1);
+	}
+}
+
+.c-sidekick__img {
+
+	img {
+		max-width: 225px;
+		width: 100%;
+		border-radius: 50%;
+	}
+}
+
+.c-sidekick__heading {
+	@include font-size(2.4);
+	font-family: $font-text;
+	font-weight: $font-weight-bold;
+}

@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    #THEME - HEADER
+\*------------------------------------*/
+
+.header {
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	padding: 10px $spacing-fluid;
+	background: $primary-color;
+
+	.wrapper {
+		@include align-children(vertical);
+	}
+}
+
+.header__logo {
+	@include float(left); // Flexbox fallback
+	flex: 1;
+}
+
+.header__hamburger {
+	@include float(right); // Flexbox fallback
+	position: relative;
+	z-index: 3;
+}

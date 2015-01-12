@@ -1,0 +1,44 @@
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+
+/**
+* Global Variables
+*/
+
+// Spacing
+$spacing-fluid: 				3%;
+$spacing-fixed: 				15px;
+$line-height: 					1.4;
+
+// Font family
+$font-heading: 					'Droid Serif', 'Times', serif;
+$font-text:							'Lato', 'Arial', sans-serif;
+
+// Font weights
+$font-weight-black: 		900;
+$font-weight-bold:  		700;
+$font-weight-semibold:  600;
+$font-weight-normal:  	400;
+$font-weight-light:  		300;
+
+// Font sizing
+$font-xsmall: 					1.6;
+$font-small: 						1.8;
+$font-normal: 					2;
+$font-medium: 					2.2;
+$font-large: 						2.8;
+$font-xlarge: 					4.6;
+$font-xxlarge: 					5.2;
+$font-xxxlarge: 					6.4;
+$font-massive: 					7.6;
+$font-giant: 							9.4;
+
+// Colors
+$primary-color:					#9373bf; // Main Purple
+$primary-color-light:		#8066a7; // Light Purple
+$primary-color-dark: 		#35274b; // Dark Purple
+$accent-color:					#fbd437; // Yellow
+$black: 								lighten(black, 15);
+
+$button-text-color: 		$black;
