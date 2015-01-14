@@ -42,6 +42,11 @@
 	    <a href="//github.com/arjanj" target="_blank">GitHub</a>
 	    <a href="//twitter.com/arjanjassal" target="_blank">Twitter</a>
 	    <p><em>{ Under construction }</em></p>
+	    <ul class="posts">
+	      {% for post in site.posts %}
+	        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	      {% endfor %}
+	    </ul>
 	</main>
 </body>
 
