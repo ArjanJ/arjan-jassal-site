@@ -1,0 +1,21 @@
+/****************
+
+	Random styling
+
+****************/
+
+/* customize pure button */
+
+.void-button {
+	margin-bottom: $base-spacing-unit;
+	font-size: $h5-size;
+	background: $main-black;
+	color: $main-white;
+	font-family: $main-font;
+	font-weight: 300;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+	opacity: .6;
+	}
+}
