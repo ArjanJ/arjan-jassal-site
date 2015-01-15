@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Interactive JavaScript CSS3 Infographic | Arjan Jassal Front end Web Developer</title>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Interactive infographic created using JavaScript, CSS3, and HTML5. Arjan Jassal Front end development.">
+	<meta name="author" content="Arjan Jassal">
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+	<link href="../../dist/css/style.min.css" rel="stylesheet" media="screen">
+ 	
+</head>
+<body>
+	
+	<header id="header">
+		<div class="container">
+			<a href="../../index.html" class="animated bounceInDown">
+				<img src='data:image/png;base64,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' alt="Arjan Jassal BCIT Front end Designer and Developer Portfolio"/>
+			</a>
+			<nav>
+				<ul class="animated bounceInDown">
+					<li><a href="../../arjan-jassal.html">About</a></li>
+					<li><a href="../../index.html">Work</a></li>
+				</ul>
+			</nav>		
+		</div>
+	</header>
+	<main class="project-page socialmediainvasion-bg">
+			<img src="../../dist/img/projects/web/the-social-media-invasion/javascript-css-html-infographic-arjan-jassal.jpg" class="animated fadeIn">
+
+			<section id="intro" class="project-intro l-box">
+				<a href="http://arjanjassal.com/social-media-invasion/" target="_blank" class="demo-btn">Live View</a>
+				<h2>Client</h2>
+				<p class="x-divider">
+					Personal Project
+				</p>
+				<h2>Overview</h2>
+				<p class="x-divider">
+					The Social Media Invasion is an interactive infographic designed to illustrate the growth of Facebook and Twitter from 2009 to 2014.
+				</p>
+				<h2>What I Did</h2>
+				<h1>
+					Interactive Infographic, JavaScript, CSS3
+				</h1>
+			</section>
+			<section class="project-details">
+				<article>
+					
+					<h2>The Idea</h2>
+					<p>
+						The idea behind The Social Media Invasion was to take data that would otherwise be boring, and make it engaging and fun to interact with.
+					</p>
+					
+				</article>
+				<article>
+					
+					<h2>The Code</h2>
+					<code>
+						<pre>
+var allCountry = []; // store all instances of Country()
+
+function Country(name, fb, tw, pos) {
+	this.name = name; // use as id of div
+	this.fb = fb; // facebook size [2009, 2014]
+	this.tw = tw; // twitter size [2009, 2014]
+	this.pos = pos; // x,y position
+}
+						</pre>
+					</code>
+					<p>
+						I used a function constructor to create objects to represent each country. Each object has properties with unique values that represent sizes and positions for each div that will be created.
+					</p>
+					<code>
+						<pre>
+allCountry[0] = new Country( "usa",    [85, 178], [12, 34], [270, 194] );
+allCountry[1] = new Country( "uk",     [20, 36],  [1, 15],  [625, 143] );
+allCountry[2] = new Country( "canada", [12, 19],  [1, 5],   [249, 140] );
+						</pre>
+					</code>
+					<p>
+						These are some instances of Country() being stored in an array for later use. The value of the first property is used as the id for the div that will be generated later. The second and third values are arrays where the first number determines the height and width of the div for 2009, the second number is the height and width of the div for 2014. The first array is for Facebook and the second one is for Twitter. The last property stores the x and y values of the div that will be applied when the divs are generated.
+					</p>
+					<code>
+						<pre>
+Country.prototype.createDiv = function() {
+  var div = document.createElement('div');
+  var container = document.getElementById('circle-container');
+  
+  div.id = this.name; // set id
+  div.className = 'circle'; // set class
+
+  div.style.left = this.pos[0]; // x position
+  div.style.top = this.pos[1]; // y position
+
+  container.appendChild(div); // insert into container div
+}
+						</pre>
+					</code>
+					<p>
+						This is the method that creates all of the divs and gives them id's, a class, and positions based on properties in the Country prototype.
+					</p>
+					<code>
+						<pre>
+
+var countryDivs = [];
+var circles = document.getElementById('circle-container').childNodes;
+
+for (var i = 0; i < circles.length; i++) {
+	countryDivs.push('#' + circles[i].id);
+}
+						</pre>
+					</code>
+					<p>
+						The purpose of this code is to store all of the id's of each div into an array of it's own. That way the array can be targeted easily with for the click events about to take place.
+					</p>
+					<code>
+						<pre>
+fb09.onclick = function() {
+  for (i = 0, countries = countryDivs.length; i < countries; i++) {
+    $(countryDivs[i]).velocity({
+      width: allCountry[i].fb[0], // size based on value of object property fb
+      height: allCountry[i].fb[0],
+      translateX: '-50%',
+      translateY: '-50%',
+      backgroundColor: '#3b5998',
+    }, {mobileHA: true, duration: 450, easing: 'spring'});
+    document.getElementById(allCountry[i].name).setAttribute('title', allCountry[i].fb[0] + 'M');
+  }
+};
+						</pre>
+					</code>
+					<p>
+						This loop cycles through countryDivs[] and uses Velocity.js to animate the width and height based on the values of the specified property of each object in allCountry[]. I'm also assigning each div a title attribute and using CSS to style the attribute so that when you hover over a circle it displays a number.
+					</p>
+				</article>
+				<article>
+					<h2>The Process</h2>
+					<p>
+						I originally created this project primarily using CSS3 and jQuery's addClass() and removeClass() methods. Although this worked, it was an absurd amount of work to just create even one country. There would be 4 different CSS rules for each country and then 4 different addClass() and removeClass() instances in the script. This was ridiculously repetitive and inefficient, but at the time I didn't know any better.
+					</p>
+					<p>
+						After expanding my JavaScript knowledge I thought that a great way to exercise this knowledge would be to re-code this project. I decided it would be suitable to store all the values I needed in objects and then use for loops to iterate through each object that I have stored in an array. I also wanted to use Velocity.js to animate things because it uses JavaScript to animate, which is faster than CSS and jQuery.
+					</p>
+				</article>
+			</section>
+		<div class="project-nav-container">
+			<ul class="project-nav">
+				<li>
+					<a href="../web/responsive-css-sass-website-arjan-jassal.html">VOID</a>
+				</li>
+				<li>
+					<a href="../web/interactive-javascript-css-html-arjan-jassal.html">The Social Media Invasion</a>
+				</li>
+				<li>
+					<a href="../web/3d-rotating-navigation.html">3D Rotating Navigation</a>
+				</li>
+				<li>
+					<a href="../ux/user-experience-design-eat-local-arjan-jassal.html">Eat Local</a>
+				</li>
+				<li>
+					<a href="../ux/the-denim-zone.html">The Denim Zone</a>
+				</li>
+				<li>
+					<a href="../graphic/graphic-design-beaty-museum-arjan-jassal.html">Beaty Biodiversity Museum</a>
+				</li>
+				<li>
+					<a href="../graphic/graphic-design-evergreen-arjan-jassal.html">Evergreen</a>
+				</li>
+				<li>
+					<a href="../graphic/graphic-design-evergreen-microsite-arjan-jassal.html">Evergreen Pt. 2</a>
+				</li>
+				<li>
+					<a href="../web/responsive-website-this-side-of-town-arjan-jassal.html">This Side of Town</a>
+				</li>
+				<li>
+					<a href="../graphic/graphic-design-logo-smoke-ring-arjan-jassal.html">The Smoke Ring</a>
+				</li>
+			</ul>
+			<span class="project-nav-trigger">Projects</span>
+		</div>
+		<footer>
+			
+			<ul>
+				<li><a class="icon-mail-uniF410" href="mailto:arjan@arjanjassal.com"></a></li>
+				<li><a class="icon-phone-uniF453" href="tel:7787076572"></a></li>
+				<li><a class="icon-twitter-uniF202" href="https://twitter.com/ArjanJassal" target="_blank"></a></li>
+				<li><a class="icon-google-uniF218" href="https://plus.google.com/110775247321454356792/?rel=author" target="_blank"></a></li>
+				<li><a class="icon-codepen-uniF216" href="http://codepen.io/arjancodes/" target="_blank"></a></li>
+				<li><a class="icon-linkedin-uniF207" href="http://lnkd.in/bQ4BDD6" target="_blank"></a></li>
+			</ul>
+			<span id="copyright">
+				&copy; Arjan Jassal <time>2014</time>
+			</span>
+			
+		</footer>
+	</main>
+</body>
+<!-- Js -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+
+<script type="text/javascript">
+	function downloadJSAtOnload() {
+	var element = document.createElement("script");
+	element.src = "../../dist/js/script.min.js";
+
+	document.body.appendChild(element);
+	}
+	if (window.addEventListener)
+	window.addEventListener("load", downloadJSAtOnload, false);
+	else if (window.attachEvent)
+	window.attachEvent("onload", downloadJSAtOnload);
+	else window.onload = downloadJSAtOnload;
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51811440-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
