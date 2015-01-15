@@ -1,0 +1,23 @@
+{
+  "name": "arjanj.github.io",
+  "version": "1.0.0",
+  "description": "my portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArjanJ/arjanj.github.io.git"
+  },
+  "author": "arjanj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArjanJ/arjanj.github.io/issues"
+  },
+  "homepage": "https://github.com/ArjanJ/arjanj.github.io",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-gh-pages": "^0.4.0"
+  }
+}
