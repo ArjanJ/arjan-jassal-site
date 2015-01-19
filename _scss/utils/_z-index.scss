@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #UTILS - Z-INDEX
+\*------------------------------------*/
+
+$zindex: (
+	header: 				10,
+	home-overlay: 	-1,
+	home-content: 		1
+);
+
+@function z($label) {
+    @return map-get($zindex, $label);
+}
+
+.header {
+	z-index: z(header);
+}
+
+.home {
+	z-index: z(home-content);
+
+	&:before {
+		z-index: z(home-overlay);
+	}
+}

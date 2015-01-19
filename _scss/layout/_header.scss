@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #LAYOUT - HEADER
+\*------------------------------------*/
+
+.header {
+	position: fixed;
+	width: 100%;
+	padding: ($spacing-fixed * 3) (0);
+}
+
+.header__wrapper {
+	@include align-children(both);
+}
+
+.header__logo {
+	fill: white;
+	height: 35px;
+}

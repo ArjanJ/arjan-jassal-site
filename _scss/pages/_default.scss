@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    #PAGES - DEFAULT
+\*------------------------------------*/
+
+.main {
+	min-height: 100vh;
+	background: black;
+}
+
+.section {
+	@include cf;
+}

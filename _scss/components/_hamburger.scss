@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #COMPONENTS - HAMBURGER
+\*------------------------------------*/
+
+.c-hamburger {
+	cursor: pointer;
+	@include ease-out-slow;
+
+	.c-hamburger__patty {
+		will-change: transform, opacity;
+		width: 32px;
+		height: 4px;
+		margin: 0 0 6px 0;
+		background: white;
+		opacity: 1;
+		transform: translate(0) rotate(0deg);
+		@include ease-out-fast;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.c-hamburger--close {
+    transform: rotate(-180deg);
+
+		.c-hamburger__patty:nth-child(1) {
+			transform: translate(7px, 10px) rotate(-45deg);
+		}
+
+		.c-hamburger__patty:nth-child(2) {
+			transform: scale(0);
+			opacity: 0;
+		}
+
+		.c-hamburger__patty:nth-child(3) {
+			transform: translate(7px, -10px) rotate(45deg);
+		}
+	}
+}

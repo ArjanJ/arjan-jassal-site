@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    #PAGES - HOME
+\*------------------------------------*/
+
+.home {
+	min-height: 100vh;
+	background: url('//unsplash.it/1920/1080') center/cover;
+	-webkit-filter: grayscale(1);
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(black, 0.8);
+	}
+}
+
+.home__wrapper {
+	min-height: 100vh;
+	max-width: 768px;
+	margin: 0 auto;
+	@include align-children(both);
+	flex-direction: column;
+}
+
+.home__title {
+	font-weight: $font-weight-light;
+}
+
+@include xlarge {
+	.home {
+		background: url('//unsplash.it/1280/800') center/cover;
+	}
+}
+
+@include large {
+	.home {
+		background: url('//unsplash.it/960/1024') center/cover;
+	}
+}
+
+@include medium {
+	.home {
+		background: url('//unsplash.it/768/1024') center/cover;
+	}
+}

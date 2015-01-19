@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #COMPONENTS - FLAG
+\*------------------------------------*/
+
+.c-flag {
+  display: table;
+  width: 100%;
+}
+
+.c-flag__image,
+.c-flag__body {
+  display: table-cell;
+  vertical-align: middle;
+
+  .c-flag--top & {
+    vertical-align: top;
+  }
+
+  .c-flag--bottom & {
+    vertical-align: bottom;
+  }
+
+}
+
+.c-flag__img {
+  padding-right: 10px;
+
+  > img {
+    display: block;
+    width: auto;
+    max-width: none;
+  }
+
+  .c-flag--rev & {
+    padding-right: 0;
+    padding-left: 10px;
+  }
+
+}
+
+.c-flag__body {
+  width: 100%;
+  padding: $spacing-fixed / 2;
+  padding-bottom: 0;
+}
