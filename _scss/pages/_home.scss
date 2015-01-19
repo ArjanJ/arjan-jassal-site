@@ -19,7 +19,7 @@
 }
 
 .home__wrapper {
-	min-height: 100vh;
+	min-height: inherit;
 	max-width: 768px;
 	margin: 0 auto;
 	@include align-children(both);
