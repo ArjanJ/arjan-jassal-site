@@ -16,11 +16,13 @@
 
 			if (bg.classList.contains('project__bg--show')) {
 				bg.classList.remove('project__bg--show');
+				bg.classList.add('project__bg--hide');
 
 				for (var i = 0, ii = e.name.length; i < ii; i++) {
 					e.name[i].style.opacity = '1';
 				}
 			} else {
+				bg.classList.remove('project__bg--hide');
 				bg.classList.add('project__bg--show');
 
 				for (var j = 0, jj = e.name.length; j < jj; j++) {
@@ -29,6 +31,8 @@
 
 				self.style.opacity = '1';
 			}
+
+			window.requestAnimationFrame(show);
 		};
 
 		var events = function() {
