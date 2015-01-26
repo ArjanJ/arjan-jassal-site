@@ -5,7 +5,8 @@
 	var Preview = (function() {
 
 		var elements = {
-			name: document.querySelectorAll('h1.projects__title')
+			name: document.querySelectorAll('h1.projects__title'),
+			bgs: document.querySelectorAll('div.projects__bg')
 		};
 
 		var show = function() {
@@ -14,25 +15,28 @@
 			var project = self.dataset.project;
 			var bg = document.getElementById(project);
 
-			if (bg.classList.contains('project__bg--show')) {
-				bg.classList.remove('project__bg--show');
-				bg.classList.add('project__bg--hide');
-
+			if (bg.classList.contains('projects__bg--show')) {
 				for (var i = 0, ii = e.name.length; i < ii; i++) {
-					e.name[i].style.opacity = '1';
+					e.bgs[i].classList.remove('projects__bg--show');
+					e.bgs[i].classList.add('projects__bg--hide');
 				}
-			} else {
-				bg.classList.remove('project__bg--hide');
-				bg.classList.add('project__bg--show');
+
+				bg.classList.add('projects__bg--hide');
 
 				for (var j = 0, jj = e.name.length; j < jj; j++) {
-					e.name[j].style.opacity = '0';
+					e.name[j].style.opacity = '1';
+				}
+
+			} else {
+				bg.classList.remove('projects__bg--hide');
+				bg.classList.add('projects__bg--show');
+
+				for (var k = 0, kk = e.name.length; k < kk; k++) {
+					e.name[k].style.opacity = '0.2';
 				}
 
 				self.style.opacity = '1';
 			}
-
-			window.requestAnimationFrame(show);
 		};
 
 		var events = function() {
@@ -48,7 +52,7 @@
 		};
 
 		return {
-			init: init
+			init: init,
 		};
 
 	}());

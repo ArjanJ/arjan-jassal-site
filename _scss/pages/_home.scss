@@ -67,13 +67,18 @@
 .projects__title {
 	margin: 0;
 	padding: $spacing-fixed 0;
+	@include ease-out-normal;
 
 	> a {
 		font-weight: $font-weight-light;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
-.project__bg {
+.projects__bg {
 	will-change: transform, opacity;
 	@include cover;
 	height: 100vh;
@@ -82,27 +87,35 @@
 	transform: translate3d(-100%, 0, 0);
 	@include ease-out-slow;
 
-	&.project__bg--show {
+	&.projects__bg--show {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
 
-	&.project__bg--hide {
-		animation: hide .65s ease; 
+	&.projects__bg--hide {
+		animation: hide .65s ease;
 	}
+}
+
+@for $i from 1 through 6 {
+  .projects__bg {
+  	&:nth-of-type(#{$i}) {
+      background: hsl(1, 80%, random(100));
+    }
+  }
 }
 
 @keyframes hide {
 	0% {
-		transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0) scale(1);
 	}
 
 	99% {
-		transform: translate3d(100%, 0, 0);
+		transform: translate3d(0, 0, 0) scale(0.7);
 	}
 
 	100% {
 		opacity: 0;
-		transform: translate3d(-101%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
 	}
 }
