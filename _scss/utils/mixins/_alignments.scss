@@ -2,10 +2,6 @@
     #MIXINS - ALIGNMENTS
 \*------------------------------------*/
 
-@mixin center-inline {
-	text-align: center;
-}
-
 @mixin center-block {
 	display: block;
 	margin: 0 auto;
