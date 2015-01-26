@@ -6,7 +6,7 @@
 	min-height: 100vh;
 	background: url('//unsplash.it/1920/1080') center/cover fixed;
 	-webkit-filter: grayscale(1);
-	backface-visibilty: hidden;
+	backface-visibility: hidden;
 
 	&:before {
 		content: "";
