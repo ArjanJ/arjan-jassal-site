@@ -26,7 +26,6 @@ body {
 	height: 100%;
 	font-family: $font-text;
 	@include font-size($font-small);
-	color: white;
 	// for smooth font rendering in Chrome and Firefox
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -66,5 +65,5 @@ input {
 a {
 	cursor: pointer;
 	text-decoration: none;
-	color: white;
+	color: inherit;
 }

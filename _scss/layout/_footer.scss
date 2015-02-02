@@ -3,6 +3,28 @@
 \*------------------------------------*/
 
 .footer {
-	padding: ($spacing-fixed * 3) (0);
+	padding: ($spacing-fixed * 4) (0);
 	text-align: center;
+	color: $black;
+
+	a {
+		font-weight: $font-weight-light;
+	}
+}
+
+.social-icons {
+	margin-top: $spacing-fixed * 2.5;
+
+	> li {
+		display: inline-block;
+	}
+
+	a {
+		padding: (0) ($spacing-fixed);
+	}
+
+	svg {
+		width: 35px;
+		height: 35px;
+	}
 }

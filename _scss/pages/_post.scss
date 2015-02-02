@@ -12,6 +12,30 @@
 	min-height: 100vh;
 	background: url('//unsplash.it/1490/700') center/cover;
 	color: white;
+
+	&--project-1 {
+		background: url('//unsplash.it/1500/700') center/cover;
+	}
+
+	&--project-2 {
+		background: url('//unsplash.it/1600/700') center/cover;
+	}
+
+	&--project-3 {
+		background: url('//unsplash.it/1500/800') center/cover;
+	}
+
+	&--project-4 {
+		background: url('//unsplash.it/1505/705') center/cover;
+	}
+
+	&--project-5 {
+		background: url('//unsplash.it/1500/710') center/cover;
+	}
+
+	&--project-6 {
+		background: url('//unsplash.it/1520/710') center/cover;
+	}
 }
 
 .post-header__title {
@@ -34,8 +58,6 @@
 	color: $black;
 	@include font-size(2);
 	font-weight: $font-weight-normal;
-	border-top: 1px solid darken(white, 15);
-	border-bottom: 1px solid darken(white, 15);
 
 	> svg {
 		@include ease-out-normal;
@@ -50,11 +72,9 @@
 		}
 
 		&:hover {
-			opacity: 1;
-			background: darken(white, 10);
 
 			> svg {
-				transform: translateX(-$spacing-fixed * 2);
+				transform: translateX(-$spacing-fixed);
 			}
 		}
 	}
@@ -67,11 +87,9 @@
 		}
 
 		&:hover {
-			opacity: 1;
-			background: darken(white, 10);
 
 			> svg {
-				transform: translateX($spacing-fixed * 2);
+				transform: translateX($spacing-fixed);
 			}
 		}
 	}

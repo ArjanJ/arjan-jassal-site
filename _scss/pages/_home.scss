@@ -7,6 +7,7 @@
 	background: url('//unsplash.it/1920/1080') center/cover;
 	-webkit-filter: grayscale(1);
 	text-align: center;
+	color: white;
 
 	&:before {
 		@include cover--pseudo;
@@ -53,7 +54,8 @@
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
-	background: $black;
+	background: black;
+	color: white;
 }
 
 .projects__wrapper {
@@ -61,7 +63,7 @@
 	flex-direction: column;
 	min-height: inherit;
 	margin: 0 auto;
-	padding-top: 90px;
+	padding-top: 30px;
 }
 
 .projects__post {
