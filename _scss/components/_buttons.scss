@@ -8,14 +8,6 @@
 	@include c-btn;
 }
 
-.c-btn--primary {
-	@include c-btn--primary;
-}
-
 .c-btn--wide {
 	width: 100%;
-}
-
-.c-btn--sm {
-	@include c-btn--sm;
 }

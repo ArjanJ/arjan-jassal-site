@@ -59,9 +59,5 @@ dt {
 
 a {
 	@include ease-out-normal;
-	font-weight: $font-weight-bold;
-
-	&:hover {
-		opacity: 0.6;
-	}
+	font-weight: $font-weight-normal;
 }

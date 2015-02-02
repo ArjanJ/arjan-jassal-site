@@ -9,10 +9,10 @@ categories: work
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero beatae repellat error fugiat consequuntur impedit ipsam laudantium soluta unde quia doloremque repudiandae expedita animi ipsum, a eos voluptate nobis perferendis.
 </p>
 
-<div class="post-content__images wrapper">
-	<img src="http://unsplash.it/1280/400" alt="">
+<div class="post-content__images">
+	<img class="img__half" src="http://unsplash.it/585/350" alt="">
 
-	<img src="http://unsplash.it/1280/450" alt="">
+	<img class="img__half" src="http://unsplash.it/585/350" alt="">
 
 	<img src="http://unsplash.it/1280/420" alt="">
 </div>

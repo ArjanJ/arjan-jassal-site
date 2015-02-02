@@ -32,13 +32,30 @@
 	padding: ($spacing-fixed * 3) (0);
 	background: white;
 	color: $black;
+	@include font-size(2);
 	font-weight: $font-weight-normal;
+	border-top: 1px solid darken(white, 15);
+	border-bottom: 1px solid darken(white, 15);
+
+	> svg {
+		@include ease-out-normal;
+	}
 
 	&:first-child {
 		left: 0;
+		border-right: 1px solid darken(white, 15);
 
 		> svg {
 			margin-right: ($spacing-fixed * 4);
+		}
+
+		&:hover {
+			opacity: 1;
+			background: darken(white, 10);
+
+			> svg {
+				transform: translateX(-$spacing-fixed * 2);
+			}
 		}
 	}
 
@@ -48,11 +65,21 @@
 		> svg {
 			margin-left: ($spacing-fixed * 4);
 		}
+
+		&:hover {
+			opacity: 1;
+			background: darken(white, 10);
+
+			> svg {
+				transform: translateX($spacing-fixed * 2);
+			}
+		}
 	}
 }
 
 .post-content {
 	text-align: center;
+	padding-bottom: $spacing-fixed * 2;
 
 	&__wrapper {
 		@include align-children(vertical);
@@ -68,8 +95,17 @@
 		overflow: hidden;
 
 		img {
-			margin: ($spacing-fixed * 3) (auto);
+			margin: (0) (auto) ($spacing-fixed * 3);
 			width: 100%;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&.img__half {
+				@include column(1/2, $gutter: $spacing-fixed * 3);
+				@include cycle(2);
+			}
 		}
 	}
 }

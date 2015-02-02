@@ -44,7 +44,7 @@ function swallowError (error) {
 gulp.task('sass', function () {
     return gulp.src('_scss/global.scss')
         .pipe(sass({
-            includePaths: ['scss'],
+            includePaths: ['css'],
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%'], { cascade: true }))
