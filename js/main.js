@@ -57,6 +57,47 @@
 
 	}());
 
+	var FancyScroll = (function() {
+
+		var elements = {
+			homeTitle: document.querySelector('.home__title'),
+			projectTitle: document.querySelector('h1.post-header__title')
+		};
+
+		var init = function() {
+			var e = elements;
+			var pageHeight = window.outerHeight;
+
+			window.addEventListener('scroll', function() {
+
+				var scrollPos = window.scrollY;
+				var opacity = 1 - (scrollPos/250);
+				var trans = 1 + (scrollPos);
+
+				if (scrollPos < pageHeight / 2) {
+					if (e.homeTitle) {
+						e.homeTitle.style.opacity = opacity;
+						e.homeTitle.style.transform = 'translateY(' + trans + 'px)';
+					}
+
+					if (e.projectTitle) {
+						e.projectTitle.style.opacity = opacity;
+						e.projectTitle.style.transform = 'translateY(' + trans + 'px)';
+					}
+				}
+
+			});
+		};
+
+		return {
+			init: init
+		};
+
+	}());
+
+
+
 	Preview.init();
+	FancyScroll.init();
 
 }(window, document));

@@ -5,14 +5,19 @@
 .header {
 	position: fixed;
 	width: 100%;
-	padding: ($spacing-fixed * 3) (0);
+	padding: ($spacing-fixed * 4) (0) (0);
+	backface-visibility: hidden;
 }
 
 .header__wrapper {
 	@include align-children(both);
+	justify-content: space-between;
 }
 
 .header__logo {
 	fill: white;
-	height: 35px;
+	width: 60px;
+	height: 60px;
+	padding: 12px;
+	background: $black;
 }

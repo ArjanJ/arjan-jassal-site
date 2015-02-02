@@ -6,11 +6,11 @@
 	cursor: pointer;
 	@include ease-out-slow;
 
-	.c-hamburger__patty {
+	&__patty {
 		will-change: transform, opacity;
-		width: 32px;
-		height: 4px;
-		margin: 0 0 6px 0;
+		width: 28px;
+		height: 2px;
+		margin: 0 0 5px 0;
 		background: white;
 		opacity: 1;
 		transform: translate(0) rotate(0deg);
@@ -21,7 +21,11 @@
 		}
 	}
 
-	&.c-hamburger--close {
+	&:hover {
+		opacity: 0.7;
+	}
+
+	&--close {
     transform: rotate(-180deg);
 
 		.c-hamburger__patty:nth-child(1) {

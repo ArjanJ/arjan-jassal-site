@@ -3,9 +3,9 @@
 \*------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
-	margin: ($spacing-fixed) (0);
+	margin: ($spacing-fixed * 2) (0);
 	font-family: $font-heading;
-	font-weight: $font-weight-bold;
+	font-weight: $font-weight-light;
 }
 
 h1 {
@@ -44,9 +44,9 @@ h6 {
 .giant { @include font-size($font-giant); }
 
 p {
-	margin: ($spacing-fixed / 2) (0);
+	margin: ($spacing-fixed * 2) (0);
 	font-family: $font-text;
-	font-weight: $font-weight-light;
+	font-weight: $font-weight-normal;
 }
 
 strong {

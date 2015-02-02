@@ -1,3 +1,19 @@
 /*------------------------------------*\
     #LAYOUT - NAVIGATION
 \*------------------------------------*/
+
+.nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	opacity: 0;
+
+	&__item {
+		display: inline-block;
+		margin-left: $spacing-fixed;
+	}
+
+	&__link {
+		font-weight: $font-weight-normal;
+	}
+}

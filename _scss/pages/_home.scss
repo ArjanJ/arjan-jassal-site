@@ -4,13 +4,12 @@
 
 .home {
 	min-height: 100vh;
-	background: url('//unsplash.it/1920/1080') center/cover fixed;
+	background: url('//unsplash.it/1920/1080') center/cover;
 	-webkit-filter: grayscale(1);
-	backface-visibility: hidden;
+	text-align: center;
 
 	&:before {
-		content: "";
-		@include cover;
+		@include cover--pseudo;
 		background: rgba(black, 0.8);
 	}
 }
@@ -25,23 +24,28 @@
 
 .home__title {
 	font-weight: $font-weight-light;
+	@include ease-out-slow;
+
+	&--hide {
+		opacity: 0;
+	}
 }
 
 @include xlarge {
 	.home {
-		background: url('//unsplash.it/1280/800') center/cover fixed;
+		background: url('//unsplash.it/1280/800') center/cover;
 	}
 }
 
 @include large {
 	.home {
-		background: url('//unsplash.it/960/1024') center/cover fixed;
+		background: url('//unsplash.it/960/1024') center/cover;
 	}
 }
 
 @include medium {
 	.home {
-		background: url('//unsplash.it/768/1024') center/cover fixed;
+		background: url('//unsplash.it/768/1024') center/cover;
 	}
 }
 
@@ -49,6 +53,7 @@
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
+	background: $black;
 }
 
 .projects__wrapper {
@@ -87,12 +92,12 @@
 	transform: translate3d(-100%, 0, 0);
 	@include ease-out-slow;
 
-	&.projects__bg--show {
+	&--show {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
 
-	&.projects__bg--hide {
+	&--hide {
 		animation: hide .65s ease;
 	}
 }

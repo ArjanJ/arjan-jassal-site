@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    #PAGES - POST
+\*------------------------------------*/
+
+.post {
+	background: white;
+	color: $black;
+}
+
+.post-header {
+	@include align-children(both);
+	min-height: 100vh;
+	background: url('//unsplash.it/1490/700') center/cover;
+	color: white;
+}
+
+.post-header__title {
+	margin: 0;
+	font-size: 4.5vw;
+	font-weight: $font-weight-light;
+	color: white;
+}
+
+.post-nav {
+	display: flex;
+	@include ease-slow;
+}
+
+.post-nav__link {
+	@include align-children(both);
+	width: 50vw;
+	padding: ($spacing-fixed * 3) (0);
+	background: white;
+	color: $black;
+	font-weight: $font-weight-normal;
+
+	&:first-child {
+		left: 0;
+
+		> svg {
+			margin-right: ($spacing-fixed * 4);
+		}
+	}
+
+	&:last-child {
+		right: 0;
+
+		> svg {
+			margin-left: ($spacing-fixed * 4);
+		}
+	}
+}
+
+.post-content {
+	text-align: center;
+
+	&__wrapper {
+		@include align-children(vertical);
+		flex-flow: column wrap;
+	}
+
+	&__text {
+		max-width: 640px;
+		margin: ($spacing-fixed * 6) (auto);
+	}
+
+	&__images {
+		overflow: hidden;
+
+		img {
+			margin: ($spacing-fixed * 3) (auto);
+			width: 100%;
+		}
+	}
+}
