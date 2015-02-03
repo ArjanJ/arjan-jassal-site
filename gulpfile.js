@@ -25,7 +25,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 // Wait for jekyll-build, then launch the Server
-gulp.task('browser-sync', ['sass', 'scripts', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-build', 'scripts'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -60,6 +60,7 @@ gulp.task('scripts', function() {
         .pipe(concat('script.js'))
         // .pipe(rename('script.min.js'))
         // .pipe(uglify())
+        .pipe(gulp.dest('./js'))
         .pipe(gulp.dest('./_site/js'));
 });
 
