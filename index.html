@@ -14,7 +14,7 @@ excerpt: I create interactive websites using the latest front-end technologies. 
   {% for post in site.posts %}
     <article class="projects__post">
     	<h1 data-project="{{ post.title }}" class="projects__title">
-    		<a href=" {{ post.url }}">
+    		<a class="smooth-trans" href=" {{ post.url }}">
 					{{ post.title }}
 				</a>
     	</h1>
@@ -31,4 +31,5 @@ excerpt: I create interactive websites using the latest front-end technologies. 
   </div>
   {% endfor %}
 </section>
-<script src="js/main.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+<script src="js/script.js"></script>

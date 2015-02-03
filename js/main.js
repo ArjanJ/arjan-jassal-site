@@ -95,9 +95,76 @@
 
 	}());
 
+	var PageTrans = (function() {
 
+		var elements = {
+			trigger: document.querySelectorAll('.smooth-trans'),
+			body: document.getElementById('body')
+		};
 
-	Preview.init();
-	FancyScroll.init();
+		var enter = function() {
+			var e = elements;
+			Velocity(e.body,
+				{
+					opacity: 1
+				},
+				{
+					duration: 750
+				});
+		};
+
+		var exit = function(event) {
+			var e = elements;
+			var that = this;
+			var page = [];
+			for (var i = 0; i < e.trigger.length; i++) {
+				page.push(e.trigger[i].href);
+			}
+
+			Velocity(e.body,
+				{
+					opacity: 0
+				},
+				{
+					duration: 500,
+					complete: function() {
+						location.href = that.href;
+					}
+				});
+
+			event.preventDefault();
+		};
+
+		var bindActions = function() {
+			var e = elements;
+
+			window.addEventListener('load', enter, false);
+
+			for (var i = 0; i < e.trigger.length; i++) {
+				e.trigger[i].addEventListener('click', exit, false);
+			}
+		};
+
+		var init = function() {
+			bindActions();
+		};
+
+		return {
+			init: init
+		};
+
+	}());
+
+	var Initializer = (function( Preview, FancyScroll, PageTrans ) {
+		return {
+			init: function() {
+				Preview.init();
+				FancyScroll.init();
+				PageTrans.init();
+			}
+		};
+	}( Preview || {}, FancyScroll || {}, PageTrans || {} ));
+
+	Initializer.init();
 
 }(window, document));

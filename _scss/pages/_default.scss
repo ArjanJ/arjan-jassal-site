@@ -2,6 +2,10 @@
     #PAGES - DEFAULT
 \*------------------------------------*/
 
+#body {
+	opacity: 0;
+}
+
 .main {
 	@include cf;
 	min-height: 100vh;

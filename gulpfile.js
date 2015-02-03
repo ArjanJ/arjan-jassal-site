@@ -25,7 +25,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 // Wait for jekyll-build, then launch the Server
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'scripts', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -53,22 +53,22 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('css'));
 });
 
-// // Concatenate & Minify JS
-// gulp.task('scripts', function() {
-//     return gulp.src(['./js/*.js'])
-//         .on('error', swallowError)
-//         .pipe(concat('script.js'))
-//         .pipe(rename('script.min.js'))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('./js'));
-// });
+// Concatenate & Minify JS
+gulp.task('scripts', function() {
+    return gulp.src(['./js/*.js'])
+        .on('error', swallowError)
+        .pipe(concat('script.js'))
+        // .pipe(rename('script.min.js'))
+        // .pipe(uglify())
+        .pipe(gulp.dest('./_site/js'));
+});
 
 
 // Watch scss files for changes & recompile
 // Watch html/md files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
     gulp.watch('_scss/**/*.scss', ['sass', 'jekyll-rebuild']);
-    // gulp.watch('js/*', ['scripts']);
+    gulp.watch('js/*', ['scripts']);
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
