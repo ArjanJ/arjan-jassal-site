@@ -10,3 +10,7 @@ permalink: /:categories/:title.html
 
 # Build settings
 markdown: kramdown
+
+#page
+# pages_list:
+# 	About: '/about/'
