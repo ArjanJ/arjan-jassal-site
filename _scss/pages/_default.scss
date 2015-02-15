@@ -2,14 +2,22 @@
     #PAGES - DEFAULT
 \*------------------------------------*/
 
-#body {
+.body {
 	opacity: 0;
+	background: $primary-color;
 }
 
 .main {
 	@include cf;
 	min-height: 100vh;
 	background: black;
+	transform: translate3d(0, 0, 0);
+	@include ease-out-slow;
+
+	&--active {
+		opacity: 0.2;
+		// transform: translate3d(0, 100vh, 0);
+	}
 }
 
 .section {

@@ -4,7 +4,7 @@
 
 .home {
 	min-height: 100vh;
-	background: #e74c3c;
+	background: $primary-color;
 	color: white;
 
 	&:before {
@@ -27,7 +27,6 @@
 
 .home__subtitle {
 	margin-top: 0;
-	padding-bottom: $spacing-fixed;
 	max-width: 800px;
 }
 
@@ -73,6 +72,7 @@
 .projects__title {
 	margin: 0;
 	padding: $spacing-fixed 0;
+	opacity: 0.2;
 	@include ease-out-normal;
 
 	> a {
@@ -90,7 +90,8 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	transform: translate3d(-100%, 0, 0);
+	opacity: 0;
+	// transform: translate3d(-100%, 0, 0);
 	@include ease-out-slow;
 
 	&--show {
@@ -106,7 +107,7 @@
 @for $i from 1 through 6 {
   .projects__bg {
   	&:nth-of-type(#{$i}) {
-      background: hsl(1, 80%, random(100));
+      background: hsl(1, 100%, random(40));
     }
   }
 }

@@ -7,6 +7,16 @@
 	width: 100%;
 	padding: ($spacing-fixed * 4) (0) (0);
 	backface-visibility: hidden;
+	will-change: transform;
+	@include ease-out-normal;
+
+	&--active {
+
+		.header__logo {
+			fill: $primary-color;
+		}
+		// transform: translate3d(0, 50vh, 0);
+	}
 }
 
 .header__wrapper {
@@ -15,6 +25,11 @@
 }
 
 .header__logo {
+	position: relative;
 	fill: white;
 	height: 30px;
+}
+
+.header__hamburger {
+	position: relative;
 }
