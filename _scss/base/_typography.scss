@@ -60,4 +60,24 @@ dt {
 a {
 	@include ease-out-normal;
 	font-weight: $font-weight-normal;
+
+	&.link-styled {
+		position: relative;
+
+		&:before {
+			@include cover--pseudo;
+			bottom: 0;
+			top: auto;
+			height: 2px;
+			transform: scaleX(0.2);
+			background: white;
+			@include ease-out-normal;
+		}
+
+		&:hover {
+			&:before {
+				transform: scaleX(1);
+			}
+		}
+	}
 }

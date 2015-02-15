@@ -25,7 +25,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 // Wait for jekyll-build, then launch the Server
-gulp.task('browser-sync', ['sass', 'jekyll-build', 'scripts'], function() {
+gulp.task('browser-sync', ['sass', 'scripts', 'jekyll-build', ], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -55,13 +55,13 @@ gulp.task('sass', function () {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src(['./js/*.js'])
+    return gulp.src(['./js/main.js'])
         .on('error', swallowError)
         .pipe(concat('script.js'))
         // .pipe(rename('script.min.js'))
         // .pipe(uglify())
-        .pipe(gulp.dest('./js'))
-        .pipe(gulp.dest('./_site/js'));
+        .pipe(gulp.dest('./js'));
+        // .pipe(gulp.dest('./_site/js'));
 });
 
 

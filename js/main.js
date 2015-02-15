@@ -60,8 +60,7 @@
 	var FancyScroll = (function() {
 
 		var elements = {
-			homeTitle: document.querySelector('.home__title'),
-			projectTitle: document.querySelector('h1.post-header__title')
+			theThing: document.querySelector('.fadescroll')
 		};
 
 		var init = function() {
@@ -75,14 +74,9 @@
 				var trans = 1 + (scrollPos);
 
 				if (scrollPos < pageHeight / 2) {
-					if (e.homeTitle) {
-						e.homeTitle.style.opacity = opacity;
-						e.homeTitle.style.transform = 'translateY(' + trans + 'px)';
-					}
-
-					if (e.projectTitle) {
-						e.projectTitle.style.opacity = opacity;
-						e.projectTitle.style.transform = 'translateY(' + trans + 'px)';
+					if (e.theThing) {
+						e.theThing.style.opacity = opacity;
+						// e.theThing.style.transform = 'translateY(' + trans + 'px)';
 					}
 				}
 
@@ -116,10 +110,6 @@
 		var exit = function(event) {
 			var e = elements;
 			var that = this;
-			var page = [];
-			for (var i = 0; i < e.trigger.length; i++) {
-				page.push(e.trigger[i].href);
-			}
 
 			Velocity(e.body,
 				{
