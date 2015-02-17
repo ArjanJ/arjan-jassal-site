@@ -7,7 +7,8 @@ $zindex: (
 	home-overlay: 	-1,
 	home-content: 	1.0,
 	hamburger: 			15,
-	logo: 					15
+	logo: 					15,
+	nav: 						15
 );
 
 @function z($label) {
@@ -24,6 +25,10 @@ $zindex: (
 
 .header__logo {
 	z-index: z(logo);
+}
+
+.nav {
+	z-index: z(nav);
 }
 
 .home {

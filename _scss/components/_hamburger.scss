@@ -23,12 +23,13 @@
 	}
 
 	&--close {
+		transform: rotateY(180deg);
 		.c-hamburger__patty {
-			background: $primary-color;
+			// background: $primary-color;
 		}
 
 		.c-hamburger__patty:nth-child(1) {
-			transform: translate(0px, 7.5px) rotate(-45deg) scale(1, 1.5);
+			transform: translate(0px, 9px) rotate(-45deg) scale(1, 1);
 		}
 
 		.c-hamburger__patty:nth-child(2) {
@@ -36,7 +37,7 @@
 		}
 
 		.c-hamburger__patty:nth-child(3) {
-			transform: translate(0px, -7.5px) rotate(45deg) scale(1, 1.5);
+			transform: translate(0px, -7.5px) rotate(45deg) scale(1, 1);
 		}
 	}
 }

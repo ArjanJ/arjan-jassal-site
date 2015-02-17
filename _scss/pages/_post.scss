@@ -9,6 +9,7 @@
 
 .post-header {
 	@include align-children(both);
+	flex-direction: column;
 	min-height: 100vh;
 	background: url('//unsplash.it/1490/700') center/cover;
 	color: white;
@@ -48,6 +49,7 @@
 .post-nav {
 	display: flex;
 	@include ease-slow;
+	background: white;
 }
 
 .post-nav__link {

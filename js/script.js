@@ -80,7 +80,7 @@
 
 		var elements = {
 			trigger: document.querySelectorAll('.smooth-trans'),
-			body: document.getElementById('body')
+			body: document.querySelector('.main')
 		};
 
 		var enter = function() {
@@ -146,7 +146,7 @@
 				trigger.classList.toggle('c-hamburger--close');
 				nav.classList.toggle('nav--active');
 				main.classList.toggle('main--active');
-				header.classList.toggle('header--active');
+				// header.classList.toggle('header--active');
 			};
 
 			trigger.addEventListener('click', triggerOpen, false);

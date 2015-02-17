@@ -102,6 +102,10 @@
 	&--hide {
 		animation: hide .65s ease;
 	}
+
+	picture {
+		width: 100%;
+	}
 }
 
 @for $i from 1 through 6 {

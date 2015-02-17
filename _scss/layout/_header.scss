@@ -11,11 +11,9 @@
 	@include ease-out-normal;
 
 	&--active {
-
 		.header__logo {
-			fill: $primary-color;
+			// fill: $primary-color;
 		}
-		// transform: translate3d(0, 50vh, 0);
 	}
 }
 
@@ -25,9 +23,15 @@
 }
 
 .header__logo {
-	position: relative;
-	fill: white;
-	height: 30px;
+	flex: 2;
+
+	> svg {
+		position: relative;
+		fill: white;
+		height: 30px;
+		@include ease-out-normal;
+	}
+	
 }
 
 .header__hamburger {

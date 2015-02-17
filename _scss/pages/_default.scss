@@ -3,20 +3,33 @@
 \*------------------------------------*/
 
 .body {
-	opacity: 0;
 	background: $primary-color;
 }
 
 .main {
 	@include cf;
+	position: relative;
 	min-height: 100vh;
 	background: black;
 	transform: translate3d(0, 0, 0);
 	@include ease-out-slow;
+	opacity: 0;
+
+	&:before {
+		@include cover--pseudo;
+		z-index: 2;
+		display: block;
+		background: black;
+		opacity: 0;
+		visibility: hidden;
+		@include ease-out-slow;
+	}
 
 	&--active {
-		opacity: 0.2;
-		// transform: translate3d(0, 100vh, 0);
+		&:before {
+			opacity: 0.4;
+			visibility: visible;
+		}
 	}
 }
 
