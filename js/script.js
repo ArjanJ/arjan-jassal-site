@@ -63,7 +63,7 @@
 
 					if (scrollPos < pageHeight / 2) {
 						e.theThing.style.opacity = opacity;
-						e.theThing.style.transform = 'translateY(' + trans + 'px)';
+						//e.theThing.style.transform = 'translateY(' + trans + 'px)';
 					}
 
 				});
