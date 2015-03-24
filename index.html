@@ -1,6 +1,6 @@
 ---
 layout: default
-excerpt: I create interactive websites using the latest front-end technologies. I'm passionate about developing fast, usable, and memorable web experiences.
+excerpt: I create fast, interactive, and usable web experiences with CSS &amp; JavaScript.
 ---
 
 <section class="section home">
@@ -9,26 +9,5 @@ excerpt: I create interactive websites using the latest front-end technologies. 
 	</article>
 </section>
 
-<section class="section projects projects__wrapper">
-  {% for post in site.posts %}
-    <article class="projects__post">
-    	<h1 data-project="{{ post.title }}" class="projects__title">
-    		<a class="smooth-trans" href=" {{ post.url }}">
-					{{ post.title }}
-				</a>
-    	</h1>
-    </article>
-  {% endfor %}
-  {% for post in site.posts %}
-  <div id="{{ post.title }}" class="section projects__bg">
-    <picture>
-       <source media="(min-width: 1920px)" srcset="//unsplash.it/1920/1440">
-       <source media="(min-width: 1280px)" srcset="//unsplash.it/1285/800">
-       <source media="(min-width: 768px)" srcset="//unsplash.it/768/1024">
-       <img src="//unsplash.it/1280/800" alt="A photo.">
-    </picture>
-  </div>
-  {% endfor %}
-</section>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 <script src="js/script.js"></script>

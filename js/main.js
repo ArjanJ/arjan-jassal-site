@@ -161,7 +161,7 @@
 	var Initializer = (function( Preview, FancyScroll, PageTrans ) {
 		return {
 			init: function() {
-				Nav.init();
+				// Nav.init();
 				Preview.init();
 				FancyScroll.init();
 				PageTrans.init();

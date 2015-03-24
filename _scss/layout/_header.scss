@@ -19,11 +19,11 @@
 
 .header__wrapper {
 	@include align-children(both);
-	justify-content: space-between;
+	//justify-content: space-between;
 }
 
 .header__logo {
-	flex: 2;
+	// flex: 2;
 
 	> svg {
 		position: relative;
