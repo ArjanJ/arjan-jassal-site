@@ -13,7 +13,7 @@
 	background: black;
 	transform: translate3d(0, 0, 0);
 	@include ease-out-slow;
-	opacity: 0;
+	// opacity: 0;
 
 	&:before {
 		@include cover--pseudo;
