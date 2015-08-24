@@ -19,15 +19,15 @@
 	flex-direction: column;
 }
 
-.home__title {
-	// text-transform: uppercase;
-	// letter-spacing: 3px;
-	max-width: 800px;
-}
+// .home__title {
+// 	// text-transform: uppercase;
+// 	// letter-spacing: 3px;
+// 	max-width: 800px;
+// }
 
 .home__subtitle {
 	margin-top: 0;
-	max-width: 800px;
+	max-width: 768px;
 
 	@include medium {
 		font-size: 24px;
