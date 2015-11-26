@@ -1,0 +1,44 @@
+.nav {
+
+	&__link {
+		padding: (0) ($space / 1.5);
+		position: relative;
+		font-size: 2rem;
+		letter-spacing: 2px;
+		color: white;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateX(0) scaleX(0);
+			height: 1px;
+			width: 100%;
+			background: white;
+			transition: all .2s ease-out;
+		}
+
+		&:first-child {
+			padding-left: 0;
+
+			&:before {
+				transform: translateX(-$space / 3) scaleX(0);
+			}
+
+			&:hover {
+
+				&:before {
+					transform: translateX(-$space / 3) scaleX(1);
+				}
+			}
+		}
+
+		&:hover {
+
+			&:before {
+				transform: translateX(0) scaleX(1);
+			}
+		}
+	}
+}

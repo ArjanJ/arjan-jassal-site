@@ -1,0 +1,31 @@
+*,
+:before,
+:after {
+	box-sizing: inherit;
+}
+
+:root {
+	box-sizing: border-box;
+	font-family: $font;
+	font-size: 0.625rem;
+	line-height: 1.6;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: (0) (0) ($space);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

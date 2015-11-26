@@ -1,0 +1,47 @@
+.home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	overflow: auto;
+	background: linear-gradient(to top, rgba(#0E2F56, 1) 0%, rgba(#FF304F, 1) 100%);
+
+	&__wrapper {
+		margin: 0 auto;
+		max-width: 800px;
+		padding: (0) ($space);
+	}
+
+	&__heading {
+		font-size: 2.6rem;
+		font-weight: 300;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 6px;
+	}
+
+	&__subheading {
+		font-size: 2rem;
+		color: white;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+
+	&__btn {
+		display: inline-block;
+		border: 2px solid white;
+		color: white;
+		padding: ($space / 2);
+		font-size: 1.6rem;
+	}
+
+	@media screen and (min-width: 640px) {
+		align-items: center;
+
+		&__heading {
+			letter-spacing: 8px;
+			font-size: 4.2rem;
+			font-weight: 300;
+		}
+	}
+}

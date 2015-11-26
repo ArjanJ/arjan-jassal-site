@@ -1,0 +1,25 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: ($space * 2) (0);
+
+	&__wrapper {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 800px;
+		width: 100%;
+		padding: (0) ($space);
+	}
+
+	&__logo {
+
+	}
+
+	&__logo-svg {
+		fill: white;
+	}
+}

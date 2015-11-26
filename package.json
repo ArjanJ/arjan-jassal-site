@@ -1,0 +1,31 @@
+{
+  "name": "arjanj.github.io",
+  "version": "1.1.0",
+  "description": "Arjan Jassal website.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArjanJ/arjanj.github.io.git"
+  },
+  "author": "ArjanJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArjanJ/arjanj.github.io/issues"
+  },
+  "homepage": "https://github.com/ArjanJ/arjanj.github.io#readme",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "css-loader": "^0.9.0",
+    "node-sass": "^3.4.2",
+    "normalize.css": "^3.0.3",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.8.0",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.6.5"
+  }
+}
