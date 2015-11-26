@@ -4,7 +4,7 @@
 	justify-content: center;
 	min-height: 100vh;
 	overflow: auto;
-	background: linear-gradient(to top, rgba(#0E2F56, 1) 0%, rgba(#FF304F, 1) 100%);
+	background: linear-gradient(to top, rgba(#231A31, 1) 0%, rgba(#E42F45, 1) 75%);
 
 	&__wrapper {
 		margin: 0 auto;
@@ -27,12 +27,22 @@
 		letter-spacing: 1px;
 	}
 
-	&__btn {
+	&__link {
 		display: inline-block;
+		width: 120px;
+		margin: (0) ($space) ($space) (0);
 		border: 2px solid white;
+		text-align: center;
 		color: white;
-		padding: ($space / 2);
-		font-size: 1.6rem;
+		padding: ($space / 3) ($space / 2);
+		font-size: 1.4rem;
+		box-shadow: 4px 4px white;
+		transition: all .2s ease-out;
+
+		&:hover {
+			background: #E42F45;
+			border-color: #E42F45;
+		}
 	}
 
 	@media screen and (min-width: 640px) {
@@ -42,6 +52,11 @@
 			letter-spacing: 8px;
 			font-size: 4.2rem;
 			font-weight: 300;
+		}
+
+		&__link {
+			margin: (0) ($space) (0) (0);
+			font-size: 1.6rem;
 		}
 	}
 }

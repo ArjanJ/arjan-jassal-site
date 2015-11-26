@@ -13,7 +13,7 @@
 			top: 50%;
 			left: 0;
 			transform: translateX(0) scaleX(0);
-			height: 1px;
+			height: 2px;
 			width: 100%;
 			background: white;
 			transition: all .2s ease-out;
@@ -29,7 +29,7 @@
 			&:hover {
 
 				&:before {
-					transform: translateX(-$space / 3) scaleX(1);
+					transform: translateX(-$space / 3) scaleX(0.9);
 				}
 			}
 		}
@@ -37,7 +37,7 @@
 		&:hover {
 
 			&:before {
-				transform: translateX(0) scaleX(1);
+				transform: translateX(0) scaleX(0.9);
 			}
 		}
 	}
