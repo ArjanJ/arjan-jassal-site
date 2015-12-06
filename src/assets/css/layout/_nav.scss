@@ -3,9 +3,10 @@
 	&__link {
 		padding: (0) ($space / 1.5);
 		position: relative;
-		font-size: 2rem;
+		font-size: 1.8rem;
 		letter-spacing: 2px;
 		color: white;
+		text-transform: uppercase;
 
 		&:before {
 			content: "";

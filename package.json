@@ -1,10 +1,10 @@
 {
   "name": "arjanj.github.io",
   "version": "1.1.0",
-  "description": "Arjan Jassal website.",
-  "main": "webpack.config.js",
+  "description": "My personal website.",
+  "main": "gulpfile.js",
   "scripts": {
-    "start": "webpack-dev-server --inline",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,14 +18,22 @@
   },
   "homepage": "https://github.com/ArjanJ/arjanj.github.io#readme",
   "devDependencies": {
-    "autoprefixer-loader": "^3.1.0",
-    "css-loader": "^0.9.0",
-    "node-sass": "^3.4.2",
-    "normalize.css": "^3.0.3",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.8.0",
-    "url-loader": "^0.5.5",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.6.5"
+    "autoprefixer": "^6.1.2",
+    "babel-core": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.10.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-swig": "^0.8.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint-stylish": "^2.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

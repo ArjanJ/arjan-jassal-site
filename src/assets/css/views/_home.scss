@@ -4,7 +4,7 @@
 	justify-content: center;
 	min-height: 100vh;
 	overflow: auto;
-	background: linear-gradient(to top, rgba(#231A31, 1) 0%, rgba(#E42F45, 1) 75%);
+	background: linear-gradient(to top, rgba(#231A31, 1) 0%, rgba(#E42F45, 1) 100%);
 
 	&__wrapper {
 		margin: 0 auto;
@@ -13,6 +13,7 @@
 	}
 
 	&__heading {
+		margin-bottom: ($space * 2);
 		font-size: 2.6rem;
 		font-weight: 300;
 		color: white;
@@ -35,7 +36,9 @@
 		text-align: center;
 		color: white;
 		padding: ($space / 3) ($space / 2);
-		font-size: 1.4rem;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
 		box-shadow: 4px 4px white;
 		transition: all .2s ease-out;
 
@@ -45,18 +48,17 @@
 		}
 	}
 
-	@media screen and (min-width: 640px) {
+	@media screen and (min-width: 760px) {
 		align-items: center;
 
 		&__heading {
 			letter-spacing: 8px;
-			font-size: 4.2rem;
-			font-weight: 300;
+			font-size: 3.6rem;
 		}
 
 		&__link {
 			margin: (0) ($space) (0) (0);
-			font-size: 1.6rem;
+			font-size: 1.2rem;
 		}
 	}
 }
