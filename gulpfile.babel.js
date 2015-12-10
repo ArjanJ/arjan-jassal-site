@@ -23,6 +23,10 @@ const dirs = {
 };
 
 const paths = {
+	cname: {
+		src: 'CNAME',
+		build: dirs.build
+	},
 	templates: {
 		src: `${dirs.src}/templates/**/*.swig`,
 		views: `${dirs.src}/templates/views/*.swig`,
@@ -43,7 +47,7 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'scripts', 'styles', 'lint'], watch);
+gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname'], watch);
 
 gulp.task('templates', templates);
 
@@ -52,6 +56,8 @@ gulp.task('scripts', scripts);
 gulp.task('styles', styles);
 
 gulp.task('lint', lint);
+
+gulp.task('cname', cname);
 
 function serve() {
 	bs.init({
@@ -109,6 +115,11 @@ function lint() {
 	return gulp.src(paths.js.src)
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'));
+}
+
+function cname() {
+	return gulp.src(paths.cname.src)
+		.pipe(gulp.dest(paths.cname.build));
 }
 
 function handleError(err) {
