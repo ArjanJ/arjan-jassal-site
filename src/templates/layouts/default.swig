@@ -15,7 +15,7 @@
 
 	<body>
 
-		{% include "../partials/header.swig" %}
+		{# {% include "../partials/header.swig" %} #}
 
 		{% block content %}{% endblock %}		
 
