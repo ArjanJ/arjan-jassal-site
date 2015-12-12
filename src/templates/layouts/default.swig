@@ -7,7 +7,7 @@
 
 		<title>Arjan Jassal | Front-end Developer Vancouver</title>
 
-		<meta name="description" content="">
+		<meta name="description" content="Vancouver based front-end developer. Making stuff with CSS, JavaScript, and all of that good stuff.">
 
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="./assets/css/bundle.css">
