@@ -233,9 +233,7 @@ textarea {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100vh;
-  overflow: auto;
-  background: -webkit-linear-gradient(bottom, #231a31 0%, #e42f45 100%);
-  background: linear-gradient(to top, #231a31 0%, #e42f45 100%); }
+  overflow: auto; }
   .home__wrapper {
     margin: 0 auto;
     max-width: 800px;
@@ -246,7 +244,11 @@ textarea {
     font-weight: 300;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 6px; }
+    letter-spacing: 6px;
+    background: -webkit-linear-gradient(bottom, #231a31 0%, #e42f45 100%);
+    background: linear-gradient(to top, #231a31 0%, #e42f45 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
   .home__subheading {
     font-size: 2rem;
     color: white;
@@ -256,19 +258,19 @@ textarea {
     display: inline-block;
     width: 120px;
     margin: 0 2.25rem 2.25rem 0;
-    border: 2px solid white;
+    border: 2px solid #231A31;
     text-align: center;
-    color: white;
+    color: #231A31;
     padding: 0.75rem 1.125rem;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 4px 4px white;
+    box-shadow: 4px 4px #231A31;
     -webkit-transition: all .2s ease-out;
     transition: all .2s ease-out; }
     .home__link:hover {
-      background: #E42F45;
-      border-color: #E42F45; }
+      color: #E42F45;
+      box-shadow: 0px 0px #231A31; }
   @media screen and (min-width: 760px) {
     .home {
       -webkit-box-align: center;
