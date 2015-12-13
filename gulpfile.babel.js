@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 import browserify from 'browserify';
 import browserSync from 'browser-sync';
 import buffer from 'vinyl-buffer';
+import ghPages from 'gulp-gh-pages';
 import gulp from 'gulp';
 import jshint from 'gulp-jshint';
 import minifyCSS from 'gulp-minify-css';
@@ -40,7 +41,8 @@ const paths = {
 		index: `${dirs.src}/js/index.js`,
 		src: `${dirs.src}/js/*.js`,
 		build: `${dirs.build}/js`
-	}
+	},
+	deploy: `${dirs.build}/**/*`
 };
 
 gulp.task('default', ['serve']);
@@ -58,6 +60,8 @@ gulp.task('styles', styles);
 gulp.task('lint', lint);
 
 gulp.task('cname', cname);
+
+gulp.task('deploy', deploy);
 
 function serve() {
 	bs.init({
@@ -120,6 +124,11 @@ function lint() {
 function cname() {
 	return gulp.src(paths.cname.src)
 		.pipe(gulp.dest(paths.cname.build));
+}
+
+function deploy() {
+	return gulp.src(paths.deploy)
+		.pipe(ghPages());
 }
 
 function handleError(err) {
