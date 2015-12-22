@@ -1,1 +1,37 @@
+@import "about";
 @import "home";
+
+.layers {
+	position: relative;
+	z-index: 1;
+}
+
+.layer {
+	position: relative;
+	width: 100%;
+	// transition: all .2s ease-out;
+	// box-shadow: 0 10px 40px rgba(black, 0.35);
+
+	// @for $i from 1 through 4 {
+	// 	&:nth-child(#{$i}) {
+	// 		z-index: $i * -1;
+	// 	}
+	// }
+
+	&__clip {
+		position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  clip: rect(auto, auto, auto, auto);
+	}
+
+	&__content {
+		position: fixed;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	}
+}
