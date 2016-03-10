@@ -132,8 +132,8 @@ function criticalCSS() {
     src: 'index.html',
     dest: './build/index.html',
     minify: true,
-    width: 414,
-    height: 600
+    width: 800,
+    height: 800
 	})
 }
 
