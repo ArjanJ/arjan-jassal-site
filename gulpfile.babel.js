@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 import browserify from 'browserify';
 import browserSync from 'browser-sync';
 import buffer from 'vinyl-buffer';
+import critical from 'critical';
 import ghPages from 'gulp-gh-pages';
 import gulp from 'gulp';
 import jshint from 'gulp-jshint';
@@ -33,10 +34,6 @@ const paths = {
 		views: `${dirs.src}/templates/views/**/*.swig`,
 		build: dirs.build
 	},
-	content: {
-		src: `${dirs.src}/content/*`,
-		build: `${dirs.build}/content`
-	},
 	scss: {
 		src: `${dirs.src}/assets/css/**/**/*.scss`,
 		build: `${dirs.build}/assets/css`
@@ -46,6 +43,10 @@ const paths = {
 		src: `${dirs.src}/js/*.js`,
 		build: `${dirs.build}/js`
 	},
+	favicon: {
+		src: `${dirs.src}/assets/favicon/*`,
+		build: `${dirs.build}/assets/favicon`
+	},
 	deploy: `${dirs.build}/**/*`
 };
 
@@ -53,19 +54,21 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'content', 'scripts', 'styles', 'lint', 'cname'], watch);
+gulp.task('watch', ['templates', 'scripts', 'styles', 'critical', 'lint', 'cname', 'favicon'], watch);
 
 gulp.task('templates', templates);
-
-gulp.task('content', content);
 
 gulp.task('scripts', scripts);
 
 gulp.task('styles', styles);
 
+gulp.task('critical', ['templates', 'styles'], criticalCSS);
+
 gulp.task('lint', lint);
 
 gulp.task('cname', cname);
+
+gulp.task('favicon', favicon);
 
 gulp.task('deploy', deploy);
 
@@ -96,11 +99,6 @@ function templates() {
 		.pipe(gulp.dest(paths.templates.build));
 }
 
-function content() {
-	return gulp.src(paths.content.src)
-		.pipe(gulp.dest(paths.content.build));
-}
-
 function scripts() {
 	return browserify(paths.js.index)
 		.bundle()
@@ -120,10 +118,23 @@ function styles() {
 		.pipe(postcss([
 			autoprefixer()
 		]))
+		.pipe(minifyCSS())
 		.pipe(rename('bundle.css'))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scss.build))
 		.pipe(bs.stream());
+}
+
+function criticalCSS() {
+	critical.generate({
+		inline: true,
+    base: './build/',
+    src: 'index.html',
+    dest: './build/index.html',
+    minify: true,
+    width: 414,
+    height: 600
+	})
 }
 
 function lint() {
@@ -135,6 +146,11 @@ function lint() {
 function cname() {
 	return gulp.src(paths.cname.src)
 		.pipe(gulp.dest(paths.cname.build));
+}
+
+function favicon() {
+	return gulp.src(paths.favicon.src)
+		.pipe(gulp.dest(paths.favicon.build));
 }
 
 function deploy() {

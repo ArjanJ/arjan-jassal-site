@@ -3,7 +3,7 @@
 	align-items: center;
 	padding: calc(76px + (#{$space} * 3)) (0) ($space * 3);
 	overflow: auto;
-	background: tomato;
+	background: #EA5455;
 
 	&__wrapper {
 		margin: 0 auto;
@@ -13,11 +13,11 @@
 
 	&__heading {
 		margin-bottom: 0;
-		font-size: $space;
+		font-size: $space * 1.25;
 		font-weight: 700;
 		color: $purple;
 		text-transform: uppercase;
-		letter-spacing: ($space / 8);
+		letter-spacing: ($space / 6);
 		
 		span {
 			font-weight: 300;
@@ -37,11 +37,6 @@
 
 	@media screen and (min-width: 600px) {
 		padding: calc(123px + (#{$space} * 5)) (0) ($space * 5);
-
-		&__heading {
-			font-size: $space * 1.25;
-			letter-spacing: ($space / 6);
-		}
 	}
 
 	@media screen and (min-width: 800px) {

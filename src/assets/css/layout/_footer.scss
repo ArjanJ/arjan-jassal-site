@@ -4,7 +4,7 @@
 
 	p:first-child {
 		padding: ($space * 2) (0) (0);
-		border-top: 10px solid tomato;
+		border-top: 10px solid $red;
 	}
 
 	&__link {
@@ -13,7 +13,7 @@
 		transition: color .1s ease-out;
 
 		&:hover {
-			color: tomato;
+			color: $red;
 		}
 	}
 
