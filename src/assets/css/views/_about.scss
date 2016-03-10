@@ -1,10 +1,6 @@
 .about {
-	min-height: 100vh;
+	padding: ($space * 2) (0);
 	overflow: auto;
-
-	&__content {
-		background: darken(white, 3);
-	}
 
 	&__image,
 	&__article {
@@ -12,31 +8,24 @@
 	}
 
 	&__image {
-		height: 100vh;
 		display: block;
-		background: url('//unsplash.it/800/1000?image=63') center/cover;
+		background: $red;
 	}
 
 	&__article {
-		display: flex;
-		align-items: center;
 
 		&-wrapper {
 			margin: 0 auto;
-			max-width: 700px;
-			padding: ($space * 3);
-			background:  white;
-			position: relative;
-			left: -$space* 3;
-			// box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			max-width: 800px;
+			padding: (0) ($space);
 		}
 
 		h1 {
-			margin-bottom: ($space / 1.5);
+			margin-bottom: ($space);
 			text-transform: uppercase;
-			letter-spacing: 2px;
-			font-weight: 700;
-			line-height: 1.1;
+			letter-spacing: ($space / 12);
+			line-height: 1.15;
+			font-size: $space;
 		}
 
 		p {
@@ -44,11 +33,23 @@
 		}
 	}
 
-	@media screen and (min-width: 760px) {
+	@media (min-width: 400px) {
 
-		&__content {
-			display: flex;
-			align-items: center;
+	}
+
+	@media screen and (min-width: 600px) {
+		padding: ($space * 3) (0) ($space * 4);
+
+		&__article {
+
+			h1 {
+				font-size: $space * 1.25;
+				letter-spacing: ($space / 10);
+			}
+
+			p {
+				font-size: 2rem;
+			}
 		}
 	}
 }

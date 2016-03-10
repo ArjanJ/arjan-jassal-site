@@ -30,8 +30,12 @@ const paths = {
 	},
 	templates: {
 		src: `${dirs.src}/templates/**/*.swig`,
-		views: `${dirs.src}/templates/views/*.swig`,
+		views: `${dirs.src}/templates/views/**/*.swig`,
 		build: dirs.build
+	},
+	content: {
+		src: `${dirs.src}/content/*`,
+		build: `${dirs.build}/content`
 	},
 	scss: {
 		src: `${dirs.src}/assets/css/**/**/*.scss`,
@@ -49,9 +53,11 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname'], watch);
+gulp.task('watch', ['templates', 'content', 'scripts', 'styles', 'lint', 'cname'], watch);
 
 gulp.task('templates', templates);
+
+gulp.task('content', content);
 
 gulp.task('scripts', scripts);
 
@@ -88,6 +94,11 @@ function templates() {
 		}))
 		.on('error', handleError)
 		.pipe(gulp.dest(paths.templates.build));
+}
+
+function content() {
+	return gulp.src(paths.content.src)
+		.pipe(gulp.dest(paths.content.build));
 }
 
 function scripts() {

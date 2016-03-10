@@ -1,0 +1,90 @@
+.work {
+	padding: ($space * 2) (0);
+
+	&__list {
+		width: 100%;
+		margin: 0 auto;
+		list-style-type: none;
+
+		&-item {
+			
+		}
+	}
+
+	&-item {
+		$p: &;
+		$text-color: $purple;
+
+		padding: ($space * 1.5) (0);
+		transition: all .1s ease-out;
+
+		&__wrapper {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: (0) ($space * 2);
+		}
+
+		&__title {
+			margin-bottom: ($space);
+			text-transform: uppercase;
+			letter-spacing: ($space / 12);
+			line-height: 1.15;
+			font-size: $space * 1;
+			color: $text-color;
+		}
+
+		&__button {
+			display: inline-block;
+			width: 110px;
+			margin: (0) ($space / 3) (0) (0);
+			border: 2px solid $purple;
+			text-align: center;
+			color: $text-color;;
+			padding: ($space / 3) ($space / 2);
+			font-size: 1.2rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: ($space / 12);
+			box-shadow: 4px 4px $purple;
+			transition: all .2s ease-out;
+
+			&:hover {
+				color: tomato;
+				box-shadow: 0px 0px $purple;
+			}
+		}
+
+		p {
+			margin: (0) (0) ($space);
+			color: $text-color;
+		}
+	}
+
+	@media (min-width: 400px) {
+		padding: ($space * 3) (0);
+
+		&-item {
+			padding: ($space * 2) (0);
+
+			&__button {
+				width: 120px;
+				margin: (0) ($space / 2) (0) (0);
+			}
+		}
+	}
+
+	@media screen and (min-width: 600px) {
+
+		&-item {
+
+			&__title {
+				font-size: $space * 1.25;
+				letter-spacing: ($space / 10);
+			}
+
+			p {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

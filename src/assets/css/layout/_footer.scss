@@ -1,0 +1,30 @@
+.footer {
+	padding: (0) (0) ($space * 3);
+	color: $purple;
+
+	p:first-child {
+		padding: ($space * 2) (0) (0);
+		border-top: 10px solid tomato;
+	}
+
+	&__link {
+		color: $purple;
+		font-weight: 700;
+		transition: color .1s ease-out;
+
+		&:hover {
+			color: tomato;
+		}
+	}
+
+	@media (min-width: 400px) {
+
+		&__link {
+			font-size: 1.8rem;
+		}
+	}
+
+	@media (min-width: 600px) {
+		padding: ($space) (0) ($space * 4);
+	}
+}

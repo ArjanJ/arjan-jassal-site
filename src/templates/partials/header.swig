@@ -1,11 +1,9 @@
-<header class="header">
+<header class="header" data-header>
 			
-	<div class="header__wrapper">
-
+	<div class="u-wrapper">
 		<nav class="nav">
-			<a href="" class="nav__link">About</a>
-			<a href="" class="nav__link">Work</a>
-			<a href="" class="nav__link">Contact</a>
+			<a href="#work" class="nav__link">Work</a>
+			<a href="#about" class="nav__link">About</a>
 		</nav>
 	</div>
 

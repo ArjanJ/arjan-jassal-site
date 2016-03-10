@@ -1,29 +1,26 @@
 .home {
-	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: calc(76px + (#{$space} * 3)) (0) ($space * 3);
 	overflow: auto;
-	background: white;
-
-	&__content {
-		display: flex;
-		align-items: center;
-	}
+	background: tomato;
 
 	&__wrapper {
 		margin: 0 auto;
 		max-width: 800px;
-		padding: (0) ($space);
+		padding: (0) ($space * 2);
 	}
 
 	&__heading {
-		margin-bottom: ($space * 2);
-		font-size: 2.6rem;
+		margin-bottom: 0;
+		font-size: $space;
 		font-weight: 700;
-		color: #231A31;
+		color: $purple;
 		text-transform: uppercase;
-		letter-spacing: 6px;
+		letter-spacing: ($space / 8);
 		
 		span {
-			color: #E42F45;
+			font-weight: 300;
 		}
 	}
 
@@ -34,37 +31,24 @@
 		letter-spacing: 1px;
 	}
 
-	&__link {
-		display: inline-block;
-		width: 120px;
-		margin: (0) ($space) ($space) (0);
-		border: 2px solid #231A31;
-		text-align: center;
-		color: #231A31;
-		padding: ($space / 3) ($space / 2);
-		font-size: 1.2rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		box-shadow: 4px 4px #231A31;
-		transition: all .2s ease-out;
+	@media (min-width: 400px) {
+		padding: calc(76px + (#{$space} * 4)) (0) ($space * 4);
+	}
 
-		&:hover {
-			color: #E42F45;
-			box-shadow: 0px 0px #231A31;
+	@media screen and (min-width: 600px) {
+		padding: calc(123px + (#{$space} * 5)) (0) ($space * 5);
+
+		&__heading {
+			font-size: $space * 1.25;
+			letter-spacing: ($space / 6);
 		}
 	}
 
-	@media screen and (min-width: 760px) {
+	@media screen and (min-width: 800px) {
 
 		&__heading {
-			letter-spacing: 6px;
-			font-size: 3.6rem;
-		}
-
-		&__link {
-			margin: (0) ($space) (0) (0);
-			font-size: 1.2rem;
+			letter-spacing: ($space / 4);
+			font-size: $space * 1.5;
 		}
 	}
 }

@@ -1,61 +1,43 @@
-// document.addEventListener('DOMContentLoaded', function() {
-// 	window.addEventListener('scroll', handleScroll);
-// });
+var workItems = document.querySelectorAll('.work-item');
 
-// var layers = document.querySelector('.layers');
-// var layer = document.querySelectorAll('.layer');
+var project = document.querySelector('.project');
+var projectTitle = document.querySelector('[data-project-title]');
+var projectDate = document.querySelector('[data-project-date]');
+var projectContent = document.querySelector('[data-project-content]');
 
-// function layersHeight(layers) {
-// 	var h = 0;
+var data = require('../content/ribeye');
 
-// 	for (var i = 0; i < layer.length; i++) {
-// 		h += parseInt(layer[i].offsetHeight);
-// 	}
+for (var i = 0; i < workItems.length; i++) {
+	workItems[i].addEventListener('click', function(event) {
+		var param = this.getAttribute('data-load');
 
-// 	return h;
-// }
+		projectTitle.innerHTML = data[param].title;
+		projectDate.innerHTML = data[param].date.month;
+		projectContent.innerHTML = data[param].content;
+  	project.classList.add('project--active');
 
-// layers.style.height = layersHeight(layer) + 'px';
+	});
+}
 
-// window.addEventListener('scroll', handleScroll);
+(function() {
 
+	var header = document.querySelector('[data-header]');
+	var wh = window.innerHeight;
 
-// function handleScroll() {
-// 	window.requestAnimationFrame(animateSection);
-// }
+	// var target = (wh - header.offsetHeight);
 
-// function animateSection() {
-// 	var scrollAmt = window.pageYOffset;
+	window.addEventListener('scroll', onScroll);
 
-// 	var transform, transY;
+	function onScroll() {
+		var scrollAmt = window.pageYOffset;
 
-// 	for (var i = 0; i < layer.length; i++) {
+		if (scrollAmt >= header.offsetHeight) {
+			header.classList.add('header--scrolled');
+		}
 
-// 		transY = (-scrollAmt + (i * layer[i].offsetHeight));
+		if (scrollAmt < header.offsetHeight) {
+			header.classList.remove('header--scrolled');
+		}
+	}
 
-// 		transform = 'translateY(' + transY + 'px)';
-
-// 		minYOffset = i * layer[i].offsetHeight;
-// 		maxYOffset = (i * layer[i].offsetHeight) + (layer[i].offsetHeight); 
-
-// 		if (scrollAmt >= minYOffset && scrollAmt <= maxYOffset) {
-// 			layer[i].style.transform = transform;
-// 		}
-// 	}
-// }
-
-
-// function debounce(func, wait, immediate) {
-// 	var timeout;
-// 	return function() {
-// 		var context = this, args = arguments;
-// 		var later = function() {
-// 			timeout = null;
-// 			if (!immediate) func.apply(context, args);
-// 		};
-// 		var callNow = immediate && !timeout;
-// 		clearTimeout(timeout);
-// 		timeout = setTimeout(later, wait);
-// 		if (callNow) func.apply(context, args);
-// 	};
-// }
+}());
