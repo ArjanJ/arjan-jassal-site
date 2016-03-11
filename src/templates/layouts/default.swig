@@ -34,6 +34,7 @@
 		<meta name="msapplication-square310x310logo" content="/assets/favicon/mstile-310x310.png" />
 
 		<meta name="theme-color" content="#EA5455">
+		<meta name="google-site-verification" content="GK0yaDwgJ2fsteMI1kxfJcFWn0J8WhLUgK0dA-PzHso" />
 	</head>
 
 	<body>
