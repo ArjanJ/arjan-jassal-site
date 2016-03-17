@@ -36,14 +36,31 @@
 	}
 
 	@media screen and (min-width: 600px) {
-		padding: calc(123px + (#{$space} * 5)) (0) ($space * 5);
+		// min-height: 100vh;
+		margin-top: 12.4rem;
+		padding: calc(#{$space} * 6) (0) ($space * 6);
 	}
 
 	@media screen and (min-width: 800px) {
+		// background: white;
 
 		&__heading {
 			letter-spacing: ($space / 4);
 			font-size: $space * 1.5;
+			// color: #454553;
+			// color: rgba(#4AA0D5, 1);
+			// font-weight: 300;
+			// text-shadow:
+			// 	4px 10px rgba(#EB586F, 0.7),
+			// 	10px 4px rgba(#4AA0D5, 0.2);
+
+			span {
+				// color: #EB586F;
+				// text-shadow:
+				// 	4px 10px rgba(#EB586F, 0.5),
+				// 	10px 4px rgba(#4AA0D5, 0.25);
+				// font-weight: 700;
+			}
 		}
 	}
 }
