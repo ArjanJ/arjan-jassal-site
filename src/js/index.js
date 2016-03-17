@@ -1,20 +1,32 @@
-(function() {
+var HeadingScrollAnimation = (function() {
 
-	var header = document.querySelector('[data-header]');
-	var wh = window.innerHeight;
+	var heading = document.querySelector('h1.home__heading');
 
-	window.addEventListener('scroll', onScroll);
-
-	function onScroll() {
-		var scrollAmt = window.pageYOffset;
-
-		if (scrollAmt >= header.offsetHeight) {
-			header.classList.add('header--scrolled');
-		}
-
-		if (scrollAmt < header.offsetHeight) {
-			header.classList.remove('header--scrolled');
-		}
+	function init() {
+		window.addEventListener('scroll', handleScroll);
 	}
 
+	function handleScroll() {
+		if (window.pageYOffset < window.innerHeight)
+			window.requestAnimationFrame(animation);
+	}
+
+	function animation() {
+		var scrolled		= window.pageYOffset;
+		var translateY	= scrolled / 3;
+		var opacity			= 1 - (scrolled / 600);
+
+		heading.style.transform = 'translateY(' + translateY + 'px)';
+		heading.style.opacity = opacity;
+	}
+
+	return {
+		init: init
+	};
+
 }());
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	HeadingScrollAnimation.init();
+});

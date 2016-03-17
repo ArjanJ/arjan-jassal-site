@@ -54,7 +54,7 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'scripts', 'styles', 'critical', 'lint', 'cname', 'favicon'], watch);
+gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname', 'favicon'], watch);
 
 gulp.task('templates', templates);
 
