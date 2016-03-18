@@ -23,7 +23,7 @@
 
 		{% block content %}{% endblock %}
 
-		{% include "../partials/footer.swig" %}	
+		{# {% include "../partials/footer.swig" %}	 #}
 
 		<script src="/js/bundle.js"></script>
 

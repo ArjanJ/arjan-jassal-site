@@ -7,30 +7,17 @@
 	background: darken(mix(black, #382F60, 40), 10);
 	background: linear-gradient(180deg, #1A0C26, #2E205D);
 
-	&__wrapper {
-		margin: 0 auto;
-		max-width: 800px;
-		padding: (0) ($space * 2);
-	}
-
 	&__heading {
 		margin-bottom: 0;
-		font-size: $space * 2.25;
+		font-size: $space * 2;
 		font-weight: 300;
 		color: #FD1463;
 		text-transform: uppercase;
-		text-align: center;
+		// text-align: center;
 		letter-spacing: ($space / 6);
 
 		span {
 			color: #5047D4;
 		}
-	}
-}
-
-@keyframes heading-enter {
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1;
 	}
 }
