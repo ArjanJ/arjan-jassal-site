@@ -37,6 +37,13 @@
 	@media (min-width: 600px) {
 
 		&__heading {
+			font-size: $space * 2.5;
+		}
+	}
+
+	@media (min-width: 800px) {
+
+		&__heading {
 			font-size: 8vh;
 		}
 	}
