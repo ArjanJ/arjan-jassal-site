@@ -2,22 +2,42 @@
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
-	padding: ($space * 3) (0);
+	padding: ($space * 4) (0);
 	overflow: auto;
 	background: darken(mix(black, #382F60, 40), 10);
-	background: linear-gradient(180deg, #1A0C26, #2E205D);
+	background: linear-gradient(180deg, darken(mix(black, #382F60, 40), 10), #2E205D);
 
 	&__heading {
-		margin-bottom: 0;
-		font-size: $space * 2;
-		font-weight: 300;
+		margin: -$space * 4 0 0 0;
+		font-size: $space * 1.25;
+		line-height: 1.3;
 		color: #FD1463;
 		text-transform: uppercase;
-		// text-align: center;
-		letter-spacing: ($space / 6);
+		letter-spacing: ($space / 4);
 
 		span {
 			color: #5047D4;
+		}
+	}
+
+	@media (min-width: 360px) {
+
+		&__heading {
+			font-size: $space * 1.5;
+		}
+	}
+
+	@media (min-width: 400px) {
+
+		&__heading {
+			font-size: $space * 1.75;
+		}
+	}
+
+	@media (min-width: 800px) {
+
+		&__heading {
+			font-size: 8vh;
 		}
 	}
 }

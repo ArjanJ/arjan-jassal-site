@@ -46,13 +46,13 @@ var WorkScrollAnimation = (function() {
 		});
 
 		lists.forEach(function(list, i) {
-			var topVis = (offsets[i].top >= 0) && (offsets[i].top < window.innerHeight + 150);
-			var bottomVis = (offsets[i].bottom > 0) && (offsets[i].bottom <= window.innerHeight + 150);
+			var topVis = (offsets[i].top >= 0) && (offsets[i].top < window.innerHeight - 150);
+			var bottomVis = (offsets[i].bottom > 0) && (offsets[i].bottom <= window.innerHeight - 150);
 
 			if (topVis || bottomVis) {
 				list.classList.add('active');
 			} else {
-				list.classList.remove('active');
+				// list.classList.remove('active');
 			}
 		});
 	}

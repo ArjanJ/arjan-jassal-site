@@ -1,12 +1,6 @@
 .about {
-	padding: ($space * 12) (0) ($space * 3);
+	padding: ($space * 7) (0) ($space * 2);
 	overflow: auto;
-
-	&__wrapper {
-		display: flex;
-		flex-flow: row-reverse wrap;
-		max-width: 900px;
-	}
 
 	&__heading {
 		text-transform: uppercase;
@@ -17,7 +11,6 @@
 		color: #1A0C26;
 	}
 
-	&__image,
 	&__article {
 		flex: 1;
 	}
@@ -26,23 +19,21 @@
 		flex: 2;
 	}
 
-	&__image {
-		display: block;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&-img {
-			border-radius: 50%;
-			max-width: 100%;
-			filter: grayscale(100%);
-		}
-	}
-
 	&__article {
 
 		p {
-			margin: 0 0 $space;;
+			margin: 0 0 $space;
+		}
+	}
+
+	@media (min-width: 600px) {
+		padding: ($space * 12) (0) ($space * 2);
+
+		&__article {
+
+			p {
+				font-size: 2rem;
+			}
 		}
 	}
 }

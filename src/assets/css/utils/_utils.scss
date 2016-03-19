@@ -3,7 +3,7 @@
 .u-wrapper {
 	max-width: 600px;
 	margin: 0 auto;
-	padding: (0) ($space);
+	padding: (0) ($space * 1.5);
 
 	@media (min-width: 400px) {
 		padding: (0) ($space * 2);
@@ -11,6 +11,10 @@
 
 	@media (min-width: 800px) {
 		max-width: 800px;
+	}
+
+	@media (min-width: 900px) {
+		max-width: 900px;
 	}
 }
 
