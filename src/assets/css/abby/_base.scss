@@ -1,0 +1,117 @@
+/*------------------------------------*\
+		#BASE
+\*------------------------------------*/
+
+/**
+ * 1. Make every element inherit the value for the box-sizing property. This 
+ * 		allows for easy overriding and cascading.
+ */
+
+ *,
+ *:before,
+ *:after {
+ 	box-sizing: inherit; // 1
+ 	margin: 0;
+ 	padding: 0;
+ 	font-size: inherit;
+ }
+
+/**
+ * 1. Auto-hiding scrollbars are used if the element's content overflows
+ *		(IE 10/11).
+ * 2. Disable unwanted auto-enlargement of small text in mobile browsers.
+ * 3. Set to border-box so the width/height of an element is calculated to
+ *		include padding.
+ * 4. Set root font-size to 0.625rem that 1rem == 10px.
+ */
+
+ :root {
+ 	-ms-overflow-style: -ms-autohiding-scrollbar; // 1
+	text-size-adjust: 100%; // 2
+	box-sizing: border-box; // 3
+	font-size: $font-size-root; // 4
+	font-family: $font-copy;
+  font-weight: $font-weight-default;
+  line-height: $line-height-base;
+	-webkit-font-smoothing: antialiased; // Smooth fonts in webkit.
+	-moz-osx-font-smoothing: grayscale; // Smooth fonts in moz.
+  text-rendering: optimizeLegibility;
+	cursor: default;
+ }
+
+/**
+ * 1. Hide auto element in Chrome 40+, iOS 8+, Safari 8+.
+ */
+
+audio:not([controls]) {
+	display: none; // 1
+}
+
+details {
+	display: block; // Firefox 36+, Internet Explorer 11+, Windows Phone 8.1+
+}
+
+input {
+	&[type="number"] {
+		width: auto; // Firefox 36+
+	}
+
+	&[type="search"] {
+		-webkit-appearance: textfield; // Safari 8+
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			-webkit-appearance: none; // Safari 8+
+		}
+	}
+}
+
+main {
+	display: block; // Android 4.3-, Internet Explorer 11+, Windows Phone 8.1+
+}
+
+pre {
+	overflow: auto; // Internet Explorer 11+
+}
+
+textarea {
+	overflow: auto; // Internet Explorer 11+
+}
+
+[hidden] {
+	display: none; // Internet Explorer 10-
+}
+
+[unselectable] {
+	user-select: none; // Android 4.4+, Chrome 40+, Firefox 36+, iOS 8+, Safari 8+
+}
+
+a {
+	text-decoration: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+	color: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace;
+}

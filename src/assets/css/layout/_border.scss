@@ -1,0 +1,13 @@
+.border {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: calc(100% - #{$base-space * 2});
+	height: calc(100% - #{$base-space * 2});
+	box-shadow: inset 0 0 0 10px $theme-color-1;
+}

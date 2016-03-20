@@ -1,0 +1,26 @@
+/*------------------------------------*\
+		#BUTTON
+\*------------------------------------*/
+
+.c-button {
+
+	// Reset appearance
+	appearance: none;
+	border: none;
+
+	display: inline-block;
+	margin: (0) ($base-space / 6) ($base-space) (0);
+	padding: ($base-space / 3) ($base-space);
+	border-radius: 5px;
+	vertical-align: middle;
+	white-space: nowrap;
+	line-height: inherit;
+	font-size: $font-size-body;
+	cursor: pointer;
+	color: $text-color;
+	background: color(light-grey);
+
+	&:focus {
+		outline: none;
+	}
+}

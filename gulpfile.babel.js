@@ -47,6 +47,10 @@ const paths = {
 		src: `${dirs.src}/assets/favicon/*`,
 		build: `${dirs.build}/assets/favicon`
 	},
+	images: {
+		src: `${dirs.src}/assets/img/*`,
+		build: `${dirs.build}/assets/img`
+	},
 	deploy: `${dirs.build}/**/*`
 };
 
@@ -54,7 +58,7 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname', 'favicon'], watch);
+gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname', 'images'], watch);
 
 gulp.task('templates', templates);
 
@@ -70,7 +74,11 @@ gulp.task('cname', cname);
 
 gulp.task('favicon', favicon);
 
+gulp.task('images', images);
+
 gulp.task('deploy', deploy);
+
+// Manually run 'critcal' and 'favicon'.
 
 function serve() {
 	bs.init({
@@ -151,6 +159,11 @@ function cname() {
 function favicon() {
 	return gulp.src(paths.favicon.src)
 		.pipe(gulp.dest(paths.favicon.build));
+}
+
+function images() {
+	return gulp.src(paths.images.src)
+		.pipe(gulp.dest(paths.images.build));
 }
 
 function deploy() {
