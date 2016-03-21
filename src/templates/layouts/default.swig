@@ -18,8 +18,10 @@
 	</head>
 
 	<body>
-
-		{% block content %}{% endblock %}
+		
+		<main class="main">
+			{% block content %}{% endblock %}
+		</main>
 
 		<script src="/js/bundle.js"></script>
 

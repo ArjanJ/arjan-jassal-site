@@ -86,12 +86,12 @@ $colors: 	(
 );
 
 $headings-color: 	map-get($colors, red);
-$text-color: 			map-get($colors, purple);
+$text-color: 			map-get($colors, black);
 
-$theme-color-1: map-get($colors, red);
-$theme-color-2: map-get($colors, pink);
-$theme-color-3: map-get($colors, fuschia);
-$theme-color-4: map-get($colors, purple);
+$theme-color-1: 	map-get($colors, red);
+$theme-color-2: 	map-get($colors, pink);
+$theme-color-3: 	map-get($colors, fuschia);
+$theme-color-4: 	map-get($colors, purple);
 
 /**
  * TRANSITIONS

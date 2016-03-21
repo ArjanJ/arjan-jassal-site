@@ -1,2 +1,9 @@
 @import "home";
 @import "work";
+@import "about";
+
+.main {
+	overflow-x: hidden;
+	margin-bottom: ($base-space * 10);
+	@include shadow(5);
+}

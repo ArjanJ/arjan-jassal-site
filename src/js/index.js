@@ -64,6 +64,6 @@ var WorkScrollAnimation = (function() {
 }());
 
 document.addEventListener('DOMContentLoaded', function() {
-	HeadingScrollAnimation.init();
-	WorkScrollAnimation.init();
+	// HeadingScrollAnimation.init();
+	// WorkScrollAnimation.init();
 });
