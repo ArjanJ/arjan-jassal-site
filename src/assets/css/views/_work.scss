@@ -3,46 +3,49 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	padding: ($base-space) (0);
 	background: $theme-color-3 url('../img/wov.png');
 	background-blend-mode: overlay;
 
-	&__heading {
-		display: inline-block;
-		margin: (0) (0) (0) ($base-space * 3);
-		padding: ($base-space / 2) ($base-space * 1.5);
-		font-size: map-get($heading-sizes, 5);
-		text-transform: uppercase;
-		letter-spacing: (-$base-space / 16);
-		box-shadow: (-$base-space / 2.5) (-$base-space / 2.5) ($theme-color-1);
-		background: $theme-color-4;
-	}
-
 	&__wrapper {
 		@include clearfix;
+		padding: (0) ($base-space);
 	}
 
 	&__list {
 		display: flex;
 		flex-flow: row wrap;
 		list-style-type: none;
-		padding-top: ($base-space * 3);
+	}
 
-		@media (min-height: 750px) {
-			padding-top: 0;
+	@keyframes enter {
+		to {
+			transform: scale(1);
+			opacity: 1;
 		}
 	}
 
 	&__item {
 		$p: &;
-		$background-opacity: 0.8;
+		$background-opacity: 0.85;
 		display: flex;
 		align-items: center;
-		height: 50vh;
-		padding: ($base-space * 3);
+		min-height: 25vh;
+		width: 100%;
+		padding: ($base-space) (0);
+		position: relative;
+		transform: scale(0.5);
+		opacity: 0;
+		will-change: transform, opacity;
 		@include ease();
+		@include shadow(1);
+
+		&--active {
+			animation: enter .35s $ease-out;
+			animation-fill-mode: forwards;
+		}
 		
 		&:nth-child(1) {
-			width: 60%;
 			background: rgba($theme-color-1, $background-opacity);
 
 			#{$p}-heading {
@@ -63,8 +66,8 @@
 		}
 
 		&:nth-child(2) {
-			width: 40%;
 			background: rgba($theme-color-3, $background-opacity);
+			animation-delay: 0.15s;
 
 			#{$p}-desc {
 				color: color(white);
@@ -84,7 +87,6 @@
 		}
 
 		&:nth-child(3) {
-			width: 50%;
 			background: rgba($theme-color-2, $background-opacity);
 
 			#{$p}-heading {
@@ -105,8 +107,8 @@
 		}
 
 		&:nth-child(4) {
-			width: 50%;
 			background: rgba($theme-color-4, $background-opacity);
+			animation-delay: 0.15s;
 
 			#{$p}-desc {
 				color: color(white);
@@ -126,28 +128,134 @@
 		}
 
 		&-wrapper {
-			max-width: 540px;
+			max-width: 400px;
 			margin: 0 auto;
+			padding: (0) ($base-space);
 		}
 
 		&-heading {
-			font-size: map-get($heading-sizes, 1);
+			font-size: map-get($heading-sizes, 3);
 			letter-spacing: (-$base-space / 12);
 		}
 
-		&-desc {
-			font-size: map-get($heading-sizes, 5);
-		}
-
 		&-link {
-			min-width: ($base-space * 5);
-			margin-right: ($base-space / 2);
+			width: ($base-space * 3.5);
+			margin-right: ($base-space / 3);
 			margin-bottom: 0;
+			padding: ($base-space / 5) (0);
 			text-align: center;
 			text-transform: uppercase;
 			font-weight: 700;
+			font-size: 80%;
 			background: none;
 			@include ease();
+		}
+
+		&:hover {
+			z-index: 1;
+			@include shadow(5);
+		}
+	}
+
+	@include bp(xsmall) {
+
+		&__item {
+			padding: ($base-space * 1.5) (0);
+
+			&-wrapper {
+				padding: (0) ($base-space * 1.5);
+			}
+
+			&-link {
+				font-size: 85%;
+				width: ($base-space * 4);
+			}
+		}
+	}
+
+	@include bp(small) {
+
+		&__item {
+
+			&-wrapper {
+				max-width: 500px;
+				padding: (0) ($base-space * 2);
+			}
+
+			&-heading {
+				font-size: map-get($heading-sizes, 3);
+				letter-spacing: (-$base-space / 14);
+			}
+
+			&-link {
+				width: ($base-space * 4.5);
+				margin-right: ($base-space / 2);
+				padding: ($base-space / 4) (0);
+			}
+		}
+	}
+
+	@include bp(medium) {
+
+		&__item {
+			min-height: 25vh;
+			height: auto;
+
+			&-wrapper {
+				max-width: 640px;
+				width: 640px;
+				padding: (0) ($base-space * 2);
+			}
+
+			&-desc {
+				font-size: map-get($heading-sizes, 5);
+			}
+		}
+	}
+
+	@include bp(large) {
+
+		&__item {
+			min-height: 50vh;
+			width: 50%;
+			padding: ($base-space * 3) (0);
+
+			&-wrapper {
+				padding: (0) ($base-space * 3);
+			}
+		}
+	}
+
+	@include bp(xlarge) {
+
+		&__item {
+
+			&:nth-child(1),
+			&:nth-child(4) {
+				width: 60%;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				width: 40%;
+			}
+
+			&-wrapper {
+				max-width: 540px;
+			}
+
+			&-heading {
+				font-size: map-get($heading-sizes, 1);
+			}
+
+			&-desc {
+				font-size: map-get($heading-sizes, 5);
+			}
+
+			&-link {
+				min-width: ($base-space * 5);
+				font-size: map-get($heading-sizes, 6);
+			}
 		}
 	}
 }

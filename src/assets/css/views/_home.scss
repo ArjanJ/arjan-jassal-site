@@ -4,30 +4,34 @@
 	align-items: center;
 	min-height: 100vh;
 	position: relative;
+	overflow: hidden;
 	background: $theme-color-4 url('../img/wov.png');
 	background-blend-mode: soft-light;
 
 	&__wrapper {
-		max-width: calc(800px + #{$base-space * 6});
+		max-width: 500px;
 		margin: 0 auto;
-		padding: (0) ($base-space * 3);
+		padding: (0) ($base-space * 2);
 	}
 
 	&__heading {
 		margin: 0;
-		font-size: ($base-space * 2.75);
-		letter-spacing: (-$base-space / 12);
+		font-size: ($base-space * 1.25);
+		letter-spacing: (-$base-space / 22);
+		will-change: transform, opacity;
+		transform: translateY(0);
+		opacity: 1;
 	}
 
 	&__links {
 		position: absolute;
 		width: 100%;
 		top: $base-space * 2;
-		right: $base-space * 2;
-		text-align: right;
+		left: 0;
+		text-align: center;
 
 		&-link {
-			margin-left: ($base-space / 3);
+			margin: (0) ($base-space / 2.5);
 			color: $theme-color-1;
 			position: relative;
 
@@ -51,6 +55,66 @@
 					opacity: 1;
 				}
 			}
+
+			span {
+				display: none;
+			}
+
+			svg {
+				fill: color(white);
+			}
+		}
+	}
+
+	@include bp(xsmall) {
+
+		&__heading {
+			font-size: ($base-space * 1.25);
+		}
+	}
+
+	@include bp(small) {
+
+		&__wrapper {
+			padding: (0) ($base-space * 2);
+		}
+
+		&__heading {
+			font-size: ($base-space * 1.5);
+			letter-spacing: (-$base-space / 18);
+		}
+
+		&__links {
+			top: ($base-space * 2.5);
+			
+			span { display: inline-block }
+			svg { display: none }
+		}
+	}
+
+	@include bp(medium) {
+
+		&__wrapper {
+			max-width: 640px;
+			padding: (0) ($base-space * 2);
+		}
+
+		&__heading {
+			font-size: ($base-space * 2);
+			letter-spacing: (-$base-space / 16);
+		}
+	}
+
+	@include bp(large) {
+
+		&__wrapper {
+			max-width: calc(800px + #{$base-space * 6});
+			padding: (0) ($base-space * 3);
+		}
+
+		&__heading {
+			font-size: ($base-space * 2.75);
+			letter-spacing: (-$base-space / 12);
 		}
 	}
 }

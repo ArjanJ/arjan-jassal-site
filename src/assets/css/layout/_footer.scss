@@ -7,11 +7,19 @@
 	z-index: -1;
 	bottom: 0;
 	left: 0;
-	height: ($base-space * 10);
+	height: ($base-space * 5);
 	background: color(white);
 	width: 100%;
 
 	&__text {
-		font-size: map-get($heading-sizes, 1);
+		font-size: map-get($heading-sizes, 5);
+	}
+
+	@include bp(large) {
+		height: ($base-space * 10);
+
+		&__text {
+			font-size: map-get($heading-sizes, 2);
+		}
 	}
 }

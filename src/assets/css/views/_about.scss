@@ -1,7 +1,8 @@
 .about {
 	@include clearfix;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	min-height: 100vh;
 	padding: ($base-space * 3) (0);
 	position: relative;
@@ -9,43 +10,78 @@
 	background-blend-mode: soft-light;
 
 	&__wrapper {
-		max-width: 740px;
+		max-width: 500px;
 		margin: 0 auto;
-		padding: (0) ($base-space * 3);
-		position: relative;
-		z-index: 1;
+		padding: (0) ($base-space * 2);
 	}
 
 	&__text {
-		font-size: map-get($heading-sizes, 4);
+		position: relative;
+		z-index: 1;
+		font-size: map-get($heading-sizes, 6);
 		color: $theme-color-4;
 	}
 
 	&__img {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(0, -50%);
-		width: $base-space * 20;
+		@include ease();
+
+		&--active {
+			opacity: 1;
+		}
 
 		img {
 			max-width: 100%;
 			opacity: 0.45;
 		}
+	}
 
-		&:before {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 100%;
+	@include bp(small) {
+
+		&__wrapper {
+			padding: (0) ($base-space * 2);
+		}
+
+		&__text {
+			font-size: map-get($heading-sizes, 5);
+		}
+	}
+
+	@include bp(medium) {
+
+		&__wrapper {
+			max-width: 640px;
+			padding: (0) ($base-space * 2);
+		}
+		
+		&__text {
+			font-size: map-get($heading-sizes, 4);
+		}
+	}
+
+	@include bp(large) {
+		display: flex;
+		align-items: center;
+
+		&__wrapper {
+			max-width: 680px;
+		}
+
+		&__text {
+			top: auto;
+			left: auto;
+			font-size: map-get($heading-sizes, 4);
+		}
+
+		&__img {
+			width: $base-space * 20;
 			position: absolute;
-			top: 0;
-			left: 0;
-			// background: linear-gradient(
-			// 	90deg,
-			// 	rgba($theme-color-1, 0.85) 20%,
-			// 	transparent
-			// );
+			top: 50%;
+			left: 50%;
+			transform: translate(0, -50%);
+
+			img {
+				max-width: 100%;
+			}
 		}
 	}
 }

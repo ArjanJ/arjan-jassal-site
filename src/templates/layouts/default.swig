@@ -13,7 +13,7 @@
 
 		{% include "../partials/favicons.swig" %}
 
-		<meta name="theme-color" content="#EA5455">
+		<meta name="theme-color" content="#dd4056">
 		<meta name="google-site-verification" content="GK0yaDwgJ2fsteMI1kxfJcFWn0J8WhLUgK0dA-PzHso" />
 	</head>
 
