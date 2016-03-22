@@ -1,0 +1,19 @@
+/*------------------------------------*\
+		#LIST
+\*------------------------------------*/
+
+.c-list {
+	margin: (0) (0) ($base-space);
+
+	.c-list {
+		margin: (0) (0) (0) ($base-space);
+	}
+
+	&-item {
+		margin-bottom: ($base-space / 4);
+	}
+
+	&--clean {
+		list-style-type: none;
+	}
+}

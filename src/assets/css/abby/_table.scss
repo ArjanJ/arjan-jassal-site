@@ -1,0 +1,29 @@
+/*------------------------------------*\
+		#TABLE
+\*------------------------------------*/
+
+.c-table {
+	box-sizing: border-box;
+	width: 100%;
+	margin: (0) (0) ($base-space);
+	border-collapse: collapse;
+}
+
+.c-th,
+.c-td {
+	padding: ($base-space / 2);
+}
+
+.c-th {
+	text-align: left;
+}
+
+.c-tr {
+
+	&:nth-child(odd) {
+
+		.c-td {
+			background: color(light-grey);
+		}
+	}
+}

@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    #FORM
+\*------------------------------------*/
+
+.c-form {
+  margin: (0) (0) ($base-space);
+}
+
+.c-fieldset {
+  border: none;
+  margin: (0) (0) ($base-space / 2);
+}
+
+.c-label {
+  display: block;
+  margin-bottom: ($base-space / 6);
+}
+
+.c-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: ($base-space * 1.5);
+  margin: (0) (0) ($base-space / 4);
+  padding: ($base-space / 4) ($base-space / 3);
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 1px solid color(mid-grey);
+  font: inherit;
+  color: inherit;
+  background: white;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 4px 1px grey;
+  }
+}
+
+.c-textarea {
+  height: auto;
+  min-height: ($base-space * 1.5);
+}
+
+.c-input-option {
+  display: inline-block;
+  margin-right: ($base-space / 6);
+  padding: 0;
+  height: auto;
+
+  &:focus {
+    outline: none;
+  }
+}

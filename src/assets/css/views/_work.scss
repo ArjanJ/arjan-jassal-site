@@ -1,124 +1,260 @@
 .work {
-	@include cf;
-	position: relative;
-	z-index: 1;
-	padding: ($space * 3) (0) ($space * 0);
-
-	&:before {
-		content: "";
-		display: block;
-		width: 100%;
-		height: 110%;
-		position: absolute;
-		z-index: -1;
-		left: 0;
-		background: #FD1463;
-		background: linear-gradient(0, #FE4040, #FE1D71);
-	}
-
-	&:before {
-		top: 0;
-		transform: skewY(-4deg) translateY(-5%);
-	}
-
-	@media (min-width: 1200px) {
-		&:before {
-			transform: skewY(-4deg) translateY(-7%);
-		}
-	}
+	@include clearfix;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: ($base-space) (0);
+	background: $theme-color-3 url('../img/wov.png');
+	background-blend-mode: overlay;
 
 	&__wrapper {
-		position: relative;
-		top: -$space * 2;
-
-		@media (min-width: 1200px) {
-			top: -$space * 3;
-		}
-	}
-
-	&__heading {
-		text-align: center;
-		text-transform: uppercase;
-		font-size: $space;
-		letter-spacing: ($space / 10);
-		margin: 0 0 $space * 1;
-		font-weight: 300;
-		color: #1A0C26;
+		@include clearfix;
+		padding: (0) ($base-space);
 	}
 
 	&__list {
+		display: flex;
+		flex-flow: row wrap;
 		list-style-type: none;
 	}
 
-	&-item {
-		$text-color: #1A0C26;
-		margin-bottom: ($space);
-		padding: ($space) (0);
-		color: $text-color;
-		opacity: 0;
-		transform: scale(0.5);
-		transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-
-		&.active {
-			opacity: 1;
+	@keyframes enter {
+		to {
 			transform: scale(1);
-		}
-
-		&__title {
-			margin-bottom: ($space);
-			text-transform: uppercase;
-			letter-spacing: ($space / 12);
-			line-height: 1.3;
-			font-size: $space * 1;
-			color: inherit;
-		}
-
-		&__button {
-			display: inline-block;
-			width: 110px;
-			margin: (0) ($space / 3) ($space) (0);
-			border: 2px solid $text-color;
-			text-align: center;
-			color: inherit;
-			padding: ($space / 3) ($space / 2);
-			font-size: 1.2rem;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: ($space / 12);
-			box-shadow: 4px 4px $text-color;
-			transition: all .2s ease-out;
-
-			&:hover {
-				box-shadow: -4px -4px $text-color;
-			}
-		}
-
-		p {
-			margin: (0) (0) ($space);
-			color: inherit;
+			opacity: 1;
 		}
 	}
 
-	@media (min-width: 600px) {
-		padding: ($space * 2) (0) ($space * 0);
+	&__item {
+		$p: &;
+		$background-opacity: 0.85;
+		display: flex;
+		align-items: center;
+		min-height: 25vh;
+		width: 100%;
+		padding: ($base-space) (0);
+		position: relative;
+		transform: scale(0.5);
+		opacity: 0;
+		will-change: transform, opacity;
+		@include ease();
+		@include shadow(1);
 
-		&:before {
-			height: 115%;
+		&--active {
+			animation: enter .35s $ease-out;
+			animation-fill-mode: forwards;
 		}
+		
+		&:nth-child(1) {
+			background: rgba($theme-color-1, $background-opacity);
 
-		&__heading {
-			margin: 0 0 $space * 3;
-			font-size: 3.2rem;
-		}
-
-		&-item {
-
-			&__title {
-				font-size: $space * 1.75;
+			#{$p}-heading {
+				color: $theme-color-4;
 			}
 
-			p {
-				font-size: 2rem;
+			#{$p}-link {
+				color: $theme-color-4;
+				border: 4px solid $theme-color-4;
+				box-shadow: 6px 6px $theme-color-4;
+
+				&:hover {
+					box-shadow: 0 0 $theme-color-4;
+					background: $theme-color-4;
+					color: $theme-color-1;
+				}
+			}
+		}
+
+		&:nth-child(2) {
+			background: rgba($theme-color-3, $background-opacity);
+			animation-delay: 0.15s;
+
+			#{$p}-desc {
+				color: color(white);
+			}
+
+			#{$p}-link {
+				color: $theme-color-1;
+				border: 4px solid $theme-color-1;
+				box-shadow: 6px 6px $theme-color-1;
+
+				&:hover {
+					box-shadow: 0 0 $theme-color-1;
+					background: $theme-color-1;
+					color: $theme-color-4;
+				}
+			}
+		}
+
+		&:nth-child(3) {
+			background: rgba($theme-color-2, $background-opacity);
+
+			#{$p}-heading {
+				color: $theme-color-4;
+			}
+
+			#{$p}-link {
+				color: $theme-color-4;
+				border: 4px solid $theme-color-4;
+				box-shadow: 6px 6px $theme-color-4;
+
+				&:hover {
+					box-shadow: 0 0 $theme-color-4;
+					background: $theme-color-4;
+					color: $theme-color-1;
+				}
+			}
+		}
+
+		&:nth-child(4) {
+			background: rgba($theme-color-4, $background-opacity);
+			animation-delay: 0.15s;
+
+			#{$p}-desc {
+				color: color(white);
+			}
+
+			#{$p}-link {
+				color: $theme-color-1;
+				border: 4px solid $theme-color-1;
+				box-shadow: 6px 6px $theme-color-1;
+
+				&:hover {
+					box-shadow: 0 0 $theme-color-1;
+					background: $theme-color-1;
+					color: $theme-color-4;
+				}
+			}
+		}
+
+		&-wrapper {
+			max-width: 400px;
+			margin: 0 auto;
+			padding: (0) ($base-space);
+		}
+
+		&-heading {
+			font-size: map-get($heading-sizes, 3);
+			letter-spacing: (-$base-space / 12);
+		}
+
+		&-link {
+			width: ($base-space * 3.5);
+			margin-right: ($base-space / 3);
+			margin-bottom: 0;
+			padding: ($base-space / 5) (0);
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 80%;
+			background: none;
+			@include ease();
+		}
+
+		&:hover {
+			z-index: 1;
+			@include shadow(5);
+		}
+	}
+
+	@include bp(xsmall) {
+
+		&__item {
+			padding: ($base-space * 1.5) (0);
+
+			&-wrapper {
+				padding: (0) ($base-space * 1.5);
+			}
+
+			&-link {
+				font-size: 85%;
+				width: ($base-space * 4);
+			}
+		}
+	}
+
+	@include bp(small) {
+
+		&__item {
+
+			&-wrapper {
+				max-width: 500px;
+				padding: (0) ($base-space * 2);
+			}
+
+			&-heading {
+				font-size: map-get($heading-sizes, 3);
+				letter-spacing: (-$base-space / 14);
+			}
+
+			&-link {
+				width: ($base-space * 4.5);
+				margin-right: ($base-space / 2);
+				padding: ($base-space / 4) (0);
+			}
+		}
+	}
+
+	@include bp(medium) {
+
+		&__item {
+			min-height: 25vh;
+			height: auto;
+
+			&-wrapper {
+				max-width: 640px;
+				width: 640px;
+				padding: (0) ($base-space * 2);
+			}
+
+			&-desc {
+				font-size: map-get($heading-sizes, 5);
+			}
+		}
+	}
+
+	@include bp(large) {
+
+		&__item {
+			min-height: 50vh;
+			width: 50%;
+			padding: ($base-space * 3) (0);
+
+			&-wrapper {
+				padding: (0) ($base-space * 3);
+			}
+		}
+	}
+
+	@include bp(xlarge) {
+
+		&__item {
+
+			&:nth-child(1),
+			&:nth-child(4) {
+				width: 60%;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				width: 40%;
+			}
+
+			&-wrapper {
+				max-width: 540px;
+			}
+
+			&-heading {
+				font-size: map-get($heading-sizes, 1);
+			}
+
+			&-desc {
+				font-size: map-get($heading-sizes, 5);
+			}
+
+			&-link {
+				min-width: ($base-space * 5);
+				font-size: map-get($heading-sizes, 6);
 			}
 		}
 	}

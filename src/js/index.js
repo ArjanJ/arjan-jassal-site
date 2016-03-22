@@ -28,7 +28,7 @@ var HeadingScrollAnimation = (function() {
 
 var WorkScrollAnimation = (function() {
 
-	var lists = [].slice.call(document.querySelectorAll('.work__list-item'));
+	var items = [].slice.call(document.querySelectorAll('.work__item'));
 
 	function init() {
 		window.addEventListener('scroll', handleScroll);
@@ -41,18 +41,16 @@ var WorkScrollAnimation = (function() {
 	function animation() {
 		var scrolled = window.pageYOffset;
 
-		var offsets = lists.map(function(x) {
+		var offsets = items.map(function(x) {
 			return x.getBoundingClientRect();
 		});
 
-		lists.forEach(function(list, i) {
-			var topVis = (offsets[i].top >= 0) && (offsets[i].top < window.innerHeight - 150);
-			var bottomVis = (offsets[i].bottom > 0) && (offsets[i].bottom <= window.innerHeight - 150);
+		items.forEach(function(item, i) {
+			var topVis = (offsets[i].top >= 0) && (offsets[i].top < window.innerHeight - 50);
+			var bottomVis = (offsets[i].bottom > 0) && (offsets[i].bottom <= window.innerHeight - 50);
 
 			if (topVis || bottomVis) {
-				list.classList.add('active');
-			} else {
-				// list.classList.remove('active');
+				item.classList.add('work__item--active');
 			}
 		});
 	}

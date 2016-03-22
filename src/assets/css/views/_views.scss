@@ -1,3 +1,12 @@
-@import "about";
 @import "home";
 @import "work";
+@import "about";
+
+.main {
+	overflow-x: hidden;
+	margin-bottom: ($base-space * 5);
+
+	@include bp(large) {
+		margin-bottom: ($base-space * 10);
+	}
+}

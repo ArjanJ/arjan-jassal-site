@@ -8,22 +8,20 @@
 		<title>Arjan Jassal | {{ title || "Front-end Developer Vancouver" }}</title>
 		<meta name="description" content="Vancouver based front-end developer, making awesome web things with JavaScript, CSS, and lots of tea.">
 
-		<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:700,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/assets/css/bundle.css">
 
 		{% include "../partials/favicons.swig" %}
 
-		<meta name="theme-color" content="#EA5455">
+		<meta name="theme-color" content="#dd4056">
 		<meta name="google-site-verification" content="GK0yaDwgJ2fsteMI1kxfJcFWn0J8WhLUgK0dA-PzHso" />
 	</head>
 
 	<body>
-
-		{# {% include "../partials/header.swig" %} #}
-
-		{% block content %}{% endblock %}
-
-		{% include "../partials/footer.swig" %}	
+		
+		<main class="main">
+			{% block content %}{% endblock %}
+		</main>
 
 		<script src="/js/bundle.js"></script>
 

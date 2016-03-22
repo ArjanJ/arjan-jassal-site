@@ -1,16 +1,25 @@
 .footer {
-	padding: ($space * 4) (0);
-	color: $purple;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: fixed;
+	z-index: -1;
+	bottom: 0;
+	left: 0;
+	height: ($base-space * 5);
+	background: color(white);
+	width: 100%;
 
-	&__link {
-		display: inline-block;
-		padding: ($space / 6) ($space / 4);
-		color: $purple;
-		font-weight: 700;
-		transition: color .1s ease-out;
+	&__text {
+		font-size: map-get($heading-sizes, 5);
+	}
 
-		&:hover {
-			color: $red;
+	@include bp(large) {
+		height: ($base-space * 10);
+
+		&__text {
+			font-size: map-get($heading-sizes, 2);
 		}
 	}
 }
