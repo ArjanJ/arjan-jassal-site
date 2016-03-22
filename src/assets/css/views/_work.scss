@@ -30,7 +30,7 @@
 		$background-opacity: 0.85;
 		display: flex;
 		align-items: center;
-		min-height: 25vh;
+		min-height: 285px;
 		width: 100%;
 		padding: ($base-space) (0);
 		position: relative;
@@ -176,6 +176,7 @@
 	@include bp(small) {
 
 		&__item {
+			min-height: 25vh;
 
 			&-wrapper {
 				max-width: 500px;
@@ -198,7 +199,6 @@
 	@include bp(medium) {
 
 		&__item {
-			min-height: 25vh;
 			height: auto;
 
 			&-wrapper {
