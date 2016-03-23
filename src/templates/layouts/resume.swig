@@ -6,7 +6,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Arjan Jassal - Resumé - Front-end Developer</title>
-		<meta name="description" content="Vancouver based front-end developer, making awesome web things with JavaScript, CSS, and lots of tea.">
+		<meta name="description" content="Resumé of Arjan Jassal - Vancouver based front-end Developer and designer.">
 
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/assets/css/resume.css">

@@ -9,7 +9,7 @@
 				<div class="resume__header-links">
 					<a class="resume__header-link" href="tel:7787076572">(778) 707-6572</a>
 					<a class="resume__header-link" href="mailto:hello@arjanjassal.com">hello@arjanjassal.com</a>
-					<a class="resume__header-link" href="">6572 Parkdale Drive, Burnaby, BC V5B 2X5</a>
+					<span class="resume__header-link">6572 Parkdale Drive, Burnaby, BC V5B 2X5</span>
 				</div>
 			</div>
 		</header>

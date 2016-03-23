@@ -24,7 +24,6 @@
 			display: inline-block;
 			margin-right: ($base-space / 2);
 			color: white;
-			white-space: nowrap;
 			font-size: 1.4rem;
 			@include ease();
 
@@ -36,7 +35,7 @@
 
 	&__section {
 		@include clearfix;
-		margin-bottom: ($base-space * 1.5);
+		margin-bottom: ($base-space);
 		color: $theme-color-1;
 
 		&-title {
@@ -76,5 +75,9 @@
 .u-wrapper {
 	max-width: 800px;
 	margin: 0 auto;
-	padding: (0) ($base-space * 2);
+	padding: (0) ($base-space);
+
+	@include bp(medium) {
+		padding: (0) ($base-space * 2);
+	}
 }
