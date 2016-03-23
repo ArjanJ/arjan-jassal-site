@@ -35,7 +35,11 @@ const paths = {
 		build: dirs.build
 	},
 	scss: {
-		src: `${dirs.src}/assets/css/**/**/*.scss`,
+		src: {
+			abby: `${dirs.src}/assets/css/abby/**/*.scss`,
+			site: `${dirs.src}/assets/css/site/**/*.scss`,
+			resume: `${dirs.src}/assets/css/resume/*.scss`
+		},
 		build: `${dirs.build}/assets/css`
 	},
 	js: {
@@ -68,7 +72,15 @@ gulp.task('templates', templates);
 
 gulp.task('scripts', scripts);
 
-gulp.task('styles', styles);
+gulp.task('styles', ['siteStyles', 'resumeStyles']);
+
+gulp.task('siteStyles', function() {
+	return styles(paths.scss.src.site, paths.scss.build, 'bundle');
+});
+
+gulp.task('resumeStyles', function() {
+	return styles(paths.scss.src.resume, paths.scss.build, 'resume');
+});
 
 gulp.task('critical', ['templates', 'styles'], criticalCSS);
 
@@ -95,7 +107,7 @@ function serve() {
 function watch() {
 	gulp.watch(paths.templates.src, ['templates', bs.reload]);
 	gulp.watch(paths.js.src, ['scripts', 'lint']);
-	gulp.watch(paths.scss.src, ['styles']);
+	gulp.watch([paths.scss.src.abby, paths.scss.src.site, paths.scss.src.resume], ['styles']);
 }
 
 function templates() {
@@ -120,8 +132,8 @@ function scripts() {
 		.pipe(bs.stream());
 }
 
-function styles() {
-	return gulp.src(paths.scss.src)
+function styles(src, dest, name) {
+	return gulp.src(src)
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.on('error', handleError)
@@ -129,9 +141,9 @@ function styles() {
 			autoprefixer()
 		]))
 		.pipe(minifyCSS())
-		.pipe(rename('bundle.css'))
+		.pipe(rename(`${name}.css`))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.scss.build))
+		.pipe(gulp.dest(dest))
 		.pipe(bs.stream());
 }
 
@@ -142,7 +154,7 @@ function criticalCSS() {
     src: 'index.html',
     dest: './build/index.html',
     minify: true,
-    width: 800,
+    width: 1280,
     height: 800
 	})
 }
