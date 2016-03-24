@@ -4,31 +4,32 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	top: 0;
 	right: 0;
-	min-height: 100vh;
+	height: 100%;
 	width: 100%;
+	overflow-y: scroll;
+	backface-visibility: hidden;
 	background: $theme-color-4;
 	background: color(white) url('../img/wov.png');
 	background-blend-mode: hard-light;
 	transform: translate3d(100%, 0, 0);
-	visibility: hidden;
 	transform-origin: right center;
-	will-change: transform, visibility;
+	will-change: transform;
 	@include shadow(4);
 	@include ease('in-out');
 
 	&--active {
 		@include ease('out', 0.5);
 		transform: translate3d(0, 0, 0);
-		visibility: visible;
 	}
 
 	&__list {
 		list-style-type: none;
 		width: 100%;
+		margin: ($base-space * 2) (0) (0);
 
 		&:nth-child(2) {
 			margin-top: ($base-space * 2);
@@ -79,6 +80,10 @@
 
 	@include bp(medium) {
 		width: ($base-space * 13);
+
+		&__list {
+			margin-top: 0;
+		}
 
 		&__link {
 			padding: ($base-space / 3) ($base-space * 3);

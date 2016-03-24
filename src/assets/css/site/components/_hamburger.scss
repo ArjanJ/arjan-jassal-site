@@ -21,7 +21,6 @@
 		height: $height;
 		margin-bottom: $height * 2;
 		background: $color;
-		transform-origin: left center;
 		animation-timing-function: $ease-out;
 		animation-duration: 0.68s;
 		@include shadow(1);
@@ -29,8 +28,7 @@
 
 		&:last-child {
 			margin-bottom: 0;
-			transform-origin: left center;
-			transform: scaleX(0.68);
+			width: 68%;
 		}
 
 		@for $i from 1 through 3 {
@@ -41,12 +39,7 @@
 		}
 	}
 
-	&:hover {
-
-		#{$p}__patty {
-			transform: scaleX(1);
-		}
-	}
+	
 
 	&:focus,
 	&:active {
@@ -55,9 +48,7 @@
 
 	&--close {
 
-		#{$p}__patty {
-			animation-duration: 0s;
-			transform-origin: center center;
+		#{$p}__patty {			
 
 			&:nth-child(1) {
 				transform: rotate(45deg) translate(7px, 6px);
@@ -72,5 +63,15 @@
 				width: 100%;
 			}
 		}
+	}
+
+	@include bp(large) {
+
+		// &:hover {
+
+		// 	#{$p}__patty {
+		// 		transform: scaleX(1);
+		// 	}
+		// }
 	}
 }

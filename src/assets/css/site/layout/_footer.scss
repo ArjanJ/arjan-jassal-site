@@ -10,6 +10,7 @@
 	height: ($base-space * 5);
 	background: color(white);
 	width: 100%;
+	backface-visibility: hidden;
 
 	&__text {
 		font-size: map-get($heading-sizes, 5);
