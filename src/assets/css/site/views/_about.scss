@@ -34,10 +34,13 @@
 	}
 
 	&__img {
-		@include ease();
+		opacity: 0;
+		transform: scale(0.5);
+		@include ease('out', 0.5);
 
 		&--active {
 			opacity: 1;
+			transform: scale(1);
 		}
 
 		img {
@@ -89,7 +92,12 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(0, -50%);
+			transform: translate(50%, -50%);
+
+			&--active {
+				opacity: 1;
+				transform: translate(0, -50%);
+			}
 
 			img {
 				max-width: 100%;
