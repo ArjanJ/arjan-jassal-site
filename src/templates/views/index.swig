@@ -2,6 +2,8 @@
 
 {% block content %}
 
+	{% include "../partials/header.swig" %}
+
 	{% include "../partials/home.swig" %}
 
 	{% include "../partials/work.swig" %}

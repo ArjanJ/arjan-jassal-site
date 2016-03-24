@@ -1,0 +1,76 @@
+.c-hamburger {
+	$p: &;
+	$width: $base-space * 1.25;
+	$height: 3px;
+	$color: $theme-color-1;
+
+	display: block;
+	appearance: none;
+	width: $width;
+	margin: 0 0 0 auto;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	background: none;
+
+	&__patty {
+		display: block;
+		width: 100%;
+		height: $height;
+		margin-bottom: $height * 2;
+		background: $color;
+		transform-origin: left center;
+		animation-timing-function: $ease-out;
+		animation-duration: 0.68s;
+		@include shadow(1);
+		@include ease('in-out');
+
+		&:last-child {
+			margin-bottom: 0;
+			transform-origin: left center;
+			transform: scaleX(0.68);
+		}
+
+		@for $i from 1 through 3 {
+
+			&:nth-child(#{$i}) {
+				animation-delay: ($i * 0.1) +s;
+			}
+		}
+	}
+
+	&:hover {
+
+		#{$p}__patty {
+			transform: scaleX(1);
+		}
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	&--close {
+
+		#{$p}__patty {
+			animation-duration: 0s;
+			transform-origin: center center;
+
+			&:nth-child(1) {
+				transform: rotate(45deg) translate(7px, 6px);
+			}
+
+			&:nth-child(2) {
+				transform: scaleX(0);
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg) translate(7px, -6px);
+				width: 100%;
+			}
+		}
+	}
+}

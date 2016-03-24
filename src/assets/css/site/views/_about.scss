@@ -15,6 +15,17 @@
 		padding: (0) ($base-space * 2);
 	}
 
+	&__heading {
+		@extend %u-heading-3;
+		padding: ($base-space) (0);
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		letter-spacing: (-$base-space / 18);
+		text-shadow: 10px 8px $theme-color-2;
+		color: $theme-color-4;
+	}
+
 	&__text {
 		position: relative;
 		z-index: 1;

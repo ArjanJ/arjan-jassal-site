@@ -1,0 +1,88 @@
+.nav {
+	@include clearfix;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	min-height: 100vh;
+	width: 100%;
+	background: $theme-color-4;
+	background: color(white) url('../img/wov.png');
+	background-blend-mode: hard-light;
+	transform: translate3d(100%, 0, 0);
+	visibility: hidden;
+	transform-origin: right center;
+	will-change: transform, visibility;
+	@include shadow(4);
+	@include ease('in-out');
+
+	&--active {
+		@include ease('out', 0.5);
+		transform: translate3d(0, 0, 0);
+		visibility: visible;
+	}
+
+	&__list {
+		list-style-type: none;
+		width: 100%;
+
+		&:nth-child(2) {
+			margin-top: ($base-space * 2);
+		}
+	}
+
+	&__item {
+		opacity: 0;
+		transform: translateX(50%);
+		will-change: transform, opacity;
+		@include ease('out', 0.5);
+		
+		&--active {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		@for $i from 1 through 5 {
+
+			&:nth-child(#{$i}) {
+				transition-delay: ($i * 0.1) +s;
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+		padding: ($base-space / 4) ($base-space * 3);
+		font-size: map-get($heading-sizes, 3);
+		font-weight: 700;
+		letter-spacing: (-$base-space / 20);
+		color: $theme-color-1;
+		@include ease();
+
+		&:hover {
+			color: mix(black, $theme-color-1, 20);
+		}
+
+		&--sm {
+			font-size: map-get($heading-sizes, 5);
+			color: $theme-color-2;
+
+			&:hover {
+				color: mix(black, $theme-color-2, 20);
+			}
+		}
+	}
+
+	@include bp(medium) {
+		width: ($base-space * 13);
+
+		&__link {
+			padding: ($base-space / 3) ($base-space * 3);
+			text-shadow: 10px 8px color(light-grey);
+		}
+	}
+}

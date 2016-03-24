@@ -12,6 +12,15 @@
 		padding: (0) ($base-space);
 	}
 
+	&__heading {
+		@extend %u-heading-3;
+		padding: ($base-space) (0);
+		position: relative;
+		text-align: center;
+		letter-spacing: (-$base-space / 18);
+		text-shadow: 10px 8px $theme-color-4;
+	}
+
 	&__list {
 		display: flex;
 		flex-flow: row wrap;
@@ -27,7 +36,7 @@
 
 	&__item {
 		$p: &;
-		$background-opacity: 0.85;
+		$background-opacity: 0.80;
 		display: flex;
 		align-items: center;
 		min-height: 285px;
@@ -241,7 +250,7 @@
 			}
 
 			&-wrapper {
-				max-width: 540px;
+				max-width: 640px;
 			}
 
 			&-heading {

@@ -1,5 +1,6 @@
-<section class="work">
+<section class="work" id="work">
 	<div class="work__wrapper">
+		<h1 class="work__heading">Work</h1>
 		<ul class="work__list">
 			<li class="work__item">
 				<div class="work__item-wrapper">

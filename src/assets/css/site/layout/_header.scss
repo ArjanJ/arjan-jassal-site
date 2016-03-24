@@ -1,0 +1,17 @@
+.header {
+	@include clearfix;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: ($base-space * 2) ($base-space * 2) (0);
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+
+	@include bp(medium) {
+		padding: ($base-space * 2.5) ($base-space * 2.5) (0);
+	}
+}
