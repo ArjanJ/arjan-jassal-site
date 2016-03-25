@@ -4,9 +4,4 @@
 
 .main {
 	overflow-x: hidden;
-	margin-bottom: ($base-space * 5);
-
-	@include bp(large) {
-		margin-bottom: ($base-space * 10);
-	}
 }

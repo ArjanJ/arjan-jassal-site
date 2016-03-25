@@ -13,13 +13,25 @@
 	overflow-y: scroll;
 	backface-visibility: hidden;
 	background: $theme-color-4;
-	background: color(white) url('../img/wov.png');
-	background-blend-mode: hard-light;
+	background: color(white);
 	transform: translate3d(100%, 0, 0);
 	transform-origin: right center;
 	will-change: transform;
 	@include shadow(4);
 	@include ease('in-out');
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('../img/wov2.png');
+		opacity: 0.1;
+	}
 
 	&--active {
 		@include ease('out', 0.5);

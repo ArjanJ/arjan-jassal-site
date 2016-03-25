@@ -4,9 +4,22 @@
 	align-items: center;
 	min-height: 100vh;
 	position: relative;
+	z-index: 1;
 	overflow: hidden;
-	background: $theme-color-4 url('../img/wov.png');
-	background-blend-mode: soft-light;
+	background: $theme-color-4;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $theme-color-4 url('../img/wov2.png');
+		opacity: 0.2;
+	}
 
 	&__wrapper {
 		max-width: 500px;

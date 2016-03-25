@@ -51,10 +51,6 @@ const paths = {
 		src: `${dirs.src}/assets/**`,
 		build: `${dirs.build}/assets`
 	},
-	favicon: {
-		src: `${dirs.src}/assets/favicon/*`,
-		build: `${dirs.build}/assets/favicon`
-	},
 	images: {
 		src: `${dirs.src}/assets/img/*`,
 		build: `${dirs.build}/assets/img`
@@ -108,6 +104,7 @@ function watch() {
 	gulp.watch(paths.templates.src, ['templates', bs.reload]);
 	gulp.watch(paths.js.src, ['scripts', 'lint']);
 	gulp.watch([paths.scss.src.abby, paths.scss.src.site, paths.scss.src.resume], ['styles']);
+	gulp.watch(paths.images.src, ['assets']);
 }
 
 function templates() {

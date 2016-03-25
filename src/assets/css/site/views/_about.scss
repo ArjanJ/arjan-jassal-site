@@ -3,11 +3,24 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 640px;
 	padding: ($base-space * 3) (0);
 	position: relative;
-	background: color(red) url('../img/wov.png');
-	background-blend-mode: soft-light;
+	z-index: 1;
+	background: $theme-color-1;
+	
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('../img/wov2.png');
+		opacity: 0.25;
+	}
 
 	&__wrapper {
 		max-width: 500px;
@@ -62,6 +75,7 @@
 	}
 
 	@include bp(medium) {
+		min-height: 100vh;
 
 		&__wrapper {
 			max-width: 640px;
