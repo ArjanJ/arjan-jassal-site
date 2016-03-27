@@ -8,6 +8,8 @@
 
 	{% include "../partials/work.swig" %}
 
+	{% include "../partials/details.swig" %}
+
 	{% include "../partials/about.swig" %}
 
 	{% include "../partials/footer.swig" %}

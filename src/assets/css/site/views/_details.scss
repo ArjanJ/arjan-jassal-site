@@ -1,0 +1,242 @@
+.work__details {
+	$p: &;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: (0) (0) ($base-space);
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	visibility: hidden;
+	color: color(white);
+
+	&.active {
+		visibility: visible;
+
+		#{$p}-fade {
+			animation-name: fadeUp;
+		}
+
+		#{$p}-cover {
+			animation-name: scaleY;
+		}
+	}
+
+	&.hide {
+		@include ease('out', .35);
+		opacity: 0;
+		transform: scaleX(0);
+	}
+
+	&.theme-1,
+	&.theme-3 {
+		
+		#{$p}-title,
+		#{$p}-intro h2 {
+			color: $theme-color-4;
+		}
+
+		p,
+		ul li {
+			color: color(black);
+		}
+
+		#{$p}-close {
+			box-shadow: 4px 4px $theme-color-1;
+			background: $theme-color-4;
+
+			svg {
+				fill: color(white);
+			}
+
+			&:hover {
+				background: $theme-color-1;
+				box-shadow: 0 0 $theme-color-1;
+
+				svg {
+					fill: $theme-color-4;
+				}
+			}
+		}
+
+		#{$p}-btn {
+			color: $theme-color-4;
+			border: 4px solid $theme-color-4;
+			box-shadow: 6px 6px $theme-color-4;
+
+			&:hover {
+				box-shadow: 0 0 $theme-color-4;
+				background: $theme-color-4;
+				color: $theme-color-1;
+			}
+		}
+	}
+
+	&-fade {
+		transform: translate3d(0, 50%, 0);
+		opacity: 0;
+		animation-duration: .6s;
+		animation-timing-function: $ease-out;
+		animation-fill-mode: forwards;
+
+		@for $i from 1 through 4 {
+			&:nth-of-type(#{$i}) {
+				animation-delay: $i * 0.1s;
+			}
+		}
+	}
+
+	&-wrapper {
+		max-width: calc(900px);
+		margin: 0 auto;
+		padding: (0) ($base-space * 2);
+	}
+
+	&-header {
+		min-height: 350px;
+		margin-bottom: ($base-space * 3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1;
+		text-align: center;
+	}
+
+	&-cover {
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('//unsplash.it/1400/300') center/cover;
+		opacity: 0.3;
+		transform: scaleY(0);
+		animation-duration: .6s;
+		animation-timing-function: $ease-out;
+		animation-fill-mode: forwards;
+		background-attachment: fixed;
+		backface-visibility: hidden;
+	}
+
+	&-close {
+		border: none;
+		position: absolute;
+		z-index: 1;
+		top: $base-space * 2;
+		right: $base-space * 2;
+		$size: 40px;
+		width: $size;
+		height: $size;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background: $theme-color-1;
+		border-radius: 50%;
+		box-shadow: 4px 4px $theme-color-3;
+		cursor: pointer;
+		@include ease();
+
+		svg {
+			margin: 0 auto;
+			fill: color(white);
+		}
+
+		&:hover {
+			background: $theme-color-3;
+			box-shadow: 0 0 $theme-color-3;
+
+			svg {
+				fill: $theme-color-1;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&-title {
+		letter-spacing: (-$base-space / 14);
+	}
+
+	&-intro {
+		display: flex;
+		margin-bottom: ($base-space);
+
+		p,
+		ul li {
+			font-size: 1.4rem;
+		}
+
+		ul li {
+			font-weight: 700;
+		}
+	}
+
+	&-left {
+		flex: 1;
+
+		h2 {
+			@extend %u-heading-5;
+			letter-spacing: (-$base-space / 30);
+		}
+
+		p {
+			font-weight: 700;
+		}
+	}
+
+	&-right {
+		flex: 2;
+		margin-left: ($base-space * 2);
+
+		h2 {
+			@extend %u-heading-3;
+			letter-spacing: (-$base-space / 24);
+		}
+	}
+
+	&-btn {
+		width: ($base-space * 3.5);
+		margin-right: ($base-space / 3);
+		margin-bottom: 0;
+		padding: ($base-space / 5) (0);
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 80%;
+		background: none;
+		@include ease();
+
+		color: $theme-color-1;
+		border: 4px solid $theme-color-1;
+		box-shadow: 6px 6px $theme-color-1;
+
+		&:hover {
+			box-shadow: 0 0 $theme-color-1;
+			background: $theme-color-1;
+			color: $theme-color-4;
+		}
+	}
+}
+
+@keyframes fadeUp {
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+
+@keyframes scaleY {
+	to {
+		transform: scaleY(1);
+	}
+}
+
