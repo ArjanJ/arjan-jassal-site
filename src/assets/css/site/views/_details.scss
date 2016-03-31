@@ -7,6 +7,7 @@
 	width: 100%;
 	height: 100%;
 	overflow-y: scroll;
+	padding-bottom: ($base-space);
 	-webkit-overflow-scrolling: touch;
 	visibility: hidden;
 	color: color(white);
@@ -191,15 +192,14 @@
 	}
 
 	&-btn {
-		width: ($base-space * 4);
+		width: ($base-space * 4.5);
 		margin-right: ($base-space / 2);
 		margin-bottom: 0;
 		padding: ($base-space / 4) (0);
 		text-align: center;
 		font-weight: 700;
-		font-size: 90%;
 		background: none;
-		@include ease();
+		@include ease('out', .25);
 		color: $theme-color-1;
 		border: 4px solid $theme-color-1;
 		box-shadow: 6px 6px $theme-color-1;

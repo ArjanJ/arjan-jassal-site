@@ -2,6 +2,10 @@ var ExpandProject = (function(window, document) {
 
 	var data = require('./workData');
 
+	var headerComponents = {
+		header: $('header.header')
+	};
+
 	var workComponents = {
 		items: 			$$('.work__item'),
 		bgs: 				$$('.work__item-bg'),
@@ -69,6 +73,7 @@ var ExpandProject = (function(window, document) {
 		detailComponents.container.classList.add('theme-' + parseInt(index+1));
 
 		moveTitle(workComponents.activeItem.querySelector('.work__item-heading'));
+		toggleHeaderVisibility();
 	}
 
 	function transformBackground(item, bg) {
@@ -81,6 +86,10 @@ var ExpandProject = (function(window, document) {
 			detailComponents.container.classList.add('active');
 			disableScroll();
 		});
+	}
+
+	function toggleHeaderVisibility() {
+		headerComponents.header.classList.toggle('hide');
 	}
 
 	function moveTitle(el) {
@@ -136,6 +145,7 @@ var ExpandProject = (function(window, document) {
 			workComponents.activeBg.removeAttribute('style');
 			title.removeAttribute('style');
 			detailComponents.container.classList.remove('active', 'hide');
+			toggleHeaderVisibility();
 
 			transitionEnd(workComponents.activeBg, function() {
 				workComponents.activeItem.classList.remove('active');

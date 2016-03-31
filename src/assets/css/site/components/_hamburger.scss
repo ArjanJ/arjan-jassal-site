@@ -4,10 +4,10 @@
 	$height: 3px;
 	$color: $theme-color-1;
 
-	display: block;
+	display: inline-block;
 	appearance: none;
 	width: $width;
-	margin: 0 0 0 auto;
+	margin: 0 0 0 ($base-space * 1.25);
 	border-radius: 0;
 	border: none;
 	cursor: pointer;
@@ -16,6 +16,7 @@
 	background: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
+	@include ease();
 
 	&__patty {
 		display: block;

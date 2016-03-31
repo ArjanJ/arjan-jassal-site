@@ -14,6 +14,4 @@
 
 	{% include "../partials/footer.swig" %}
 
-	{% include "../partials/border.swig" %}
-
 {% endblock %}

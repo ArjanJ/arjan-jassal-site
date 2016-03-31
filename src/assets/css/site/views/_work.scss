@@ -24,6 +24,8 @@
 	&__wrapper {
 		@include clearfix;
 		padding: (0) ($base-space);
+		// max-width: calc(50vh*2 + #{$base-space * 2});
+		// margin: 0 auto;
 	}
 
 	&__heading {

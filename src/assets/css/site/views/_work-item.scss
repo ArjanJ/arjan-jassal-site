@@ -5,7 +5,7 @@
 	align-items: center;
 	min-height: 205px;
 	width: 100%;
-	padding: ($base-space) (0);
+	padding: ($base-space);
 	position: relative;
 	z-index: 1;
 	transform: scale(0.5);
@@ -94,6 +94,7 @@
 
 	&-tagline {
 		margin-bottom: 0;
+		font-size: 1.3rem;
 		@include ease();
 
 		&.hide {
@@ -122,6 +123,10 @@
 
 	@include bp(medium) {
 		height: auto;
+
+		&-tagline {
+			font-size: map-get($heading-sizes, 6);
+		}
 	}
 
 	@include bp(large) {

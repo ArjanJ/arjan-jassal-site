@@ -24,6 +24,13 @@
 		}
 	}
 
+	@include bp(small) {
+
+		&__text {
+			font-size: map-get($heading-sizes, 3);
+		}
+	}
+
 	@include bp(large) {
 		height: ($base-space * 10);
 

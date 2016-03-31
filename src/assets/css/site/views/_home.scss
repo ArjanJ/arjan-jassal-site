@@ -6,19 +6,42 @@
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
+	padding: ($base-space * 4) (0) ($base-space * 1.5);
 	background: $theme-color-4;
+	color: color(white);
 
-	&:before {
-		content: "";
+	&__bg {
 		display: block;
 		position: absolute;
 		z-index: -1;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 200%;
 		height: 100%;
 		background: $theme-color-4 url('../img/wov2.png');
 		opacity: 0.2;
+		transform: translate3d(-50%, 0, 0);
+		animation: bgscroll 80s linear infinite;
+		@include ease();
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.1;
+			background: linear-gradient(90deg, white, black, white, black, white, black, white, black, white, black, white);
+		}
+	}
+
+	@keyframes bgscroll {
+		to {
+			transform: translate3d(00%, 0, 0);
+		}
 	}
 
 	&__wrapper {
@@ -28,12 +51,21 @@
 	}
 
 	&__heading {
-		margin: 0;
 		font-size: ($base-space * 1.25);
 		letter-spacing: (-$base-space / 20);
 		will-change: transform, opacity;
 		transform: translateY(0);
 		opacity: 1;
+	}
+
+	a {
+		color: $theme-color-1;
+		text-decoration: underline;
+		font-weight: 700;
+	}
+
+	@include bp-custom(360px) {
+		padding: 0;
 	}
 
 	@include bp(xsmall) {

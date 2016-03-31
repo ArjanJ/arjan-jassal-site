@@ -7,6 +7,7 @@ import buffer from 'vinyl-buffer';
 import critical from 'critical';
 import ghPages from 'gulp-gh-pages';
 import gulp from 'gulp';
+import htmlmin from 'gulp-htmlmin';
 import jshint from 'gulp-jshint';
 import minifyCSS from 'gulp-minify-css';
 import postcss from 'gulp-postcss';
@@ -115,6 +116,7 @@ function templates() {
 			}
 		}))
 		.on('error', handleError)
+		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(gulp.dest(paths.templates.build));
 }
 
