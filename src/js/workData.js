@@ -27,8 +27,8 @@ module.exports = {
 		client: 'Myself',
 		whatIDid: 'Build a lightweight HTML/CSS boilerplate that can be dropped into any project and customized.',
 		description: 'Abby is lightweight project that came into being after repeatedly copying and pasting my CSS structure and styles from project to project. I decided I needed a solid base that I can use in each project, something lightweight, customizable, and unobtrusive.',
-		github: 'https://github.com/ArjanJ/social-circles',
-		live: 'http://socialcircles.arjanjassal.me/',
+		github: 'https://github.com/ArjanJ/abby',
+		live: 'http://abby.arjanjassal.me/',
 		tech: ['HTML5', 'CSS3, SCSS', 'Gulp'],
 		process: [
 			'<h3 class="u-heading-6">01. Research</h3>',
