@@ -1,5 +1,9 @@
 {% extends "../layouts/default.swig" %}
 
+{% set title = "Error 404" %}
+
+{% set description = "This page does not exist. Arjan Jassal's portfolio is located at https://www.arjanjassal.me/" %}
+
 {% block content %}
 
 	<section class="error">

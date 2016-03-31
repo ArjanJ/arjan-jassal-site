@@ -30,6 +30,10 @@ const paths = {
 		src: 'CNAME',
 		build: dirs.build
 	},
+	robots: {
+		src: 'robots.txt',
+		build: dirs.build
+	},
 	templates: {
 		src: `${dirs.src}/templates/**/*.swig`,
 		views: `${dirs.src}/templates/views/**/*.swig`,
@@ -63,7 +67,7 @@ gulp.task('default', ['serve']);
 
 gulp.task('serve', ['watch'], serve);
 
-gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'cname', 'assets'], watch);
+gulp.task('watch', ['templates', 'scripts', 'styles', 'lint', 'rootFiles', 'assets'], watch);
 
 gulp.task('templates', templates);
 
@@ -83,7 +87,15 @@ gulp.task('critical', ['templates', 'styles'], criticalCSS);
 
 gulp.task('lint', lint);
 
-gulp.task('cname', cname);
+gulp.task('rootFiles', ['cname', 'robots']);
+
+gulp.task('cname', function() {
+	return copyFile(paths.cname.src, paths.cname.build);
+});
+
+gulp.task('robots', function() {
+	return copyFile(paths.robots.src, paths.robots.build);
+});
 
 gulp.task('assets', assets);
 
@@ -172,6 +184,11 @@ function lint() {
 function cname() {
 	return gulp.src(paths.cname.src)
 		.pipe(gulp.dest(paths.cname.build));
+}
+
+function copyFile(src, dest) {
+	return gulp.src(src)
+		.pipe(gulp.dest(dest));
 }
 
 function assets() {
