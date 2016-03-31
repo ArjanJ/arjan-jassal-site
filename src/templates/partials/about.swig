@@ -6,6 +6,4 @@
 			<img width="516" height="516" src="./assets/img/arjan-jassal.jpg" alt="Arjan Jassal standing there.">
 		</div>
 	</article>
-	
-	
 </section>

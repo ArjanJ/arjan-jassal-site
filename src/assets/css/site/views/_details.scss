@@ -6,7 +6,6 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: (0) (0) ($base-space);
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	visibility: hidden;
@@ -16,25 +15,25 @@
 		visibility: visible;
 
 		#{$p}-fade {
-			animation-name: fadeUp;
-		}
-
-		#{$p}-cover {
-			animation-name: scaleY;
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
 		}
 	}
 
 	&.hide {
-		@include ease('out', .35);
-		opacity: 0;
-		transform: scaleX(0);
+
+		#{$p}-fade {
+			transform: translate3d(0, 50%, 0);
+			opacity: 0;
+		}
 	}
 
 	&.theme-1,
 	&.theme-3 {
 		
 		#{$p}-title,
-		#{$p}-intro h2 {
+		#{$p}-intro h2,
+		#{$p}-intro h3 {
 			color: $theme-color-4;
 		}
 
@@ -43,8 +42,16 @@
 			color: color(black);
 		}
 
+		code {
+			background: rgba($theme-color-4, 0.1);
+			color: $theme-color-4;
+		}
+
+		#{$p}-link {
+			color: $theme-color-4;
+		}
+
 		#{$p}-close {
-			box-shadow: 4px 4px $theme-color-1;
 			background: $theme-color-4;
 
 			svg {
@@ -52,11 +59,10 @@
 			}
 
 			&:hover {
-				background: $theme-color-1;
-				box-shadow: 0 0 $theme-color-1;
+				background: $theme-color-3;
 
 				svg {
-					fill: $theme-color-4;
+					fill: $theme-color-1;
 				}
 			}
 		}
@@ -77,13 +83,11 @@
 	&-fade {
 		transform: translate3d(0, 50%, 0);
 		opacity: 0;
-		animation-duration: .6s;
-		animation-timing-function: $ease-out;
-		animation-fill-mode: forwards;
+		@include ease();
 
 		@for $i from 1 through 4 {
 			&:nth-of-type(#{$i}) {
-				animation-delay: $i * 0.1s;
+				transition-delay: $i * 0.1s;
 			}
 		}
 	}
@@ -95,8 +99,7 @@
 	}
 
 	&-header {
-		min-height: 350px;
-		margin-bottom: ($base-space * 3);
+		min-height: 300px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -105,30 +108,12 @@
 		text-align: center;
 	}
 
-	&-cover {
-		display: block;
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: url('//unsplash.it/1400/300') center/cover;
-		opacity: 0.3;
-		transform: scaleY(0);
-		animation-duration: .6s;
-		animation-timing-function: $ease-out;
-		animation-fill-mode: forwards;
-		background-attachment: fixed;
-		backface-visibility: hidden;
-	}
-
 	&-close {
 		border: none;
-		position: absolute;
+		position: fixed;
 		z-index: 1;
-		top: $base-space * 2;
-		right: $base-space * 2;
+		top: $base-space;
+		right: $base-space;
 		$size: 40px;
 		width: $size;
 		height: $size;
@@ -138,8 +123,9 @@
 		text-align: center;
 		background: $theme-color-1;
 		border-radius: 50%;
-		box-shadow: 4px 4px $theme-color-3;
 		cursor: pointer;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-tap-highlight-color: transparent;
 		@include ease();
 
 		svg {
@@ -148,11 +134,10 @@
 		}
 
 		&:hover {
-			background: $theme-color-3;
-			box-shadow: 0 0 $theme-color-3;
+			background: $theme-color-2;
 
 			svg {
-				fill: $theme-color-1;
+				fill: $theme-color-4;
 			}
 		}
 
@@ -162,11 +147,14 @@
 	}
 
 	&-title {
-		letter-spacing: (-$base-space / 14);
+		letter-spacing: (-$base-space / 16);
+		font-size: map-get($heading-sizes, 3);
+		margin: 0;
 	}
 
 	&-intro {
 		display: flex;
+		flex-direction: column-reverse;
 		margin-bottom: ($base-space);
 
 		p,
@@ -194,26 +182,24 @@
 
 	&-right {
 		flex: 2;
-		margin-left: ($base-space * 2);
+		margin-bottom: ($base-space);
 
 		h2 {
-			@extend %u-heading-3;
-			letter-spacing: (-$base-space / 24);
+			@extend %u-heading-4;
+			letter-spacing: (-$base-space / 26);
 		}
 	}
 
 	&-btn {
-		width: ($base-space * 3.5);
-		margin-right: ($base-space / 3);
+		width: ($base-space * 4);
+		margin-right: ($base-space / 2);
 		margin-bottom: 0;
-		padding: ($base-space / 5) (0);
+		padding: ($base-space / 4) (0);
 		text-align: center;
-		text-transform: uppercase;
 		font-weight: 700;
-		font-size: 80%;
+		font-size: 90%;
 		background: none;
 		@include ease();
-
 		color: $theme-color-1;
 		border: 4px solid $theme-color-1;
 		box-shadow: 6px 6px $theme-color-1;
@@ -224,19 +210,55 @@
 			color: $theme-color-4;
 		}
 	}
-}
 
-@keyframes fadeUp {
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1;
+	&-link {
+		color: $theme-color-1;
+		font-weight: 700;
+		text-decoration: underline;
+	}
+
+	code {
+		background: rgba($theme-color-1, 0.1);
+		color: $theme-color-1;
+		font-weight: 700;
+	}
+
+	@include bp(small) {
+
+		&-title {
+			font-size: map-get($heading-sizes, 2);
+			letter-spacing: (-$base-space / 14);
+		}
+	}
+
+	@include bp(medium) {
+
+		&-intro {
+			display: flex;
+			flex-direction: row;
+		}
+
+		&-close {
+			top: $base-space * 2;
+			right: $base-space * 2;
+		}
+
+		&-right {
+			margin-left: ($base-space * 2);
+			margin-bottom: 0;
+
+			h2 {
+				@extend %u-heading-3;
+				letter-spacing: (-$base-space / 24);
+			}
+		}
+	}
+
+	@include bp(large) {
+
+		&-title {
+			font-size: map-get($heading-sizes, 1);
+			letter-spacing: (-$base-space / 8);
+		}
 	}
 }
-
-
-@keyframes scaleY {
-	to {
-		transform: scaleY(1);
-	}
-}
-

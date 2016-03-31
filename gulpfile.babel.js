@@ -119,14 +119,19 @@ function templates() {
 }
 
 function scripts() {
-	return browserify(paths.js.index)
-		.bundle()
-		.on('error', handleError)
-		.pipe(source('bundle.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.js.build))
-		.pipe(bs.stream());
+	return browserify({
+		entries: [paths.js.index],
+		debug: true
+	})
+	.bundle()
+	.on('error', handleError)
+	.pipe(source('bundle.js'))
+	.pipe(buffer())
+	.pipe(sourcemaps.init({ loadMaps: true }))
+	.pipe(uglify())
+	.pipe(sourcemaps.write('./'))
+	.pipe(gulp.dest(paths.js.build))
+	.pipe(bs.stream());
 }
 
 function styles(src, dest, name) {

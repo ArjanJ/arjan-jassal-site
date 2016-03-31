@@ -1,10 +1,9 @@
 <section class="work__details">
 	<header class="work__details-header">
 		<h1 data-work-title class="work__details-title">Bricks</h1>
-		<button type="button" class="work__details-close">
+		<button type="button" class="work__details-close work__details-fade">
 			<svg width="24" height="24"><use xlink:href="/assets/svg/icons.svg#close" /></svg>
 		</button>
-		<div class="work__details-cover"></div>
 	</header>
 	<div class="work__details-wrapper">
 		<div class="work__details-intro">
@@ -35,7 +34,7 @@
 			</div>
 			<div class="work__details-right work__details-fade">
 				<h2>Process</h2>
-				<p data-work-process>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium numquam libero eius dolorum iste molestiae est, ipsam architecto consequatur sequi rerum fugiat repudiandae pariatur excepturi totam, facilis saepe optio suscipit?</p>
+				<div data-work-process></div>
 			</div>
 		</div>
 	</div>

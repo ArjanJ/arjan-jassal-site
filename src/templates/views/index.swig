@@ -6,9 +6,9 @@
 
 	{% include "../partials/home.swig" %}
 
-	{% include "../partials/work.swig" %}
-
 	{% include "../partials/details.swig" %}
+
+	{% include "../partials/work.swig" %}
 
 	{% include "../partials/about.swig" %}
 

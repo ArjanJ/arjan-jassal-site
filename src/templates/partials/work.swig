@@ -6,21 +6,25 @@
 				<div class="work__item-wrapper">
 					<h2 class="work__item-heading">Bricks</h2>
 				</div>
+				<div class="work__item-bg"></div>
 			</li>
 			<li class="work__item" data-work="readit" data-add-class="work__item--active" data-add-class-offset="25">
 				<div class="work__item-wrapper">
 					<h2 class="work__item-heading">Readit</h2>
 				</div>
+				<div class="work__item-bg"></div>
 			</li>
 			<li class="work__item" data-work="abby" data-add-class="work__item--active" data-add-class-offset="25">
 				<div class="work__item-wrapper">
 					<h2 class="work__item-heading">Abby</h2>
 				</div>
+				<div class="work__item-bg"></div>
 			</li>
 			<li class="work__item" data-work="socialcircles" data-add-class="work__item--active" data-add-class-offset="25">
 				<div class="work__item-wrapper">
 					<h2 class="work__item-heading">Social Circles</h2>
 				</div>
+				<div class="work__item-bg"></div>
 			</li>
 		</ul>
 	</div>
