@@ -77,6 +77,7 @@ var ExpandProject = (function(window, document) {
 
 		transitionEnd(bg, function() {
 			detailComponents.container.classList.add('active');
+			disableScroll();
 		});
 	}
 
@@ -137,6 +138,7 @@ var ExpandProject = (function(window, document) {
 				workComponents.activeItem.classList.remove('active');
 				workComponents.activeItem = {};
 				workComponents.activeBg = {};
+				enableScroll();
 			});
 		}
 	}
@@ -150,6 +152,14 @@ var ExpandProject = (function(window, document) {
 		};
 
 		el.addEventListener('transitionend', complete);
+	}
+
+	function disableScroll() {
+		document.body.style.overflow = 'hidden';
+	}
+
+	function enableScroll() {
+		document.body.removeAttribute('style');
 	}
 
 	return {
