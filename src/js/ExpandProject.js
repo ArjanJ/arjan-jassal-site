@@ -153,7 +153,7 @@ var ExpandProject = (function(window, document) {
 				workComponents.activeBg = {};
 				tagline.classList.remove('hide');
 				enableScroll();
-				detailComponents.container.scrollTo(0, 0);
+				setTimeout(detailComponents.container.scrollTo(0, 0), 50);
 			});
 		}
 	}
