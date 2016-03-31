@@ -3,10 +3,11 @@ var ExpandProject = (function(window, document) {
 	var data = require('./workData');
 
 	var workComponents = {
-		items: 	$$('.work__item'),
-		bgs: 		$$('.work__item-bg'),
+		items: 			$$('.work__item'),
+		bgs: 				$$('.work__item-bg'),
+		tagline: 		$$('.work__item-tagline'),
 		activeItem: {},
-		activeBg: {}
+		activeBg: 	{}
 	};
 
 	var detailComponents = {
@@ -59,6 +60,7 @@ var ExpandProject = (function(window, document) {
 		workComponents.items[index].classList.add('active');
 		workComponents.activeItem = workComponents.items[index];
 		workComponents.activeBg = workComponents.bgs[index];
+		workComponents.tagline[index].classList.add('hide');
 
 		updateComponents(workComponents.activeItem.getAttribute('data-work'));
 		transformBackground(workComponents.activeItem, workComponents.activeBg);
@@ -70,7 +72,6 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function transformBackground(item, bg) {
-
 		var style = window.getComputedStyle(item, null);
 		var background = style.getPropertyValue('background-color');
 		detailComponents.container.style.backgroundColor = background;
@@ -131,6 +132,7 @@ var ExpandProject = (function(window, document) {
 
 		function shrinkBg() {
 			var title = workComponents.activeItem.querySelector('.work__item-heading');
+			var tagline = workComponents.activeItem.querySelector('.work__item-tagline');
 			workComponents.activeBg.removeAttribute('style');
 			title.removeAttribute('style');
 			detailComponents.container.classList.remove('active', 'hide');
@@ -139,6 +141,7 @@ var ExpandProject = (function(window, document) {
 				workComponents.activeItem.classList.remove('active');
 				workComponents.activeItem = {};
 				workComponents.activeBg = {};
+				tagline.classList.remove('hide');
 				enableScroll();
 				detailComponents.container.scrollTo(0, 0);
 			});

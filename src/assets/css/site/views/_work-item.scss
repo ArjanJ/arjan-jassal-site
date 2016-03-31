@@ -28,23 +28,43 @@
 		#{$p}-heading {
 			color: $theme-color-4;
 		}
+
+		#{$p}-tagline {
+			color: $theme-color-4;
+		}
 	}
 
 	&:nth-child(2) {
 		background: rgba($theme-color-3, $background-opacity);
 		animation-delay: 0.15s;
+
+		#{$p}-tagline {
+			color: $theme-color-1;
+		}
 	}
 
 	&:nth-child(3) {
+		background: rgba($theme-color-4, $background-opacity);
+
+		#{$p}-heading {
+			color: $theme-color-1;
+		}
+
+		#{$p}-tagline {
+			color: $theme-color-1;
+		}
+	}
+
+	&:nth-child(4) {
 		background: rgba($theme-color-2, $background-opacity);
 
 		#{$p}-heading {
 			color: $theme-color-4;
 		}
-	}
 
-	&:nth-child(4) {
-		background: rgba($theme-color-4, $background-opacity);
+		#{$p}-tagline {
+			color: $theme-color-4;
+		}
 	}
 
 	&-wrapper {
@@ -56,7 +76,6 @@
 
 	&-heading {
 		display: inline-block;
-		margin-bottom: 0;
 		font-size: map-get($heading-sizes, 3);
 		letter-spacing: (-$base-space / 16);
 		@include ease();
@@ -71,6 +90,16 @@
 		height: 100%;
 		background: inherit;
 		@include ease('out', .6);
+	}
+
+	&-tagline {
+		margin-bottom: 0;
+		@include ease();
+
+		&.hide {
+			opacity: 0;
+			transform: translate3d(0, 50%, 0);
+		}
 	}
 
 	&:hover {
@@ -98,16 +127,6 @@
 	@include bp(large) {
 		min-height: calc(50vh - #{$base-space});
 		width: 50%;
-
-		&:nth-child(1),
-		&:nth-child(4) {
-			width: 60%;
-		}
-
-		&:nth-child(2),
-		&:nth-child(3) {
-			width: 40%;
-		}
 
 		&-heading {
 			font-size: map-get($heading-sizes, 1);
