@@ -70,6 +70,7 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function transformBackground(item, bg) {
+
 		var style = window.getComputedStyle(item, null);
 		var background = style.getPropertyValue('background-color');
 		detailComponents.container.style.backgroundColor = background;
@@ -139,6 +140,7 @@ var ExpandProject = (function(window, document) {
 				workComponents.activeItem = {};
 				workComponents.activeBg = {};
 				enableScroll();
+				detailComponents.container.scrollTo(0, 0);
 			});
 		}
 	}
