@@ -1,0 +1,29 @@
+.error {
+	@include clearfix;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+	background: color(purple);
+	color: color(white);
+
+	&:before {
+		content: "";
+		@include cover;
+		z-index: -1;
+		display: block;
+		background: $theme-color-4 url('/assets/img/wov2.png');
+		opacity: 0.2;
+
+		@supports (background-blend-mode: color-dodge) {
+			background-blend-mode: color-dodge;
+			opacity: 1;
+		}	
+	}
+
+	h1 {
+		text-shadow: 8px 8px $theme-color-3;
+	}
+}

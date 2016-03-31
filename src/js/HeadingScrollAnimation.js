@@ -1,6 +1,6 @@
 var HeadingScrollAnimation = (function() {
 
-	var heading = document.querySelector('h1.home__heading');
+	var heading = document.querySelector('.home__wrapper');
 
 	function init() {
 		if (window.innerWidth >= 768)

@@ -66,6 +66,16 @@ input {
 	}
 }
 
+::selection {
+    background-color: $theme-color-4;
+    color: $theme-color-1;
+}
+
+::-moz-selection {
+    background-color: $theme-color-1;
+    color: $theme-color-4;
+}
+
 main {
 	display: block; // Android 4.3-, Internet Explorer 11+, Windows Phone 8.1+
 }
@@ -114,4 +124,8 @@ kbd,
 pre,
 samp {
 	font-family: monospace;
+}
+
+body {
+	background-color: $theme-color-1;
 }
