@@ -15,6 +15,8 @@
 
 		<meta name="theme-color" content="#dd4056">
 		<meta name="google-site-verification" content="GK0yaDwgJ2fsteMI1kxfJcFWn0J8WhLUgK0dA-PzHso" />
+
+		<link rel="canonical" href="https://www.arjanjassal.me/">
 	</head>
 
 	<body>

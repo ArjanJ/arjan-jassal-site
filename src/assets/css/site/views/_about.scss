@@ -39,7 +39,28 @@
 		color: $theme-color-4;
 	}
 
+	&__skills {
+		margin-bottom: ($base-space * 1.5);
+		opacity: 0;
+		transform: translate3d(0, 50%, 0);
+		@include ease();
+
+		&--active {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+		}
+	}
+
+	h2 {
+		color: $theme-color-4;
+	}
+
+	ul li {
+		font-size: 1.4rem;
+	}
+
 	&__text {
+		margin-bottom: ($base-space * 1.5);
 		position: relative;
 		z-index: 1;
 		font-size: map-get($heading-sizes, 6);
@@ -58,8 +79,13 @@
 
 		img {
 			max-width: 100%;
-			opacity: 0.45;
+			opacity: 0.25;
 			height: auto;
+			@include ease();
+
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 	}
 
@@ -96,14 +122,20 @@
 		}
 
 		&__text {
+			margin-bottom: ($base-space * 2.5);
 			top: auto;
 			left: auto;
 			font-size: map-get($heading-sizes, 4);
 		}
 
+		&__skills {
+			margin-bottom: 0;
+		}
+
 		&__img {
 			width: $base-space * 20;
 			position: absolute;
+			z-index: -1;
 			top: 50%;
 			left: 50%;
 			transform: translate(50%, -50%);

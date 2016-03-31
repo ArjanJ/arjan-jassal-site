@@ -17,6 +17,11 @@
 		opacity: 0;
 	}
 
+	&.header--scrolled {
+		padding: ($base-space / 2) ($base-space);
+		background: rgba($theme-color-4, 0.95);
+	}
+
 	&__wrapper {
 		display: flex;
 		align-items: center;

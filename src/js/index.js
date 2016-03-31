@@ -3,6 +3,7 @@ var SmoothScroll = require('smooth-scroll');
 var Nav = require('./Nav');
 var addClassWhenInViewport = require('./addClassWhenInViewport');
 var ExpandProject = require('./ExpandProject');
+var HeaderScroll = require('./HeaderScroll');
 
 document.addEventListener('DOMContentLoaded', function() {
 	HeadingScrollAnimation.init();
@@ -10,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	addClassWhenInViewport.init();
 	ExpandProject.init();
 	SmoothScroll.init({
-		speed: 500
+		speed: 500,
+		offset: 54
 	});
+	HeaderScroll.init();
 });

@@ -5,7 +5,6 @@
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	text-align: center;
 	z-index: -1;
 	bottom: 0;
 	left: 0;
@@ -16,12 +15,7 @@
 
 	&__text {
 		font-size: map-get($heading-sizes, 5);
-		transform: scale(0);
-		@include ease('out', 0.5);
-
-		&--active {
-			transform: scale(1);
-		}
+		text-align: center;
 	}
 
 	@include bp(small) {
