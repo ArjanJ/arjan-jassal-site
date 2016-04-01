@@ -24,8 +24,8 @@ var ExpandProject = (function(window, document) {
 		live: 				$('[data-work-live]'),
 		tech: 				$('[data-work-tech]'),
 		process: 			$('[data-work-process]'),
-		closeBtn: 		$('.work__details-close'),
-		container: 		$('.work__details')
+		closeBtn: 		$('.work-details-close'),
+		container: 		$('.work-details')
 	};
 
 	function $(query) {
@@ -93,7 +93,7 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function moveTitle(el) {
-		var target = document.querySelector('.work__details-title');
+		var target = document.querySelector('.work-details-title');
 		var diff = calcLenthBetweenItems(target, el);
 
 		var transform = 'translate(' + diff.x +'px, ' + diff.y + 'px)';

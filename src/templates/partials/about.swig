@@ -1,7 +1,11 @@
 <section class="about" id="about">
 	<article class="about__wrapper">
 		<h1 class="about__heading">Bio</h1>
-		<p class="about__text">My name's Arjan, I'm a front-end developer and designer currently living in Vancouver. I strive to provide users with well-crafted, simple, and intuitive web experiences that help accomplish goals.</p>
+		<div class="about__text">
+			<p class="about__text-large">My name's Arjan, I'm a front-end developer and designer currently living in Vancouver. I strive to provide users with well-crafted, simple, and intuitive web experiences that help accomplish goals.</p>
+			<p>Having graduated from New Media Design &amp; Web Development in 2014, I know front-end development involves much more than writing JavaScript, CSS, and HTML; it's where all divisions of the digital process come together as one entity known as a website. It's my job to deliver an engaging user-experience, eye-catching design, and code that performs fast and bug free.</p>
+		</div>
+		
 		<div class="c-grid about__skills" data-add-class="about__skills--active">
 			<div class="c-grid__col">
 				<h2 class="u-heading-6">Professional<br>Skillset</h2>
@@ -25,6 +29,7 @@
 				<ul class="c-list c-list--clean">
 					<li class="c-list__item">Git, SVN</li>
 					<li class="c-list__item">Gulp, Webpack</li>
+					<li class="c-list__item">Sublime Text</li>
 					<li class="c-list__item">Adobe Creative Suite</li>
 				</ul>
 			</div>

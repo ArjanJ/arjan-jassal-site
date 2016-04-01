@@ -60,10 +60,9 @@
 	}
 
 	&__text {
-		margin-bottom: ($base-space * 1.5);
+		margin-bottom: ($base-space * 2);
 		position: relative;
 		z-index: 1;
-		font-size: map-get($heading-sizes, 6);
 		color: $theme-color-4;
 	}
 
@@ -95,7 +94,7 @@
 			padding: (0) ($base-space * 2);
 		}
 
-		&__text {
+		&__text-large {
 			font-size: map-get($heading-sizes, 5);
 		}
 	}
@@ -108,7 +107,7 @@
 			padding: (0) ($base-space * 2);
 		}
 		
-		&__text {
+		&__text-large {
 			font-size: map-get($heading-sizes, 4);
 		}
 	}
@@ -122,10 +121,14 @@
 		}
 
 		&__text {
-			margin-bottom: ($base-space * 2.5);
+			margin-bottom: ($base-space * 3);
 			top: auto;
 			left: auto;
-			font-size: map-get($heading-sizes, 4);
+
+			&-large {
+				margin-bottom: ($base-space * 2);
+				font-size: map-get($heading-sizes, 4);
+			}
 		}
 
 		&__skills {
