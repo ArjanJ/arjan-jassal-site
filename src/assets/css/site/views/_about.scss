@@ -69,7 +69,7 @@
 	&__img {
 		opacity: 0;
 		transform: scale(0.5);
-		@include ease('out', 0.5);
+		@include ease();
 
 		&--active {
 			opacity: 1;
@@ -78,13 +78,8 @@
 
 		img {
 			max-width: 100%;
-			opacity: 0.25;
+			opacity: 0.2;
 			height: auto;
-			@include ease();
-
-			&:hover {
-				opacity: 0.5;
-			}
 		}
 	}
 

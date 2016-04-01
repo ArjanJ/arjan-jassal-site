@@ -3,6 +3,8 @@
 	$background-opacity: 1;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	min-height: 205px;
 	width: 100%;
 	padding: ($base-space);
@@ -36,7 +38,6 @@
 
 	&:nth-child(2) {
 		background: rgba($theme-color-3, $background-opacity);
-		animation-delay: 0.15s;
 
 		#{$p}-tagline {
 			color: $theme-color-1;
@@ -81,19 +82,24 @@
 		@include ease();
 	}
 
+	&-tag {
+		font-size: 1.2rem;
+		font-weight: 700;
+		background: $theme-color-4;
+		color: $theme-color-1;
+		padding: ($base-space / 4) ($base-space / 2);
+		border-radius: 6px;
+		@include ease();
+	}
+
 	&-bg {
-		position: absolute;
+		@include cover;
 		z-index: -2;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 		background: inherit;
 		@include ease('out', .6);
 	}
 
 	&-tagline {
-		margin-bottom: 0;
 		font-size: 1.3rem;
 		@include ease();
 
@@ -105,7 +111,7 @@
 
 	&:hover {
 		z-index: 2;
-		@include shadow(5);
+		@include shadow(4);
 	}
 
 	&.active {
@@ -126,6 +132,13 @@
 
 		&-tagline {
 			font-size: map-get($heading-sizes, 6);
+			margin-bottom: 0;
+		}
+
+		&-tag {
+			position: absolute;
+			bottom: $base-space;
+			left: $base-space;
 		}
 	}
 

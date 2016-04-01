@@ -21,7 +21,7 @@
 					<li class="c-list__item">React.js, Alt.js</li>
 					<li class="c-list__item">Angular.js</li>
 					<li class="c-list__item">Static Site Generators</li>
-					<li class="c-list__item">Wordpress, Grav</li>
+					<li class="c-list__item">Wordpress, Grav, Ghost</li>
 				</ul>
 			</div>
 			<div class="c-grid__col">

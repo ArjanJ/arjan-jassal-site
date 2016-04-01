@@ -2,6 +2,7 @@ module.exports = {
 	bricks: {
 		title: 'Bricks',
 		tagline: 'Create justified image layouts like Google Images and Flickr.',
+		tag: 'JavaScript',
 		client: 'Myself',
 		whatIDid: 'Write a JavaScript plugin that allows you to create a responsive image layout where the images fit together like bricks.',
 		description: 'Bricks allows you to take a group of images that are all different dimensions and fit them into a grid without distorting the aspect ratio of the image and fill up any gaps between or around the images. This type of image layout is commonly seen on Google Images and Flickr, my aim was to create a plugin with no dependencies and enough options to be able to fit into any project.',
@@ -24,6 +25,7 @@ module.exports = {
 	abby: {
 		title: 'Abby',
 		tagline: 'A lightweight HTML/CSS boilerplate customizable with SCSS.',
+		tag: 'CSS/SCSS',
 		client: 'Myself',
 		whatIDid: 'Build a lightweight HTML/CSS boilerplate that can be dropped into any project and customized.',
 		description: 'Abby is lightweight project that came into being after repeatedly copying and pasting my CSS structure and styles from project to project. I decided I needed a solid base that I can use in each project, something lightweight, customizable, and unobtrusive.',
@@ -42,6 +44,7 @@ module.exports = {
 	readit: {
 		title: 'Readit',
 		tagline: 'Browse Reddit with this slick single page application.',
+		tag: 'React, Flux',
 		client: 'Myself',
 		whatIDid: 'Use React + Alt.js and Node.js to create a single page application that displays data from Reddits API',
 		description: 'Readit is a simple web app that lets you browse subreddits and posts from Reddit. The purpose of this project was for me to learn React.js along with some kind of Flux framework, oh and Webpack too.',
@@ -63,6 +66,7 @@ module.exports = {
 	socialcircles: {
 		title: 'Social Circles',
 		tagline: 'An interactive infographic visualizing the size of social media networks.',
+		tag: 'JavaScript',
 		client: 'Myself',
 		whatIDid: 'Create an interactive infographic that visualizes the sizes of different social media networks.',
 		description: 'This project originally started out as a school assignment where we had to take any kind of data and make it visual, whether it be a poster, video, or website, etc... I used this opportunity to learn some more JavaScript so I made an interactive infographic with jQuery and CSS. Of course looking back on the project the code was absolutely horrible but it was acceptable at the time. Now that I have a deeper understanding of JavaScript and experience with writing apps and plugins I wanted to rewrite this project in vanilla JavaScript and use the new skills I have learned.',

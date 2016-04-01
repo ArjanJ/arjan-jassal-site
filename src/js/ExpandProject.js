@@ -10,6 +10,7 @@ var ExpandProject = (function(window, document) {
 		items: 			$$('.work__item'),
 		bgs: 				$$('.work__item-bg'),
 		tagline: 		$$('.work__item-tagline'),
+		tag: 				$$('.work__item-tag'),
 		activeItem: {},
 		activeBg: 	{}
 	};
@@ -19,6 +20,7 @@ var ExpandProject = (function(window, document) {
 		client: 			$('[data-work-client]'),
 		whatIDid: 		$('[data-work-what-i-did]'),
 		tagline: 			$('[data-work-tagline]'),
+		tag: 					$('[data-work-tag]'),
 		description: 	$('[data-work-description]'),
 		github: 			$('[data-work-github]'),
 		live: 				$('[data-work-live]'),
@@ -27,6 +29,49 @@ var ExpandProject = (function(window, document) {
 		closeBtn: 		$('.work-details__close'),
 		container: 		$('.work-details')
 	};
+
+	/**
+	 * Detect CSS transform support
+	 */
+
+	var transform = false,
+	    transformString = 'transform',
+	    domPrefixes = 'Webkit Moz ms'.split(' '),
+	    pfx = '',
+	    elem = document.createElement('div');
+
+	if (elem.style[transformString] !== undefined) { transform = true; }
+
+	if (transform === false) {
+	  for (var i = 0; i < domPrefixes.length; i++) {
+	    if (elem.style[domPrefixes[i] + 'Transform'] !== undefined) {
+	      pfx = domPrefixes[i];
+	      transformString = pfx + 'Transform';
+	      transform = true;
+	      break;
+	    }
+	  }
+	}
+
+	/**
+	 * Detect transitionend event support
+	 */
+
+	var transitions = {
+	    'transition': 'transitionend',
+	    'WebkitTransition': 'webkitTransitionEnd',
+	    'MozTransition': 'transitionend',
+	    'OTransition': 'otransitionend'
+	  },
+	  transitionendString,
+	  elem = document.createElement('div');
+	 
+  for (var t in transitions) {
+    if (typeof elem.style[t] !== 'undefined') {
+      transitionendString = transitions[t];
+      break;
+    }
+  }
 
 	function $(query) {
 		return document.querySelector(query);
@@ -48,6 +93,7 @@ var ExpandProject = (function(window, document) {
 		detailComponents.client.innerHTML = data[work].client;
 		detailComponents.whatIDid.innerHTML = data[work].whatIDid;
 		detailComponents.tagline.innerHTML = data[work].tagline;
+		detailComponents.tag.innerHTML = data[work].tag;
 		detailComponents.description.innerHTML = data[work].description;
 		detailComponents.github.href = data[work].github;
 		detailComponents.live.href = data[work].live;
@@ -61,6 +107,10 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function handleClick(index) {
+		window.requestAnimationFrame(animateStuff.bind(null, index));
+	}
+
+	function animateStuff(index) {
 		workComponents.items[index].classList.add('active');
 		workComponents.activeItem = workComponents.items[index];
 		workComponents.activeBg = workComponents.bgs[index];
@@ -73,6 +123,7 @@ var ExpandProject = (function(window, document) {
 		detailComponents.container.classList.add('theme-' + parseInt(index+1));
 
 		moveTitle(workComponents.activeItem.querySelector('.work__item-heading'));
+		moveTag(workComponents.activeItem.querySelector('.work__item-tag'));
 		toggleHeaderVisibility();
 	}
 
@@ -80,7 +131,7 @@ var ExpandProject = (function(window, document) {
 		var style = window.getComputedStyle(item, null);
 		var background = style.getPropertyValue('background-color');
 		detailComponents.container.style.backgroundColor = background;
-		bg.style.transform = transform(bg);
+		bg.style[transformString] = transformTile(bg);
 
 		transitionEnd(bg, function() {
 			detailComponents.container.classList.add('active');
@@ -93,11 +144,19 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function moveTitle(el) {
-		var target = document.querySelector('.work-details__title');
+		var target = detailComponents.title;
 		var diff = calcLenthBetweenItems(target, el);
 
 		var transform = 'translate(' + diff.x +'px, ' + diff.y + 'px)';
-		el.style.transform = transform;
+		el.style[transformString] = transform;
+	}
+
+	function moveTag(el) {
+		var target = detailComponents.tag;
+		var diff = calcLenthBetweenItems(target, el);
+
+		var transform = 'translate(' + diff.x +'px, ' + diff.y + 'px)';
+		el.style[transformString] = transform;
 	}
 
 	function calcLenthBetweenItems(a, b) {
@@ -110,7 +169,7 @@ var ExpandProject = (function(window, document) {
 		};
 	}
 
-	function transform(el) {
+	function transformTile(el) {
 		var ww = window.innerWidth;
 		var wh = window.innerHeight;
 		var wcx = ww / 2;
@@ -135,24 +194,31 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function close() {
+		window.requestAnimationFrame(closeStuff);
+	}
+
+	function closeStuff() {
+		var title = workComponents.activeItem.querySelector('.work__item-heading');
+		var tagline = workComponents.activeItem.querySelector('.work__item-tagline');
+		var tag = workComponents.activeItem.querySelector('.work__item-tag');
+
 		detailComponents.container.classList.add('hide');
 
-		transitionEnd(detailComponents.container, shrinkBg, 300);
+		transitionEnd(detailComponents.container, shrinkBg, 350);
 
 		function shrinkBg() {
-			var title = workComponents.activeItem.querySelector('.work__item-heading');
-			var tagline = workComponents.activeItem.querySelector('.work__item-tagline');
 			workComponents.activeBg.removeAttribute('style');
 			title.removeAttribute('style');
+			tag.removeAttribute('style');
 			detailComponents.container.classList.remove('active', 'hide');
 			toggleHeaderVisibility();
+			enableScroll();
 
 			transitionEnd(workComponents.activeBg, function() {
 				workComponents.activeItem.classList.remove('active');
 				workComponents.activeItem = {};
 				workComponents.activeBg = {};
 				tagline.classList.remove('hide');
-				enableScroll();
 				detailComponents.container.scrollTop = 0;
 			});
 		}
@@ -163,10 +229,10 @@ var ExpandProject = (function(window, document) {
 			setTimeout(function() {
 				callback();
 			}, delay || 0);
-			el.removeEventListener('transitionend', complete);
+			el.removeEventListener(transitionendString, complete);
 		};
 
-		el.addEventListener('transitionend', complete);
+		el.addEventListener(transitionendString, complete);
 	}
 
 	function disableScroll() {

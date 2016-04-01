@@ -57,7 +57,7 @@ const paths = {
 		build: `${dirs.build}/assets`
 	},
 	images: {
-		src: `${dirs.src}/assets/img/*`,
+		src: `${dirs.src}/assets/img/**/*`,
 		build: `${dirs.build}/assets/img`
 	},
 	deploy: `${dirs.build}/**/*`
