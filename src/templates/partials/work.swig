@@ -1,4 +1,4 @@
-<section class="work" id="work">
+<section class="work" id="work" data-full-height>
 	<div class="work__wrapper">
 		<h1 class="work__heading">Work</h1>
 		<ul class="work__list">

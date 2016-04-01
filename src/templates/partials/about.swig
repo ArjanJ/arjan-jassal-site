@@ -1,4 +1,4 @@
-<section class="about" id="about">
+<section class="about" id="about" data-full-height>
 	<article class="about__wrapper">
 		<h1 class="about__heading">Bio</h1>
 		<div class="about__text">
