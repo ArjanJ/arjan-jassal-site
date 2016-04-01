@@ -100,7 +100,7 @@
 	}
 
 	&-header {
-		min-height: 300px;
+		min-height: ($base-space * 8);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -238,6 +238,10 @@
 	}
 
 	@include bp(medium) {
+
+		&-header {
+			min-height: 300px;
+		}
 
 		&-intro {
 			display: flex;
