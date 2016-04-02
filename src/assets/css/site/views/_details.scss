@@ -11,6 +11,7 @@
 	-webkit-overflow-scrolling: touch;
 	visibility: hidden;
 	color: color(white);
+	transform: translate3d(0, 0, 0);
 
 	&.active {
 		visibility: visible;
@@ -132,6 +133,7 @@
 		svg {
 			margin: 0 auto;
 			fill: color(white);
+			@include ease();
 		}
 
 		&:hover {

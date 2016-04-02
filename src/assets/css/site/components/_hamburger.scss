@@ -16,7 +16,6 @@
 	background: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
-	@include ease();
 
 	&__patty {
 		display: block;
@@ -24,25 +23,15 @@
 		height: $height;
 		margin-bottom: $height * 2;
 		background: $color;
-		animation-timing-function: $ease-out;
-		animation-duration: 0.68s;
 		@include shadow(1);
+		will-change: transform;
 		@include ease('in-out');
 
 		&:last-child {
 			margin-bottom: 0;
 			width: 68%;
 		}
-
-		@for $i from 1 through 3 {
-
-			&:nth-child(#{$i}) {
-				animation-delay: ($i * 0.1) +s;
-			}
-		}
 	}
-
-	
 
 	&:focus,
 	&:active {
@@ -66,15 +55,5 @@
 				width: 100%;
 			}
 		}
-	}
-
-	@include bp(large) {
-
-		// &:hover {
-
-		// 	#{$p}__patty {
-		// 		transform: scaleX(1);
-		// 	}
-		// }
 	}
 }

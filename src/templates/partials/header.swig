@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" role="header">
 	<div class="header__wrapper">
 		<div class="header__contact">
 			<a href="mailto:hello@arjanjassal.com" title="My email">
@@ -12,7 +12,7 @@
 		</button>
 	</div>
 	
-	<nav class="nav">
+	<nav class="nav" role="navigation">
 		<ul class="nav__list">
 			<li class="nav__item">
 				<a data-link href="#work" class="nav__link" data-scroll>Work</a>

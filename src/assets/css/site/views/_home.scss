@@ -41,14 +41,14 @@
 		max-width: 500px;
 		margin: 0 auto;
 		padding: (0) ($base-space * 2);
+		will-change: transform, opacity;
+		transform: translateY(0);
+		opacity: 1;
 	}
 
 	&__heading {
 		font-size: ($base-space * 1.25);
 		letter-spacing: (-$base-space / 20);
-		will-change: transform, opacity;
-		transform: translateY(0);
-		opacity: 1;
 	}
 
 	&__link {
@@ -56,21 +56,25 @@
 		font-weight: 700;
 		position: relative;
 		display: inline-block;
+		overflow: hidden;
+		vertical-align: bottom;
 		@include ease();
 
 		&:before {
 			content: "";
-			direction: block;
+			display: block;
 			@include cover;
 			z-index: -1;
 			background: $theme-color-1;
 			transform: scaleX(0);
 			transform-origin: left center;
+			will-change: transform;
 			@include ease();
 		}
 
 		&:hover {
 			color: $theme-color-4;
+
 			&:before {
 				transform: scaleX(1);
 			}

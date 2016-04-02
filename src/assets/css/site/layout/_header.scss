@@ -4,12 +4,15 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	padding: ($base-space * 2) ($base-space * 2) (0);
+	padding: ($base-space * 2) ($base-space * 2) ($base-space / 2);
 	position: fixed;
 	z-index: 10;
 	top: 0;
 	left: 0;
+	overflow: visibile;
 	backface-visibility: hidden;
+	background: rgba($theme-color-4, 0);
+	will-change: transform, opacity, padding, background;
 	@include ease();
 
 	&.hide {
@@ -18,7 +21,7 @@
 	}
 
 	&.header--scrolled {
-		padding: ($base-space / 2) ($base-space);
+		padding: ($base-space / 2) ($base-space) ($base-space / 2);
 		background: rgba($theme-color-4, 0.95);
 	}
 
@@ -44,7 +47,11 @@
 	}
 
 	@include bp(medium) {
-		padding: ($base-space * 2.5) ($base-space * 2.5) (0);
+		padding: ($base-space * 2.5) ($base-space * 2.5) ($base-space / 2);
+
+		&.header--scrolled {
+			padding: ($base-space / 2) ($base-space * 2.5) ($base-space / 2);
+		}
 
 		&__wrapper {
 			justify-content: flex-end;

@@ -14,8 +14,34 @@
 	backface-visibility: hidden;
 
 	&__text {
+		display: inline-block;
 		font-size: map-get($heading-sizes, 6);
+		margin-bottom: ($base-space);
 		text-align: center;
+
+		a {
+			color: $theme-color-1;
+			font-weight: 400;
+		}
+	}
+
+	&__links {
+		text-align: center;
+
+		&-link {
+			@extend .home__link;
+			font-size: 1.4rem;
+		}
+
+		a.footer__links-link {
+			margin: (0) ($base-space / 3);
+			font-weight: 400;
+			color: $theme-color-2;
+
+			&:hover {
+				color: $theme-color-4;
+			}
+		}
 	}
 
 	@include bp(small) {

@@ -4,7 +4,9 @@ var Nav = (function() {
 	var navItems = [].slice.call(nav.querySelectorAll('li.nav__item'));
 	var navLinks = [].slice.call(nav.querySelectorAll('[data-link]'));
 
-	function toggleNav() {
+	function toggleNav(event) {
+		event.preventDefault();
+
 		hamburger.classList.toggle('c-hamburger--close');
 		nav.classList.toggle('nav--active');
 		setTimeout(function() {
@@ -12,6 +14,8 @@ var Nav = (function() {
 				return item.classList.toggle('nav__item--active');
 			});
 		}, 75);
+
+		setAriaAttributes();
 	}
 
 	function init() {
@@ -20,6 +24,18 @@ var Nav = (function() {
 		navLinks.forEach(function(link) {
 			link.addEventListener('click', toggleNav);
 		});
+	}
+
+	function setAriaAttributes() {
+		if (hamburger && nav) {
+			if (nav.classList.contains('nav--active')) {
+				hamburger.setAttribute('aria-expanded', 'true');
+				nav.setAttribute('aria-hidden', 'false');
+			} else {
+				hamburger.setAttribute('aria-expanded', 'false');
+				nav.setAttribute('aria-hidden', 'true');
+			}
+		}
 	}
 
 	return {
