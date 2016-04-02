@@ -8,13 +8,14 @@
 	z-index: -1;
 	bottom: 0;
 	left: 0;
-	height: ($base-space * 5);
+	height: ($base-space * 8);
+	padding: ($base-space) (0);
 	background: color(white);
 	width: 100%;
 	backface-visibility: hidden;
 
 	&__text {
-		display: inline-block;
+		display: block;
 		font-size: map-get($heading-sizes, 6);
 		margin-bottom: ($base-space);
 		text-align: center;
@@ -26,20 +27,30 @@
 	}
 
 	&__links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 
 		&-link {
-			@extend .home__link;
-			font-size: 1.4rem;
-		}
-
-		a.footer__links-link {
-			margin: (0) ($base-space / 3);
+			padding: (0) ($base-space / 2);
 			font-weight: 400;
 			color: $theme-color-2;
 
+			svg {
+				$size: 24px;
+				width: $size;
+				height: $size;
+				fill: $theme-color-4;
+				@include ease('in-out');
+			}
+
 			&:hover {
-				color: $theme-color-4;
+
+				svg {
+					transform: rotate(360deg);
+					fill: $theme-color-1;
+				}
 			}
 		}
 	}
@@ -47,6 +58,7 @@
 	@include bp(small) {
 
 		&__text {
+			margin-bottom: ($base-space * 1.5);
 			font-size: map-get($heading-sizes, 3);
 		}
 	}

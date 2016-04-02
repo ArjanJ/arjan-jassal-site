@@ -63,7 +63,7 @@ module.exports = {
 			'<p>Up until Readit the only experience I had with writing any JavaScript that would be exectuted by Node was Gulpfiles. The reason why I needed to write some Node for this app was to have pretty URLs. Without having the server serve the correct files for any URL the app would break because nothing would exist at <code>/page/</code> for example. With Node and the Express framework I setup some simple routing so that the <code>index.html</code> was always served for any route.</p>'
 		].join('')
 	},
-	socialcircles: {
+	social_circles: {
 		title: 'Social Circles',
 		tagline: 'An interactive infographic visualizing the size of social media networks.',
 		tag: 'JavaScript',

@@ -26,7 +26,7 @@ var ExpandProject = (function(window, document) {
 		live: 				$('[data-work-live]'),
 		tech: 				$('[data-work-tech]'),
 		process: 			$('[data-work-process]'),
-		closeBtn: 		$('.work-details__close'),
+		closeBtn: 		$$('.work-details-close'),
 		container: 		$('.work-details')
 	};
 
@@ -85,7 +85,22 @@ var ExpandProject = (function(window, document) {
 		workComponents.items.forEach(function(item, index) {
 			item.addEventListener('click', handleClick.bind(null, index));
 		});
-		detailComponents.closeBtn.addEventListener('click', close);
+
+		detailComponents.closeBtn.forEach(function(button) {
+			button.addEventListener('click', function() {
+				window.history.back();
+				resetTitleTag();
+			});
+		});
+
+		window.addEventListener('popstate', function(event) {
+		  close();
+		  resetTitleTag();
+		});
+	}
+
+	function resetTitleTag() {
+		document.title = 'Arjan Jassal | Front-end Developer Vancouver';
 	}
 
 	function updateComponents(work) {
@@ -115,6 +130,15 @@ var ExpandProject = (function(window, document) {
 		workComponents.activeItem = workComponents.items[index];
 		workComponents.activeBg = workComponents.bgs[index];
 		workComponents.tagline[index].classList.add('hide');
+
+		var name = workComponents.activeItem.getAttribute('data-work');
+
+		window.history.pushState({
+			title: name
+		}, name, name);
+
+		name = name.replace(/\_/g, ' ');
+		document.title = 'Arjan Jassal | ' + name[0].toUpperCase() + name.substr(1, name.length - 1);
 
 		updateComponents(workComponents.activeItem.getAttribute('data-work'));
 		transformBackground(workComponents.activeItem, workComponents.activeBg);
@@ -198,6 +222,7 @@ var ExpandProject = (function(window, document) {
 	}
 
 	function closeStuff() {
+		// window.history.back();
 		var title = workComponents.activeItem.querySelector('.work__item-heading');
 		var tagline = workComponents.activeItem.querySelector('.work__item-tagline');
 		var tag = workComponents.activeItem.querySelector('.work__item-tag');

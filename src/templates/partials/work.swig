@@ -32,7 +32,7 @@
 				</div>
 				<div class="work__item-bg"></div>
 			</li>
-			<li class="work__item" data-work="socialcircles" data-add-class="work__item--active">
+			<li class="work__item" data-work="social_circles" data-add-class="work__item--active">
 				<div class="work__item-wrapper">
 					<h2 class="work__item-heading">Social Circles</h2>
 					<p class="work__item-tagline">An interactive infographic visualizing the size of social media networks.</p>
