@@ -1,4 +1,5 @@
 var fullHeight = (function() {
+	var ua = navigator.userAgent;
 	var elems = document.querySelectorAll('[data-full-height]');
 
 	function init() {
@@ -15,7 +16,13 @@ var fullHeight = (function() {
 	}
 
 	function handleResize() {
-		setHeight();
+
+		// Do not want to set height on resize on mobile device because it janks when the address bar hides.
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua)) {
+			return;
+		} else {
+			setHeight();
+		}
 	}
 
 	function debounce(func, wait, immediate) {
