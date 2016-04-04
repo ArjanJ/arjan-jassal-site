@@ -3,7 +3,7 @@
 		<h1 class="about__heading">Bio</h1>
 		<div class="about__text">
 			<p class="about__text-large">My name's Arjan, I'm a front-end developer and designer currently living in Vancouver. I strive to provide users with well-crafted, simple, and intuitive web experiences that help accomplish goals.</p>
-			<p>Having graduated from New Media Design &amp; Web Development in 2014, I know front-end development involves much more than writing JavaScript, CSS, and HTML; it's where all divisions of the digital process come together as one entity known as a website. It's my job to deliver an engaging user-experience, eye-catching design, and code that performs fast and bug free.</p>
+			<p>Having graduated from New Media Design &amp; Web Development in 2014, I know front-end development involves much more than writing JavaScript, CSS, and HTML; it's where all divisions of the digital process come together to tell a story through design, interactivity, and functionality. It's my job to deliver an engaging user-experience, eye-catching design, and code that performs fast and bug free.</p>
 		</div>
 		
 		<div class="c-grid about__skills" data-add-class="about__skills--active">

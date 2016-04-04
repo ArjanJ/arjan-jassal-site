@@ -24,6 +24,8 @@
 				<h1 class="resume__section-title">Experience</h1>
 				<h2 class="resume__section-subtitle"><a href="http://ettrics.com/" target="_blank">Ettrics</a> — <small>Front-end Developer — Mar 2015 - Jan 2016</small></h2>
 				<p class="resume__section-text">Using the latest client-side technologies to build innovative solutions for our clients marketing and product areas. Collaborating with designers to write articles and code experiments on CodePen and <a href="http://ettrics.com/articles/" target="_blank">Ettrics Blog</a>.</p>
+				<h2 class="resume__section-subtitle"><a href="http://ettrics.com/" target="_blank">Idea Rebel Inc.</a> — <small>Front-end Developer — Dec 2015 - Jan 2016</small></h2>
+				<p class="resume__section-text">A short contract converting PSD’s into pixel perfect landing pages for large client.</p>
 				<h2 class="resume__section-subtitle"><a href="http://www.perfectmind.com/" target="_blank">PerfectMind Inc</a> — <small>Web Designer — Sept 2014 - Mar 2015</small></h2>
 				<p class="resume__section-text">Designing and developing lead generating templates for in-house CMS. Implementing local SEO strategies for clients.</p>
 				<h2 class="resume__section-subtitle">Freelance — <small>Front-end Developer &amp; Designer — 2013 - Present</small></h2>
@@ -39,18 +41,35 @@
 		</section>
 		<section class="resume__section">
 			<div class="u-wrapper">
-				<h1 class="resume__section-title">Skills</h1>
-				<ul class="c-list resume__list">
-					<li>HTML5</li>
-					<li>CSS3, Preprocessors, BEM Architecture</li>
-					<li>JavaScript (ECMAScript 6), JQuery</li>
-					<li>Angular, React + Flux</li>
-					<li>Static Site Generators (Jekyll)</li>
-					<li>Wordpress, Grav</li>
-					<li>Node</li>
-					<li>Git, SVN</li>
-					<li>Gulp, Webpack</li>
-				</ul>
+				<h1 class="resume__section-title">Technical Expertise</h1>
+				<div class="c-grid">
+					<div class="c-grid__col">
+						<h3 class="u-heading-6">Professional<br>Skillset</h3>
+						<ul class="c-list resume__list">
+							<li>HTML5</li>
+							<li>CSS3, Preprocessors, BEM Architecture</li>
+							<li>JavaScript (ECMAScript 6), JQuery</li>
+						</ul>
+					</div>
+					<div class="c-grid__col">
+						<h3 class="u-heading-6">Working<br>Knowledge</h3>
+						<ul class="c-list resume__list">
+							<li>React.js, Alt.js</li>
+							<li>Angular.js</li>
+							<li>Static Site Generators</li>
+							<li>Wordpress, Grav, Ghost</li>
+						</ul>
+					</div>
+					<div class="c-grid__col">
+						<h3 class="u-heading-6">Tools</h3>
+						<ul class="c-list resume__list">
+							<li>Git, SVN</li>
+							<li>Gulp, Webpack</li>
+							<li>Sublime Text</li>
+							<li>Adobe Creative Suite</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="resume__section">

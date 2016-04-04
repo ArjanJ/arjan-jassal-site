@@ -7,7 +7,7 @@
 	flex-direction: column;
 	min-height: 205px;
 	width: 100%;
-	padding: ($base-space) (0);
+	padding: ($base-space * 1.25) (0);
 	position: relative;
 	z-index: 1;
 	transform: scale(0.5);
@@ -38,6 +38,7 @@
 
 	&:nth-child(2) {
 		background: rgba($theme-color-3, $background-opacity);
+		animation-delay: .1s;
 
 		#{$p}-tagline {
 			color: $theme-color-1;
@@ -58,6 +59,7 @@
 
 	&:nth-child(4) {
 		background: rgba($theme-color-2, $background-opacity);
+		animation-delay: .1s;
 
 		#{$p}-heading {
 			color: $theme-color-4;

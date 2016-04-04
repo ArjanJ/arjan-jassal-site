@@ -43,5 +43,24 @@
 				<div class="work__item-bg"></div>
 			</li>
 		</ul>
+
+		<div class="work__other" data-add-class="work__other--active">
+			<h2 class="work__subheading">More Projects</h2>
+			<p>These are some projects that I've had the pleasure of working on with others.</p>
+			<ul class="work__other-list">
+				<li class="work__other-item">
+					<a href="https://saarlis.com/" target="_blank" class="work__other-title">Saarlis</a>
+					<p class="work__other-desc">Fantasy Football single page application.<br><small>JavaScript, Angular.js, UX/UI Design</small></p>
+				</li>
+				<li class="work__other-item">
+					<a href="" class="work__other-title">CumulusPro Resource Library</a>
+					<p class="work__other-desc">Online document managing app connected to Google Drive.<br><small>JavaScript, Angular.js</small></p>
+				</li>
+				<li class="work__other-item">
+					<a href="" class="work__other-title">Ettrics.com</a>
+					<p class="work__other-desc">Company website and portfolio.<br><small>Jekyll, HTML5, CSS3, JavaScript, JQuery</small></p>
+				</li>
+			</ul>
+		</div>
 	</div>
 </section>
