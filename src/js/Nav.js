@@ -1,4 +1,4 @@
-var Nav = (function() {
+var Nav = (function(window) {
 	var hamburger = document.querySelector('button.c-hamburger');
 	var nav = document.querySelector('nav.nav');
 	var navItems = [].slice.call(nav.querySelectorAll('li.nav__item'));
@@ -10,8 +10,8 @@ var Nav = (function() {
 		hamburger.classList.toggle('c-hamburger--close');
 		nav.classList.toggle('nav--active');
 		setTimeout(function() {
-			navItems.map(function(item) {
-				return item.classList.toggle('nav__item--active');
+			navItems.forEach(function(item) {
+				window.requestAnimationFrame(showNavItem.bind(null, item));
 			});
 		}, 75);
 
@@ -24,6 +24,10 @@ var Nav = (function() {
 		navLinks.forEach(function(link) {
 			link.addEventListener('click', toggleNav);
 		});
+	}
+
+	function showNavItem(el) {
+		el.classList.toggle('nav__item--active');
 	}
 
 	function setAriaAttributes() {
@@ -42,6 +46,6 @@ var Nav = (function() {
 		init: init
 	};
 
-}());
+}(window));
 
 module.exports = Nav;

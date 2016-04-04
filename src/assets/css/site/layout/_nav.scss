@@ -46,27 +46,12 @@
 		margin: ($base-space * 2) (0) (0);
 
 		&:nth-child(2) {
-			margin-top: ($base-space * 2);
+			margin-top: ($base-space);
 		}
 	}
 
 	&__item {
-		opacity: 0;
-		transform: translateX(50%);
-		will-change: transform, opacity;
 		@include ease('out', 0.5);
-		
-		&--active {
-			opacity: 1;
-			transform: translateX(0);
-		}
-
-		@for $i from 1 through 5 {
-
-			&:nth-child(#{$i}) {
-				transition-delay: ($i * 0.1) +s;
-			}
-		}
 	}
 
 	&__link {
@@ -97,6 +82,24 @@
 
 		&__list {
 			margin-top: 0;
+		}
+
+		&__item {
+			opacity: 0;
+			transform: translateX(50%);
+			will-change: transform, opacity;
+
+			&--active {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			@for $i from 1 through 5 {
+
+				&:nth-child(#{$i}) {
+					transition-delay: ($i * 0.1) +s;
+				}
+			}
 		}
 
 		&__link {
