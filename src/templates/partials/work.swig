@@ -53,11 +53,11 @@
 					<p class="work__other-desc">Fantasy Football single page application.<br><small>JavaScript, Angular.js, UX/UI Design</small></p>
 				</li>
 				<li class="work__other-item">
-					<a href="" class="work__other-title">CumulusPro Resource Library</a>
+					<a href="https://cumuluspro.com/resource/#/resources/0ByfkGcbngmJ9flREcXBxNk53dzZVaWFPUEtDMHNKVDFxRE85X0JPWnRiMGFLZ2NLV0dmU28"  target="_blank" class="work__other-title">CumulusPro Resource Library</a>
 					<p class="work__other-desc">Online document managing app connected to Google Drive.<br><small>JavaScript, Angular.js</small></p>
 				</li>
 				<li class="work__other-item">
-					<a href="" class="work__other-title">Ettrics.com</a>
+					<a href="http://ettrics.com/" target="_blank" class="work__other-title">Ettrics.com</a>
 					<p class="work__other-desc">Company website and portfolio.<br><small>Jekyll, HTML5, CSS3, JavaScript, JQuery</small></p>
 				</li>
 			</ul>
