@@ -137,7 +137,11 @@
 			z-index: -1;
 			top: 50%;
 			left: 55%;
-			transform: translate(0, -50%);
+			transform: translate(0, -50%) scale(0.5);
+
+			&--active {
+				transform: translate(0, -50%) scale(1);
+			}
 		}
 	}
 }
