@@ -38,7 +38,7 @@ module.exports = {
 			'<h3 class="u-heading-6">02. Development</h3>',
 			'<p>Development of this project was fairly straightforward. Each component has its own SCSS file so it&#39;s easy stay organized and edit. Since this is a SCSS project I wanted to include some useful mixins for things like clearfixing, transitions, and media queries. Those are things I found I would always end up including in any project so it made sense to incorporate them into Abby.</p>',
 			'<h3 class="u-heading-6">03. Launch</h3>',
-			'<p>I published this project to NPM so that I when in my projects I can simply <code>npm install abby</code> and bam I have my base CSS styles ready to go which I can quickly tailor to the project at hand. So far I have used Abby on this website, Readit, and Social Circles and it&#39;s been a really smooth process.</p>'
+			'<p>I published this project to NPM so that in my projects I can simply <code>npm install abby</code> and bam I have my base CSS styles ready to go which I can quickly tailor to the project at hand. So far I have used Abby on this website, and Readit, and it&#39;s been a really effective process for me.</p>'
 		].join('')
 	},
 	readit: {
