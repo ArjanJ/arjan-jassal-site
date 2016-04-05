@@ -8,7 +8,7 @@
 		
 		<div class="c-grid about__skills" data-add-class="about__skills--active">
 			<div class="c-grid__col">
-				<h2 class="u-heading-6">Professional<br>Skillset</h2>
+				<h2 class="u-heading-6">Core<br>Skillset</h2>
 				<ul class="c-list c-list--clean">
 					<li class="c-list__item">HTML5</li>
 					<li class="c-list__item">CSS3, Preprocessors, BEM</li>

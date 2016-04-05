@@ -97,6 +97,7 @@
 
 	@include bp(medium) {
 		min-height: 100vh;
+		padding: ($base-space * 4) (0);
 
 		&__wrapper {
 			max-width: 640px;
@@ -132,11 +133,10 @@
 		}
 
 		&__img {
-			width: $base-space * 20;
 			position: absolute;
 			z-index: -1;
 			top: 50%;
-			left: 50%;
+			left: 55%;
 			transform: translate(0, -50%);
 		}
 	}
