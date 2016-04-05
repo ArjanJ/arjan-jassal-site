@@ -11,7 +11,7 @@
 	top: 0;
 	right: 0;
 	left: auto;
-	overflow-y: scroll;
+	overflow: hidden;
 	-webkit-overflow-scrolling: touch;
 	backface-visibility: hidden;
 	background: $theme-color-4;
@@ -36,6 +36,7 @@
 	}
 
 	&--active {
+		overflow-y: scroll;
 		@include ease('out', 0.5);
 		transform: translate3d(0, 0, 0);
 	}
