@@ -10,9 +10,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	left: auto;
 	overflow: hidden;
-	-webkit-overflow-scrolling: touch;
 	backface-visibility: hidden;
 	background: $theme-color-4;
 	background: color(white);
@@ -36,6 +34,7 @@
 	}
 
 	&--active {
+		-webkit-overflow-scrolling: touch;
 		overflow-y: scroll;
 		@include ease('out', 0.5);
 		transform: translate3d(0, 0, 0);
@@ -79,7 +78,7 @@
 	}
 
 	@include bp(medium) {
-		width: ($base-space * 13);
+		width: ($base-space * 15);
 
 		&__list {
 			margin-top: 0;
@@ -98,7 +97,7 @@
 			@for $i from 1 through 5 {
 
 				&:nth-child(#{$i}) {
-					transition-delay: ($i * 0.1) +s;
+					transition-delay: ($i * 0.1s);
 				}
 			}
 		}
