@@ -43,7 +43,7 @@
 				<div class="work__item-bg"></div>
 			</li>
 		</ul>
-
+{# 
 		<div class="work__other" data-add-class="work__other--active">
 			<h2 class="work__subheading">More Projects</h2>
 			<p>These are some projects that I've had the pleasure of working on with others.</p>
@@ -61,6 +61,6 @@
 					<p class="work__other-desc">Company website and portfolio.<br><small>Jekyll, HTML5, CSS3, JavaScript, JQuery</small></p>
 				</li>
 			</ul>
-		</div>
+		</div> #}
 	</div>
 </section>

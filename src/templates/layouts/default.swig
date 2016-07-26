@@ -6,7 +6,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Arjan Jassal | {{ title || "Front-end Developer Vancouver" }}</title>
-		<meta name="description" content="{{ description || "Vancouver based front-end developer, making awesome web things with JavaScript, CSS, and lots of tea." }}">
+		<meta name="description" content="{{ description || "Vancouver based front-end developer, building web apps with JavaScript, CSS, and good ideas." }}">
 
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/assets/css/bundle.css">
