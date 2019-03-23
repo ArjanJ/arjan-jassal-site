@@ -8,7 +8,20 @@
       content="Arjan Jassal, Frontend Developer in Vancouver."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <style>
+      @font-face {
+        font-family: "Ligmaesque";
+        font-weight: 400;
+        src: url("./fonts/regular.woff2");
+      }
+
+      @font-face {
+        font-family: "Ligmaesque";
+        font-weight: 700;
+        src: url("./fonts/bold.woff2");
+      }
+
       :root {
         --primary-color: #faf7ff;
       }
@@ -26,7 +39,7 @@
           )
           no-repeat fixed;
         color: var(--primary-color);
-        font-family: "Basis Grotesque", "Helvetica", "Arial", sans-serif;
+        font-family: "Ligmaesque", "Helvetica", "Arial", sans-serif;
         font-size: 16px;
         font-weight: 500;
         height: 100vh;
