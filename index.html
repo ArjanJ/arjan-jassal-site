@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arjan Jassal</title>
+    <meta
+      name="description"
+      content="Arjan Jassal, Frontend Developer in Vancouver."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --primary-color: #faf7ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(
+            180deg,
+            rgba(105, 0, 255, 1) 15%,
+            rgba(153, 81, 255, 1) 60%,
+            rgba(255, 215, 0, 1) 100%
+          )
+          no-repeat fixed;
+        color: var(--primary-color);
+        font-family: "Basis Grotesque", "Helvetica", "Arial", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        height: 100vh;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .intro {
+        align-items: center;
+        display: flex;
+        min-height: 85vh;
+      }
+
+      .content-border {
+        border: none;
+      }
+
+      @media (min-width: 640px) {
+        .content-border {
+          border: 5px solid var(--primary-color);
+        }
+      }
+
+      .content-padding {
+        padding: 7vh 5vw 0;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        margin: auto;
+        max-width: 666px;
+        overflow: scroll;
+      }
+
+      .fixed-frame {
+        height: calc(100% - 30px);
+        left: 50%;
+        pointer-events: none;
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 30px);
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+      }
+
+      .header-heading {
+        font-size: 36px;
+        font-weight: 800;
+        order: 2;
+      }
+
+      .header-subheading {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .plugs {
+        display: flex;
+        margin-bottom: 37px;
+      }
+
+      .plug {
+        font-weight: 600;
+        margin-right: 22px;
+        opacity: 0.8;
+        text-decoration: none;
+      }
+
+      .plug:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
+      .timeline-list {
+        list-style-type: none;
+        margin: 15px 0 60px;
+        padding: 0;
+      }
+
+      .timeline-list-item {
+        align-items: center;
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .timeline-list-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-date {
+        align-items: center;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        display: flex;
+        font-weight: 500;
+        font-size: 12px;
+        height: 22px;
+        justify-content: center;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+        width: 75px;
+      }
+
+      .timeline-event {
+        flex: 1;
+        margin-bottom: 0;
+        margin-left: 22px;
+      }
+
+      .timeline-event a {
+        color: inherit;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .timeline-event a:hover {
+        text-decoration: underline;
+      }
+
+      .bio-wrapper {
+        margin-bottom: 45px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content-border fixed-frame"></div>
+    <div class="intro">
+      <section class="content-padding content-wrapper">
+        <header class="header">
+          <h1 class="header-heading">Arjan Jassal</h1>
+          <h2 class="header-subheading">Frontend Developer</h2>
+        </header>
+        <div class="plugs">
+          <a class="plug" href="https://github.com/ArjanJ" target="_blank"
+            >GitHub</a
+          >
+          <a class="plug" href="https://codepen.io/arjancodes/" target="_blank"
+            >CodePen</a
+          >
+          <a
+            class="plug"
+            href="https://www.linkedin.com/in/arjan-jassal-27569597/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a class="plug" href="mailto:hello@arjanjassal.com">Email</a>
+        </div>
+        <div class="bio-wrapper">
+          <p>
+            👋 I'm Arjan, and I'm a Frontend Developer in Vancouver. I have over
+            6 years of experience making web things. I'm product focused, play
+            well with others, and eager to learn.
+          </p>
+        </div>
+        <div>
+          <h2 class="header-subheading">Timeline</h2>
+          <ul class="timeline-list">
+            <li class="timeline-list-item">
+              <p class="timeline-date">Feb 2019</p>
+              <p class="timeline-event">Retired</p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Nov 2018</p>
+              <p class="timeline-event">
+                Contracted at
+                <a href="https://taloflow.ai" target="_blank">Taloflow</a>
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Nov 2017</p>
+              <p class="timeline-event">
+                Promoted to Senior Frontend Engineer at
+                <a href="https://poweredbygrow.com" target="_blank">Grow</a>
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Sep 2017</p>
+              <p class="timeline-event">
+                Spoke at
+                <a
+                  href="https://vancouverstartupweek2017.sched.com/event/C9PM/how-to-build-a-bank-with-react"
+                  target="_blank"
+                  >VSW</a
+                >
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Apr 2016</p>
+              <p class="timeline-event">
+                Joined
+                <a href="https://poweredbygrow.com" target="_blank">Grow</a>
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Mar 2015</p>
+              <p class="timeline-event">
+                Joined <a href="https://ettrics.com" target="_blank">Ettrics</a>
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Oct 2014</p>
+              <p class="timeline-event">
+                Joined
+                <a href="https://www.perfectmind.com/" target="_blank"
+                  >PerfectMIND</a
+                >
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Oct 2014</p>
+              <p class="timeline-event">
+                Graduated from
+                <a
+                  href="https://www.bcit.ca/study/programs/6525dipma"
+                  target="_blank"
+                  >BCIT</a
+                >
+              </p>
+            </li>
+            <li class="timeline-list-item">
+              <p class="timeline-date">Sep 2009</p>
+              <p class="timeline-event">
+                Made my first website
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
