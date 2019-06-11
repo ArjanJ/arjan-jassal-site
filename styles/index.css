@@ -1,0 +1,48 @@
+:root {
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  cursor: default;
+  font-family: "Karla", sans-serif;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: #030611;
+  margin: 0;
+}
+
+.intro {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
+
+.intro-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  margin: auto;
+  max-width: 1280px;
+  padding: 0 36px;
+}
+
+.intro-left,
+.intro-right {
+  flex: 1;
+}
+
+.intro-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.intro-heading {
+  color: white;
+  font-size: 84px;
+  letter-spacing: -1px;
+  margin: 0;
+  max-width: 530px;
+}
