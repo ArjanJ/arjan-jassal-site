@@ -1,0 +1,25 @@
+{
+  "name": "arjan-jassal-site",
+  "version": "1.0.0",
+  "description": "My personal website.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArjanJ/arjan-jassal-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArjanJ/arjan-jassal-site/issues"
+  },
+  "homepage": "https://github.com/ArjanJ/arjan-jassal-site#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.5.1"
+  }
+}
