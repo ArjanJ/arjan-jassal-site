@@ -4,7 +4,7 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   cursor: default;
-  font-family: "Karla", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
@@ -15,7 +15,8 @@ body {
 }
 
 #flower {
-  overflow: visible;
+  animation: fadeIn 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  opacity: 0;
 }
 
 .intro {
@@ -33,22 +34,46 @@ body {
   padding: 0 36px;
 }
 
-.intro-left,
-.intro-right {
+.intro-left {
   flex: 1;
 }
 
 .intro-right {
   display: flex;
+  flex: 1;
   justify-content: flex-end;
 }
 
 .intro-heading {
+  animation: fadeInDown 1.4s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   color: white;
   font-size: 84px;
-  letter-spacing: -1.5px;
+  line-height: 1.125;
   margin: 0;
   max-width: 530px;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .middle {

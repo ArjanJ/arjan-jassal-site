@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ArjanJ/arjan-jassal-site#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
+    "sass": "^1.21.0",
     "typescript": "^3.5.1"
   },
   "browserslist": [

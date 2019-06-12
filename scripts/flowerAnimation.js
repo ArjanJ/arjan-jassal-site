@@ -37,27 +37,32 @@ export const flowerAnimation = () => {
   const originalRadius = 106;
 
   // Flower is hidden to start with.
-  hideFlower();
+  hideFlower(async () => {
+    await delay(600);
+    showFlower();
+  });
 
-  function hideFlower() {
+  function hideFlower(callback) {
     flower.rotate(-540, 0, 0);
-    flower.each(function(i) {
+    flower.each(async function(i) {
       const isCenterPetal = i === 5;
 
       // Make the center petal a small white circle.
       if (isCenterPetal) {
-        this.attr({
+        return this.attr({
           r: 16,
           fill: "white"
         });
-
-        return showFlower();
       }
 
       // Hide each petal/circle and position them in the center of the svg.
       this.attr({ fill: "white", r: 0, opacity: 0 });
       this.center(originX, originY);
     });
+
+    if (callback) {
+      callback();
+    }
   }
 
   function showFlower() {
