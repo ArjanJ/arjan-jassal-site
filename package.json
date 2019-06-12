@@ -22,6 +22,9 @@
     "parcel-bundler": "^1.12.3",
     "typescript": "^3.5.1"
   },
+  "browserslist": [
+    "since 2017-06"
+  ],
   "dependencies": {
     "svg.js": "^2.7.1"
   }

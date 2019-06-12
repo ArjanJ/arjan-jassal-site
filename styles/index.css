@@ -14,6 +14,10 @@ body {
   margin: 0;
 }
 
+#flower {
+  overflow: visible;
+}
+
 .intro {
   align-items: center;
   display: flex;
@@ -42,7 +46,11 @@ body {
 .intro-heading {
   color: white;
   font-size: 84px;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   margin: 0;
   max-width: 530px;
+}
+
+.middle {
+  height: 100vh;
 }
