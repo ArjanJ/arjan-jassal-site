@@ -1,4 +1,6 @@
 :root {
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-font-smoothing: antialiased;
@@ -10,13 +12,8 @@
 }
 
 body {
-  background-color: #030611;
+  background-color: #040404;
   margin: 0;
-}
-
-#flower {
-  animation: fadeIn 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-  opacity: 0;
 }
 
 .intro {
@@ -40,18 +37,67 @@ body {
 
 .intro-right {
   display: flex;
-  flex: 1;
   justify-content: flex-end;
+  left: auto;
+  max-width: 1280px;
+  position: fixed;
+  right: auto;
+  width: 100%;
 }
 
 .intro-heading {
-  animation: fadeInDown 1.4s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
   color: white;
   font-size: 84px;
+  letter-spacing: -1px;
   line-height: 1.125;
   margin: 0;
-  max-width: 530px;
+  max-width: 520px;
   opacity: 0;
+}
+
+.flower-svg {
+  animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
+  opacity: 0;
+}
+
+.plugs {
+  animation: fadeIn 1.4s var(--ease-out-cubic) forwards;
+  left: 12px;
+  opacity: 0;
+  position: fixed;
+  top: 12px;
+}
+
+.plugs-link {
+  align-items: center;
+  display: flex;
+  opacity: 0.75;
+  padding: 12px;
+  text-decoration: none;
+  transition: all 0.35s var(--ease-out-cubic);
+
+  &:hover {
+    opacity: 1;
+
+    .plugs-name {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.plugs-name {
+  color: white;
+  font-size: 16px;
+  margin-left: 12px;
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: all 0.35s var(--ease-out-cubic);
+}
+
+.middle {
+  height: 100vh;
 }
 
 @keyframes fadeIn {
@@ -67,15 +113,11 @@ body {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-10%);
+    transform: translateY(10%);
   }
 
   to {
     opacity: 1;
     transform: none;
   }
-}
-
-.middle {
-  height: 100vh;
 }

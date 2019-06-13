@@ -50,7 +50,7 @@ export const flowerAnimation = () => {
       // Make the center petal a small white circle.
       if (isCenterPetal) {
         return this.attr({
-          r: 16,
+          r: 10,
           fill: "white"
         });
       }
