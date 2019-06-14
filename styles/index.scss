@@ -6,13 +6,26 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   cursor: default;
-  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
 
 body {
   background-color: #040404;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.25;
   margin: 0;
 }
 
@@ -39,15 +52,11 @@ body {
   display: flex;
   justify-content: flex-end;
   left: auto;
-  max-width: 1280px;
-  position: fixed;
   right: auto;
-  width: 100%;
 }
 
 .intro-heading {
   animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
-  color: white;
   font-size: 84px;
   letter-spacing: -1px;
   line-height: 1.125;
@@ -98,6 +107,110 @@ body {
 
 .middle {
   height: 100vh;
+  padding: 48px 0;
+
+  &-wrapper {
+    // align-items: center;
+    display: flex;
+    flex: 1;
+    margin: auto;
+    max-width: 1280px;
+    padding: 0 36px;
+  }
+
+  &-left,
+  &-right {
+    flex: 1;
+  }
+
+  &-right {
+    // display: flex;
+    // justify-content: flex-end;
+  }
+
+  &-heading {
+    font-size: 36px;
+    margin-bottom: 45px;
+  }
+
+  &-subheading {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  &-copy {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+}
+
+.timeline-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.timeline-list-item {
+  align-items: center;
+  display: flex;
+  margin-bottom: 30px;
+
+  &:last-child {
+    .timeline-date::before {
+      display: none;
+    }
+  }
+}
+
+.timeline-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  align-items: center;
+  border: 2px solid white;
+  display: flex;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  height: 22px;
+  justify-content: center;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  padding-top: 3px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 75px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    height: 30px;
+    width: 2px;
+    background: white;
+    left: calc(50% - 1px);
+  }
+}
+
+.timeline-event {
+  flex: 1;
+  margin: 8px 0 0 22px;
+}
+
+.timeline-event a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.timeline-event a:hover {
+  text-decoration: underline;
+}
+
+.link {
+  color: white;
 }
 
 @keyframes fadeIn {
