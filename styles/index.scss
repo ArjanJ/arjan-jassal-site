@@ -106,11 +106,9 @@ h6 {
 }
 
 .middle {
-  height: 100vh;
-  padding: 48px 0;
+  padding: 60px 0 180px;
 
   &-wrapper {
-    // align-items: center;
     display: flex;
     flex: 1;
     margin: auto;
@@ -123,14 +121,9 @@ h6 {
     flex: 1;
   }
 
-  &-right {
-    // display: flex;
-    // justify-content: flex-end;
-  }
-
   &-heading {
     font-size: 36px;
-    margin-bottom: 45px;
+    margin-bottom: 60px;
   }
 
   &-subheading {
@@ -140,7 +133,7 @@ h6 {
 
   &-copy {
     font-size: 18px;
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 }
 
@@ -184,13 +177,12 @@ h6 {
   width: 75px;
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 34px;
-    height: 30px;
-    width: 2px;
     background: white;
-    left: calc(50% - 1px);
+    content: "";
+    height: 42px;
+    position: absolute;
+    top: 27px;
+    width: 2px;
   }
 }
 
