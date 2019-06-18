@@ -2,39 +2,45 @@
   align-items: center;
   display: flex;
   height: 100vh;
-}
 
-.intro-wrapper {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  margin: auto;
-  max-width: 1280px;
-  padding: 0 36px;
-}
+  &-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 60px;
+  }
 
-.intro-left {
-  flex: 1;
-}
+  &-left {
+    flex: 2;
+    padding-right: 60px;
+  }
 
-.intro-right {
-  display: flex;
-  justify-content: flex-end;
-  left: auto;
-  right: auto;
-}
+  &-right {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    left: auto;
+    right: auto;
+  }
 
-.intro-heading {
-  animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
-  font-size: 84px;
-  letter-spacing: -1px;
-  line-height: 1.125;
-  margin: 0;
-  max-width: 520px;
-  opacity: 0;
-}
+  &-heading {
+    animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
+    font-size: 80px;
+    letter-spacing: -2px;
+    line-height: 1.125;
+    margin: 0;
+    max-width: 768px;
+    opacity: 0;
 
-.flower-svg {
-  animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
-  opacity: 0;
+    span {
+      color: white;
+    }
+  }
+
+  &-flower-svg {
+    animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
+    opacity: 0;
+  }
 }

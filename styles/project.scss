@@ -1,0 +1,62 @@
+.project {
+  min-height: 100vh;
+  padding: 100px 0;
+
+  &-wrapper {
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 60px;
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &-title-text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &-link {
+    color: white;
+    margin-left: 16px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-banner {
+    align-items: flex-end;
+    background: linear-gradient(96.23deg, #ff6f6f 0.11%, #f9d749 100%);
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    height: 304px;
+    justify-content: center;
+    margin-bottom: 94px;
+  }
+
+  &-write-up-wrapper {
+    margin: auto;
+    max-width: 960px;
+  }
+
+  &-write-up {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  &-write-up-lead {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.25;
+  }
+}
