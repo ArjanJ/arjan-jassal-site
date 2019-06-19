@@ -1,0 +1,42 @@
+.work {
+  min-height: 100vh;
+  padding: 100px 0;
+
+  &-wrapper {
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 60px;
+  }
+
+  &-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &-group {
+    align-items: center;
+    display: flex;
+
+    &-left,
+    &-right {
+      flex: 1;
+    }
+
+    &-date {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+    &-name {
+      font-size: 72px;
+    }
+
+    &-desc {
+      max-width: 480px;
+    }
+  }
+}

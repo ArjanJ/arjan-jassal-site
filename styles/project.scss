@@ -43,8 +43,21 @@
   }
 
   &-write-up-wrapper {
+    height: 234px;
+    overflow: hidden;
     margin: auto;
     max-width: 960px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent, #040404);
+    }
   }
 
   &-write-up {
@@ -58,5 +71,23 @@
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 1.25;
+  }
+
+  &-read-more {
+    background: none;
+    border: none;
+    color: white;
+    display: block;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: auto;
+    text-transform: uppercase;
+    width: 124px;
+
+    svg {
+      margin-top: 8px;
+    }
   }
 }
