@@ -46,10 +46,7 @@ export const projectReadMore = () => {
       readMoreButtonText
     } = elements;
 
-    const openedHeight = `${paragraphWrapper.clientHeight +
-      getOpenedHeight()}px`;
-
-    paragraphWrapper.style.height = openedHeight;
+    paragraphWrapper.style.height = `${getOpenedHeight()}px`;
     overlay.style.opacity = 0;
     readMoreButtonText.innerHTML = OPENED_TEXT;
     readMoreButtonArrow.style.transform = OPENED_ARROW_TRANSFORM;
@@ -98,6 +95,9 @@ export const projectReadMore = () => {
     const bottomOfLastParagraph = scrollY + lastParagraphBottom;
     const bottomOfWrapper = scrollY + wrapperBottom;
 
-    return bottomOfLastParagraph - bottomOfWrapper;
+    const currentHeight = paragraphWrapper.clientHeight;
+    const heightDifference = bottomOfLastParagraph - bottomOfWrapper;
+
+    return currentHeight + heightDifference;
   }
 };
