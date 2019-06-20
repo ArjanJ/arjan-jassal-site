@@ -5,17 +5,22 @@
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
   cursor: default;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #040404;
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Karla", sans-serif;
   margin: 0;
 }
 
