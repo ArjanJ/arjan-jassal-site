@@ -3,8 +3,8 @@
 
   &-wrapper {
     margin: auto;
-    max-width: 1440px;
-    padding: 0 60px;
+    max-width: 1500px;
+    padding: 0 30px;
   }
 
   &-header {
@@ -29,8 +29,9 @@
     flex: 1;
     height: 352px;
     margin-bottom: 64px;
-    padding: 0 120px 60px;
+    padding: 0 60px 45px;
     position: relative;
+    z-index: 1;
 
     &--last {
       margin-left: 64px;
@@ -47,11 +48,27 @@
     &--redsky {
       background: linear-gradient(360deg, #7e51ff 0%, #f94949 100%);
     }
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.7) 86.46%
+      );
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
   }
 
   &-name {
     font-size: 36px;
     letter-spacing: -1px;
+    line-height: 1.125;
   }
 
   &-desc {
@@ -63,11 +80,25 @@
     align-items: center;
     border: 2px solid white;
     border-radius: 50%;
+    bottom: 16px;
     display: flex;
     height: 36px;
     justify-content: center;
     position: absolute;
-    left: 32px;
+    right: 30px;
     width: 36px;
+  }
+
+  &-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -2;
+
+    svg {
+      width: 100%;
+    }
   }
 }
