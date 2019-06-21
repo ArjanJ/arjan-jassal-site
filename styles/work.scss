@@ -1,6 +1,6 @@
 .work {
-  height: 100vh;
-  padding: 100px 0;
+  min-height: 100vh;
+  padding: 60px 0;
 
   &-wrapper {
     margin: auto;
@@ -16,14 +16,11 @@
   }
 
   &-groups {
-    display: flex;
-    width: 300%;
   }
 
   &-group {
     align-items: center;
     display: flex;
-    margin-left: 145px;
 
     &:first-child {
       margin-left: 0;
