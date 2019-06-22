@@ -4,14 +4,15 @@
 
   &-wrapper {
     margin: auto;
-    max-width: 1440px;
-    padding: 0 60px;
+    max-width: 1500px;
+    padding: 0 30px;
   }
 
   &-title {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
+    margin-bottom: 120px;
     text-transform: uppercase;
   }
 
@@ -19,31 +20,48 @@
   }
 
   &-group {
-    align-items: center;
-    display: flex;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &-left,
-    &-right {
-      flex: 1;
-    }
-
-    &-date {
-      font-family: "Josefin Sans", sans-serif;
-      font-size: 16px;
-      letter-spacing: 2px;
-      opacity: 0.7;
-    }
+    margin-bottom: 160px;
 
     &-name {
-      font-size: 72px;
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    &-date,
+    &-role,
+    &-tech {
+      font-family: "Karla", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    &-tech {
+      margin-bottom: 18px;
     }
 
     &-desc {
-      max-width: 480px;
+      font-size: 18px;
+      margin-bottom: 24px;
+      max-width: 580px;
+    }
+
+    &-heading {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    &-highlights {
+      list-style-type: disc;
+      margin-left: 17px;
+      max-width: 580px;
+    }
+
+    &-highlight {
+      font-size: 18px;
+      margin-bottom: 2px;
     }
   }
 }
