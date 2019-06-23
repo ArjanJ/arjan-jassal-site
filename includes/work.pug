@@ -2,9 +2,12 @@ section.work
   .work-wrapper
     header.work-header
       h2.work-title Work Experience
-    .work-groups
-        .work-group
+    .work-groups#workAccordion
+      .work-group
+        header.work-group-header
           h2.work-group-name Taloflow
+          include ./add-icon.pug
+        .work-group-content
           p.work-group-date When: 2018-2019
           p.work-group-role Role: Senior Frontend Engineer
           p.work-group-tech Tech: React, TypeScript, Node.js, Firebase, gRPC, Styled Components
@@ -20,13 +23,42 @@ section.work
             li.work-group-highlight Building a themed dashboard with TypeScript and Styled Components
             li.work-group-highlight Using gRPC protocol on the web for client-server commmunication
             li.work-group-highlight Utilizing Node.js to build a Slack a integration
-        .work-group
+            li.work-group-highlight Collaborating with amazing backend engineers and product designers
+      .work-group
+        header.work-group-header
           h2.work-group-name Grow
+          include ./add-icon.pug
+        .work-group-content
           p.work-group-date When: 2016-2018
           p.work-group-role Role: Senior Frontend Engineer, Team Lead
           p.work-group-tech Tech: React, Flow, Node.js, Firebase, Styled Components
           p.work-group-desc
-            | Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            | Voluptatum provident eum deleniti tempora culpa magnam, veritatis
-            | ad, eligendi incidunt laborum aliquid, nulla animi reiciendis iure
-            | repudiandae fugit odio! Sapiente, dolorem.
+            | I joined Grow's team of 4 engineers while the company was still direct-to-consumer.
+            | Our competition back then were banks and credit unions across Canada. Shortly after joining, Grow pivoted
+            | to a SaaS model, and now our competition were our customers. This brought a lot of challenges to the
+            | engineering team, like making our product white-labeled and modular so that it could be highly scalable
+            | across all customers.
+          strong.work-group-heading Highlights
+          ul.work-group-highlights
+            li.work-group-highlight Architecting a modular white-labeled UI
+            li.work-group-highlight Shipping with some of Canada's largest banks and credit unions
+            li.work-group-highlight Experiencing a leadership role and mentoring junior team members
+            li.work-group-highlight Interviewing many engineers and understanding how hard interviewing is
+            li.work-group-highlight Speaking about how we use React at Vancouver Startup Week
+      .work-group
+        header.work-group-header
+          h2.work-group-name Ettrics
+          include ./add-icon.pug
+        .work-group-content
+          p.work-group-date When: 2015-2016
+          p.work-group-role Role: Frontend Developer
+          p.work-group-tech Tech: Angular.js, React, jQuery
+      .work-group
+        header.work-group-header
+          h2.work-group-name PerfectMind
+          include ./add-icon.pug
+        .work-group-content
+          p.work-group-date When: 2014-2015
+          p.work-group-role Role: Web Designer
+          p.work-group-tech Tech: HTML, CSS, JavaScript
+        

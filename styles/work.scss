@@ -16,16 +16,62 @@
     text-transform: uppercase;
   }
 
-  &-groups {
-  }
-
   &-group {
-    margin-bottom: 160px;
+    border-bottom: 1px solid white;
+
+    &-content {
+      opacity: 0;
+      overflow: hidden;
+      transition: height 0.5s var(--ease-in-out-cubic),
+        opacity 0.35s 0.15s var(--ease-out-cubic);
+
+      &--open {
+        opacity: 1;
+      }
+    }
+
+    &-header {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+
+      svg {
+        opacity: 0.5;
+        transition: opacity 0.5s var(--ease-out-cubic);
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+
+        .work-group-name::before {
+          transform: scaleX(1);
+        }
+      }
+    }
 
     &-name {
+      display: inline-block;
       font-size: 48px;
+      letter-spacing: -1px;
       line-height: 1;
-      margin-bottom: 24px;
+      padding: 24px 0;
+      position: relative;
+
+      &::before {
+        background: white;
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: scaleX(0);
+        transition: transform 0.25s var(--ease-out-cubic);
+        transform-origin: left center;
+        width: 100%;
+      }
     }
 
     &-date,
@@ -43,7 +89,7 @@
 
     &-desc {
       font-size: 18px;
-      margin-bottom: 24px;
+      margin-bottom: 36px;
       max-width: 580px;
     }
 
