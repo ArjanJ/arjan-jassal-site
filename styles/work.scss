@@ -1,6 +1,6 @@
 .work {
-  // min-height: 100vh;
-  padding: 120px 0 120px;
+  padding: 60px 0;
+  min-height: 100vh;
 
   &-wrapper {
     margin: auto;
@@ -8,11 +8,14 @@
     padding: 0 30px;
   }
 
+  &-header {
+    margin-bottom: 24px;
+  }
+
   &-title {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    margin-bottom: 60px;
     text-transform: uppercase;
   }
 
@@ -20,6 +23,7 @@
     border-bottom: 1px solid white;
 
     &-content {
+      display: flex;
       opacity: 0;
       overflow: hidden;
       transition: height 0.5s var(--ease-in-out-cubic),
@@ -54,7 +58,7 @@
 
     &-name {
       display: inline-block;
-      font-size: 48px;
+      font-size: 40px;
       letter-spacing: -1px;
       line-height: 1;
       padding: 24px 0;
@@ -74,29 +78,39 @@
       }
     }
 
-    &-date,
-    &-role,
-    &-tech {
-      font-family: "Karla", sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 2px;
+    &-info,
+    &-body {
+      margin-top: 24px;
     }
 
-    &-tech {
-      margin-bottom: 18px;
+    &-info {
+      width: 470px;
+
+      &-block {
+        margin-bottom: 48px;
+      }
+
+      &-heading {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &-value {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
     }
 
-    &-desc {
-      font-size: 18px;
-      margin-bottom: 36px;
-      max-width: 580px;
-    }
+    &-body {
+      flex: 1;
+      max-width: 632px;
 
-    &-heading {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 8px;
+      &-copy {
+        font-size: 18px;
+        margin-bottom: 48px;
+      }
     }
 
     &-highlights {
