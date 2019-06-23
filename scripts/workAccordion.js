@@ -20,7 +20,6 @@ export const workAccordion = () => {
   };
 
   const CONTENT_OPEN_CLASSNAME = "work-group-content--open";
-  const HEIGHT_OFFSET = 48;
 
   init();
 
@@ -63,8 +62,14 @@ export const workAccordion = () => {
     const { openShelves } = state;
     const { target } = event;
     const workGroupElement = target.closest(".work-group");
+    const workGroupContentElement = target.closest(".work-group-content");
 
-    if (workGroupElement) {
+    /**
+     * If we clicked on an element that has a parent of .work-group-content
+     * we don't want to do anything because the inner content should be
+     * clickable without the section closing or opening.
+     */
+    if (!workGroupContentElement && workGroupElement) {
       const index = parseInt(workGroupElement.getAttribute("data-index"), 10);
       const isOpen = openShelves.includes(index);
       const contentElement = workGroupElement.querySelector(
@@ -79,7 +84,7 @@ export const workAccordion = () => {
       }
 
       // Open the section.
-      contentElement.style.height = `${state.heights[index] + HEIGHT_OFFSET}px`;
+      contentElement.style.height = `${state.heights[index]}px`;
       contentElement.classList.add(CONTENT_OPEN_CLASSNAME);
       return addOpenShelf(index);
     }
