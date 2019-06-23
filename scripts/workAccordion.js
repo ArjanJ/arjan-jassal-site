@@ -20,7 +20,7 @@ export const workAccordion = () => {
   };
 
   const CONTENT_OPEN_CLASSNAME = "work-group-content--open";
-  const HEIGHT_OFFSET = 36;
+  const HEIGHT_OFFSET = 48;
 
   init();
 
@@ -71,12 +71,14 @@ export const workAccordion = () => {
         ".work-group-content"
       );
 
+      // Close the section.
       if (isOpen) {
-        collapseHeightOfShelf(getContentElement(workGroupElement));
+        setHeight(getContentElement(workGroupElement));
         contentElement.classList.remove(CONTENT_OPEN_CLASSNAME);
         return removeOpenShelf(index);
       }
 
+      // Open the section.
       contentElement.style.height = `${state.heights[index] + HEIGHT_OFFSET}px`;
       contentElement.classList.add(CONTENT_OPEN_CLASSNAME);
       return addOpenShelf(index);
@@ -116,13 +118,13 @@ export const workAccordion = () => {
 
     const childrenArr = Array.from(children);
     const getContentAndCloseShelf = shelf =>
-      collapseHeightOfShelf(getContentElement(shelf));
+      setHeight(getContentElement(shelf));
 
     return childrenArr.forEach(getContentAndCloseShelf);
   }
 
-  function collapseHeightOfShelf(shelf) {
-    shelf.style.height = "0px";
+  function setHeight(element, value = 0) {
+    element.style.height = `${value}px`;
   }
 
   function getContentElement(shelf) {
