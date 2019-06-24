@@ -8,8 +8,16 @@
     display: flex;
     flex: 1;
     margin: auto;
-    max-width: 1500px;
+    max-width: 1080px;
     padding: 0 30px;
+
+    @include mq($from: wide) {
+      max-width: 1280px;
+    }
+
+    @include mq($from: planet) {
+      max-width: 1500px;
+    }
   }
 
   &-left {
@@ -27,7 +35,7 @@
 
   &-heading {
     animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
-    font-size: 80px;
+    font-size: 60px;
     letter-spacing: -2px;
     line-height: 1.125;
     margin: 0;
@@ -37,10 +45,23 @@
     span {
       color: white;
     }
+
+    @include mq($from: wide) {
+      font-size: 72px;
+    }
+
+    @include mq($from: planet) {
+      font-size: 80px;
+    }
   }
 
   &-flower-svg {
     animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
     opacity: 0;
+    width: 336px;
+
+    @include mq($from: wide) {
+      width: 408px;
+    }
   }
 }
