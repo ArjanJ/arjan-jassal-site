@@ -3,6 +3,11 @@
  * This code toggles the sections under "Work Experience".
  */
 export const workAccordion = () => {
+  const ACCORDION_ID = "workAccordion";
+  const CONTENT_OPEN_CLASSNAME = "work-group-content--open";
+  const WORK_GROUP_CLASSNAME = "work-group";
+  const WORK_GORUP_CONTENT_CLASSNAME = "work-group-content";
+
   /**
    * heights: The heights of each accordion section when open.
    * openShelves: The indices of open accordion sections.
@@ -12,14 +17,12 @@ export const workAccordion = () => {
     openShelves: []
   };
 
-  const accordionElement = document.getElementById("workAccordion");
+  const accordionElement = document.getElementById(ACCORDION_ID);
 
   const elements = {
     parent: accordionElement,
     children: getChildren(accordionElement)
   };
-
-  const CONTENT_OPEN_CLASSNAME = "work-group-content--open";
 
   init();
 
@@ -37,7 +40,7 @@ export const workAccordion = () => {
   }
 
   function getChildren(parent) {
-    if (parent.children) {
+    if (parent && parent.children) {
       return parent.children;
     } else {
       return [];
@@ -61,8 +64,10 @@ export const workAccordion = () => {
   function handleClick(event) {
     const { openShelves } = state;
     const { target } = event;
-    const workGroupElement = target.closest(".work-group");
-    const workGroupContentElement = target.closest(".work-group-content");
+    const workGroupElement = target.closest(`.${WORK_GROUP_CLASSNAME}`);
+    const workGroupContentElement = target.closest(
+      `.${WORK_GROUP_CONTENTCLASSNAME}`
+    );
 
     /**
      * If we clicked on an element that has a parent of .work-group-content
@@ -74,7 +79,7 @@ export const workAccordion = () => {
       const isOpen = openShelves.includes(index);
       const backgroundColor = workGroupElement.getAttribute("data-color");
       const contentElement = workGroupElement.querySelector(
-        ".work-group-content"
+        `.${WORK_GROUP_CONTENTCLASSNAME}`
       );
 
       // Close the section.
@@ -103,7 +108,7 @@ export const workAccordion = () => {
 
   /**
    * getHeights
-   * Returns the heights of content within each accordion section.
+   * Returns the height of content within each accordion section.
    */
   function getHeights() {
     const { children } = elements;
@@ -117,6 +122,10 @@ export const workAccordion = () => {
     );
   }
 
+  /**
+   * collapseHeightOfShelves
+   * Visually closes all of the accordion sections.
+   */
   function collapseHeightOfShelves() {
     const { children } = elements;
 
@@ -135,10 +144,14 @@ export const workAccordion = () => {
     element.style.height = `${value}px`;
   }
 
-  function getContentElement(shelf) {
-    return shelf.querySelector(".work-group-content");
+  function getContentElement(element) {
+    return element.querySelector(`.${WORK_GROUP_CONTENT_CLASSNAME}`);
   }
 
+  /**
+   * addIndexAttr
+   * Adds 'data-index={}` attribute to all accordion sections.
+   */
   function addIndexAttr() {
     const { children } = elements;
 
