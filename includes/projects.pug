@@ -1,0 +1,30 @@
+section.projects
+  .projects-wrapper
+    header.projects-header
+      h2.projects-title Side Projects
+    .projects-list
+      .projects-box.projects-box--sunset
+        .projects-box-info
+          h3.projects-name Teamwork
+          p.projects-desc An app to help you manage your team.
+          a.projects-gh(href="https://github.com/ArjanJ/teamwork" target="_blank") 
+            include ./icons/gh-icon.pug
+        .projects-img
+          include ./teamwork.pug
+    .projects-list
+      .projects-box.projects-box--cyan
+        .projects-box-info
+          h3.projects-name Readit
+          p.projects-desc A single page Reddit app.
+          a.projects-gh(href="https://github.com/ArjanJ/readit" target="_blank") 
+            include ./icons/gh-icon.pug
+        .projects-img
+          include ./readit.pug
+      .projects-box.projects-box--last.projects-box--redsky
+        .projects-box-info
+          h3.projects-name React Camera
+          p.projects-desc A flexible camera component for React DOM.
+          a.projects-gh(href="https://github.com/ArjanJ/react-camera" target="_blank") 
+            include ./icons/gh-icon.pug
+        .projects-img
+          include ./react-camera.pug
