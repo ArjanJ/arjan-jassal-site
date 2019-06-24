@@ -62,7 +62,7 @@
 
     &-name {
       display: inline-block;
-      font-size: 84px;
+      font-size: 72px;
       letter-spacing: -2px;
       line-height: 1;
       padding: 36px 0;
@@ -103,7 +103,7 @@
       &-heading,
       &-value {
         font-family: "Karla", sans-serif;
-        font-size: 16px;
+        font-size: 18px;
       }
 
       &-heading {
@@ -112,10 +112,10 @@
     }
 
     &-body {
-      max-width: 480px;
+      flex: 1;
 
       &-copy {
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 36px;
       }
     }
@@ -127,8 +127,8 @@
     }
 
     &-highlight {
-      font-size: 16px;
-      margin-bottom: 18px;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
   }
 }

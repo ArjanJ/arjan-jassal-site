@@ -25,10 +25,12 @@
   &-box {
     align-items: flex-end;
     border-radius: 8px;
+    box-shadow: 0 2px 18px rgba(black, 0.2);
     display: flex;
     flex: 1;
     height: 352px;
     margin-bottom: 64px;
+    overflow: hidden;
     padding: 0 60px 45px;
     position: relative;
     z-index: 1;

@@ -72,6 +72,7 @@ export const workAccordion = () => {
     if (!workGroupContentElement && workGroupElement) {
       const index = parseInt(workGroupElement.getAttribute("data-index"), 10);
       const isOpen = openShelves.includes(index);
+      const backgroundColor = workGroupElement.getAttribute("data-color");
       const contentElement = workGroupElement.querySelector(
         ".work-group-content"
       );
@@ -80,12 +81,14 @@ export const workAccordion = () => {
       if (isOpen) {
         setHeight(getContentElement(workGroupElement));
         contentElement.classList.remove(CONTENT_OPEN_CLASSNAME);
+        removeBackgroundColor();
         return removeOpenShelf(index);
       }
 
       // Open the section.
       contentElement.style.height = `${state.heights[index]}px`;
       contentElement.classList.add(CONTENT_OPEN_CLASSNAME);
+      setBackgroundColor(backgroundColor);
       return addOpenShelf(index);
     }
   }
@@ -148,5 +151,13 @@ export const workAccordion = () => {
     childrenArr.forEach((child, index) => {
       child.setAttribute("data-index", index);
     });
+  }
+
+  function setBackgroundColor(color) {
+    document.body.style.backgroundColor = color;
+  }
+
+  function removeBackgroundColor() {
+    document.body.removeAttribute("style");
   }
 };

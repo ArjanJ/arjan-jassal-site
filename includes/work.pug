@@ -3,26 +3,11 @@ section.work
     header.work-header
       h2.work-title Work Experience
     .work-groups#workAccordion
-      .work-group
+      .work-group(data-color="#0061FF")
         header.work-group-header
           h2.work-group-name Taloflow
           include ./add-icon.pug
         .work-group-content
-          .work-group-body
-            p.work-group-body-copy
-              | I joined Taloflow's intimate team as their first frontend engineer.
-              | Part of my role was to decide what tech to use, how to structure things, and to get an MVP up and running
-              | a.s.a.p. Like most startups, there are tight deadlines, and tight deadlines come with trade-offs.
-            p.work-group-body-copy
-              | With that in mind, I choose to use tech I was very familiar with like <strong>React</strong>, <strong>Styled Components</strong>, and <strong>Firebase</strong>,
-              | and <em>some</em> tech I'd never used but wanted to, like <strong>TypeScript</strong>. Quick progress was made due to tools like React,
-              | whilst still providing a challenge by learning TypeScript.
-            h3.work-group-info-heading Highlights
-            ul.work-group-highlights
-              li.work-group-highlight Building a themed dashboard with <strong>TypeScript</strong> and Styled Components
-              li.work-group-highlight Using <strong>gRPC protocol</strong> on the web for client-server commmunication
-              li.work-group-highlight Utilizing Node.js to build a <strong>Slack</strong> a integration
-              li.work-group-highlight Collaborating with amazing backend engineers and product designers
           .work-group-info
             .work-group-info-block
               h3.work-group-info-heading When
@@ -30,41 +15,102 @@ section.work
             .work-group-info-block
               h3.work-group-info-heading Role
               p.work-group-info-value Sr. Frontend Engineer
-      .work-group
+          .work-group-body
+            p.work-group-body-copy
+              | I joined Taloflow's intimate team as their first frontend engineer.
+              | Part of my role was to decide what tech to use, how to structure things, and to get an MVP up and running
+              | a.s.a.p. Like most startups, there are tight deadlines, and tight deadlines come with trade-offs.
+            p.work-group-body-copy
+              | With that in mind, I choose to use tech I was very familiar with like <strong>React</strong>, <strong>Styled Components</strong>, and <strong>Firebase</strong>,
+              | and <em>some</em> tech I'd never used but wanted to, like <strong>TypeScript</strong>.
+              | This way I could still progress quickly and keep things interesting by learning something new.
+            h3.work-group-info-heading Highlights
+            ul.work-group-highlights
+              li.work-group-highlight Building a themed dashboard with <strong>TypeScript</strong> and Styled Components
+              li.work-group-highlight Using <strong>gRPC protocol</strong> on the web for client-server commmunication
+              li.work-group-highlight Utilizing Node.js to build a <strong>Slack</strong> a integration
+              li.work-group-highlight Collaborating with amazing backend engineers and product designers
+      .work-group(data-color="#28ABE1")
         header.work-group-header
           h2.work-group-name Grow
           include ./add-icon.pug
         .work-group-content
-          p.work-group-date When: 2016-2018
-          p.work-group-role Role: Senior Frontend Engineer, Team Lead
-          p.work-group-tech Tech: React, Flow, Node.js, Firebase, Styled Components
-          p.work-group-desc
-            | I joined Grow's team of 4 engineers while the company was still direct-to-consumer.
-            | Our competition back then were banks and credit unions across Canada. Shortly after joining, Grow pivoted
-            | to a SaaS model, and now our competition were our customers. This brought a lot of challenges to the
-            | engineering team, like making our product white-labeled and modular so that it could be highly scalable
-            | across all customers.
-          strong.work-group-heading Highlights
-          ul.work-group-highlights
-            li.work-group-highlight Architecting a modular white-labeled UI
-            li.work-group-highlight Shipping with some of Canada's largest banks and credit unions
-            li.work-group-highlight Experiencing a leadership role and mentoring junior team members
-            li.work-group-highlight Interviewing many engineers and understanding how hard interviewing is
-            li.work-group-highlight Speaking about how we use React at Vancouver Startup Week
-      .work-group
+          .work-group-info
+            .work-group-info-block
+              h3.work-group-info-heading When
+              p.work-group-info-value 2016/2018
+            .work-group-info-block
+              h3.work-group-info-heading Role
+              p.work-group-info-value Sr. Frontend Engineer, Team Lead
+          .work-group-body
+            p.work-group-body-copy
+              | I joined Grow's team of 4 engineers while the company was still direct-to-consumer.
+              | Grow's competition back then was banks and credit unions across Canada. Shortly after joining, Grow pivoted
+              | to a SaaS model, and now their competition were customers. This brought many challenges to the
+              | engineering team, like making our product white-labeled and modular so that it could be highly scalable
+              | across all customers.
+            p.work-group-body-copy
+              | The next 2 years were spent utilizing <strong>React</strong>, <strong>Redux</strong>, and
+              | many other great tools in the JavaScript ecosystem to build the UI that powered Grow's
+              | modular product. I also helped build out the frontend team by <strong>interviewing</strong> countless candidates
+              | and taking part in refining Grow's interview process.
+            p.work-group-body-copy
+              | Grow also didn't have any product designers, so myself and another frontend engineer designed all
+              | products and old marketing websites. This was a fun but challenging responsibilty because we had to
+              | thinking about the UX, UI, and code, so there was a lot of context switching, but also a lot of
+              | great experience wearing those different hats. 
+            h3.work-group-info-heading Highlights
+            ul.work-group-highlights
+              li.work-group-highlight Architecting a modular white-labeled UI
+              li.work-group-highlight Shipping with some of Canada's largest banks and credit unions
+              li.work-group-highlight Experiencing a <strong>leadership</strong> role and <strong>mentoring</strong> junior team members
+              li.work-group-highlight <strong>Interviewing</strong> many engineers and understanding how hard interviewing is
+              li.work-group-highlight Speaking about how we use React at <strong>Vancouver Startup Week</strong>
+      .work-group(data-color="#21da9c")
         header.work-group-header
           h2.work-group-name Ettrics
           include ./add-icon.pug
         .work-group-content
-          p.work-group-date When: 2015-2016
-          p.work-group-role Role: Frontend Developer
-          p.work-group-tech Tech: Angular.js, React, jQuery
-      .work-group
+          .work-group-info
+            .work-group-info-block
+              h3.work-group-info-heading When
+              p.work-group-info-value 2015/2016
+            .work-group-info-block
+              h3.work-group-info-heading Role
+              p.work-group-info-value Frontend Developer
+          .work-group-body
+            p.work-group-body-copy
+              | I joined Grow's team of 4 engineers while the company was still direct-to-consumer.
+              | Grow's competition back then was banks and credit unions across Canada. Shortly after joining, Grow pivoted
+              | to a SaaS model, and now their competition were customers. This brought many challenges to the
+              | engineering team, like making our product white-labeled and modular so that it could be highly scalable
+              | across all customers.
+            h3.work-group-info-heading Highlights
+            ul.work-group-highlights
+              li.work-group-highlight First time working remotely
+              li.work-group-highlight Started building apps with JavaScript instead of marketing websites
+              li.work-group-highlight Someone showed me how to use Git properly
+      .work-group(data-color="#1D4287")
         header.work-group-header
           h2.work-group-name PerfectMind
           include ./add-icon.pug
         .work-group-content
-          p.work-group-date When: 2014-2015
-          p.work-group-role Role: Web Designer
-          p.work-group-tech Tech: HTML, CSS, JavaScript
+          .work-group-info
+            .work-group-info-block
+              h3.work-group-info-heading When
+              p.work-group-info-value 2014/2015
+            .work-group-info-block
+              h3.work-group-info-heading Role
+              p.work-group-info-value Web Designer
+          .work-group-body
+            p.work-group-body-copy
+              | I joined Grow's team of 4 engineers while the company was still direct-to-consumer.
+              | Grow's competition back then was banks and credit unions across Canada. Shortly after joining, Grow pivoted
+              | to a SaaS model, and now their competition were customers. This brought many challenges to the
+              | engineering team, like making our product white-labeled and modular so that it could be highly scalable
+              | across all customers.
+            h3.work-group-info-heading Highlights
+            ul.work-group-highlights
+              li.work-group-highlight Experienced what it's like to build web things for a living
+              li.work-group-highlight Taught co-workers modern tools (at the time) like Gulp, SCSS, etc...
         
