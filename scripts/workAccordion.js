@@ -6,7 +6,7 @@ export const workAccordion = () => {
   const ACCORDION_ID = "workAccordion";
   const CONTENT_OPEN_CLASSNAME = "work-group-content--open";
   const WORK_GROUP_CLASSNAME = "work-group";
-  const WORK_GORUP_CONTENT_CLASSNAME = "work-group-content";
+  const WORK_GROUP_CONTENT_CLASSNAME = "work-group-content";
 
   /**
    * heights: The heights of each accordion section when open.
@@ -26,17 +26,18 @@ export const workAccordion = () => {
 
   init();
 
-  /**
-   * init
-   * First, add data-index attr to each accordion section, so we
-   * know which one we clicked. Then get the heights of each section,
-   * then close all of the sections by setting their height to 0.
-   */
   function init() {
-    addIndexAttr();
+    // Store the original heights of each section.
     state.heights = getHeights();
-    setupEventListeners();
+
+    // Add an index to the DOM so we know which one is which.
+    addIndexAttr();
+
+    // Set the height to 0 on all sections.
     collapseHeightOfShelves();
+
+    // Make clicking do things.
+    setupEventListeners();
   }
 
   function getChildren(parent) {
@@ -66,7 +67,7 @@ export const workAccordion = () => {
     const { target } = event;
     const workGroupElement = target.closest(`.${WORK_GROUP_CLASSNAME}`);
     const workGroupContentElement = target.closest(
-      `.${WORK_GROUP_CONTENTCLASSNAME}`
+      `.${WORK_GROUP_CONTENT_CLASSNAME}`
     );
 
     /**
@@ -79,7 +80,7 @@ export const workAccordion = () => {
       const isOpen = openShelves.includes(index);
       const backgroundColor = workGroupElement.getAttribute("data-color");
       const contentElement = workGroupElement.querySelector(
-        `.${WORK_GROUP_CONTENTCLASSNAME}`
+        `.${WORK_GROUP_CONTENT_CLASSNAME}`
       );
 
       // Close the section.
