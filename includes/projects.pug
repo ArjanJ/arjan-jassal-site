@@ -3,7 +3,7 @@ section.projects
     header.projects-header
       h2.projects-title Side Projects
     .projects-list
-      .projects-box.projects-box--sunset
+      .projects-box.projects-box--sunset(data-sal="slide-up" data-sal-duration="650" data-sal-easing="ease-out-cubic")
         .projects-box-info
           h3.projects-name Teamwork
           p.projects-desc An app to help manage your team.
@@ -12,7 +12,7 @@ section.projects
         .projects-img
           include ./teamwork.pug
     .projects-list
-      .projects-box.projects-box--cyan
+      .projects-box.projects-box--cyan(data-sal="slide-up" data-sal-duration="650" data-sal-easing="ease-out-cubic")
         .projects-box-info
           h3.projects-name Readit
           p.projects-desc A single page Reddit app.
@@ -20,7 +20,7 @@ section.projects
             include ./icons/gh-icon.pug
         .projects-img
           include ./readit.pug
-      .projects-box.projects-box--last.projects-box--redsky
+      .projects-box.projects-box--last.projects-box--redsky(data-sal="slide-up" data-sal-delay="150" data-sal-duration="650" data-sal-easing="ease-out-cubic")
         .projects-box-info
           h3.projects-name React Camera
           p.projects-desc A flexible camera component for React DOM.
