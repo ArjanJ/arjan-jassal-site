@@ -22,18 +22,21 @@
   &-group {
     border-bottom: 1px solid white;
 
+    &[data-expanded="true"] {
+      .work-group-content {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     &-content {
+      height: 0;
       opacity: 0;
       overflow: hidden;
       transform: translateY(5%);
       transition: height 0.6s var(--ease-in-out-cubic),
         opacity 0.6s 0.35s var(--ease-out-cubic),
         transform 0.6s 0.35s var(--ease-out-cubic);
-
-      &--open {
-        opacity: 1;
-        transform: none;
-      }
 
       @include mq($from: desktop) {
         display: flex;
