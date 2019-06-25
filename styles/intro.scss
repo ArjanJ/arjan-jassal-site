@@ -1,66 +1,103 @@
 .intro {
-  align-items: center;
+  align-items: flex-end;
   display: flex;
-  height: 100vh;
+  height: 396px;
+
+  @include mq($from: desktop) {
+    align-items: center;
+    height: 100vh;
+  }
 
   &-wrapper {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    margin: auto;
-    max-width: 1080px;
+    margin: 0 auto;
     padding: 0 30px;
+
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      max-width: 924px;
+    }
+
+    @include mq($from: largeDesktop) {
+      max-width: 1080px;
+    }
 
     @include mq($from: wide) {
       max-width: 1280px;
     }
 
-    @include mq($from: planet) {
+    @include mq($from: superwide) {
       max-width: 1500px;
     }
   }
 
   &-left {
-    flex: 2;
-    padding-right: 60px;
+    @include mq($from: desktop) {
+      flex: 2;
+      padding-right: 60px;
+    }
   }
 
   &-right {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    left: auto;
-    right: auto;
+    @include mq($from: desktop) {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
   }
 
   &-heading {
     animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
-    font-size: 60px;
-    letter-spacing: -2px;
-    line-height: 1.125;
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.2;
     margin: 0;
-    max-width: 768px;
     opacity: 0;
 
     span {
       color: white;
     }
 
+    @include mq($from: desktop) {
+      font-size: 52px;
+      max-width: 768px;
+    }
+
+    @include mq($from: largeDesktop) {
+      font-size: 60px;
+      letter-spacing: -2px;
+      line-height: 1.125;
+    }
+
     @include mq($from: wide) {
       font-size: 72px;
     }
 
-    @include mq($from: planet) {
+    @include mq($from: superwide) {
       font-size: 80px;
     }
   }
 
   &-flower-svg {
-    animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
-    opacity: 0;
-    width: 336px;
+    display: none;
+
+    @include mq($from: desktop) {
+      animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
+      display: block;
+      opacity: 0;
+      width: 300px;
+    }
+
+    @include mq($from: largeDesktop) {
+      width: 312px;
+    }
 
     @include mq($from: wide) {
+      width: 360px;
+    }
+
+    @include mq($from: superwide) {
       width: 408px;
     }
   }
