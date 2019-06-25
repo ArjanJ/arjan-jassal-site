@@ -8,6 +8,7 @@
     align-items: center;
     height: 100vh;
     padding-bottom: 0;
+    position: relative;
   }
 
   &-wrapper {
@@ -74,10 +75,6 @@
     @include mq($from: wide) {
       font-size: 72px;
     }
-
-    @include mq($from: superwide) {
-      font-size: 80px;
-    }
   }
 
   &-flower-svg {
@@ -99,7 +96,57 @@
     }
 
     @include mq($from: superwide) {
-      width: 408px;
+      width: 396px;
     }
+  }
+
+  &-scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+
+    &-line {
+      background: rgba(255, 255, 255, 0.5);
+      height: 84px;
+      overflow: hidden;
+      position: relative;
+      width: 1px;
+
+      &::before {
+        animation: scrollIndicator 1.2s linear infinite;
+        background: white;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      top: -36px;
+      left: 0;
+      width: 130px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
   }
 }
