@@ -1,6 +1,7 @@
 import sal from "sal.js";
 
 import { flowerAnimation } from "./flowerAnimation";
+import { toggleScrollIndicator } from "./toggleScrollIndicator";
 import { workAccordion } from "./workAccordion";
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -8,5 +9,6 @@ window.addEventListener("DOMContentLoaded", event => {
     threshold: 0.36
   });
   flowerAnimation();
+  toggleScrollIndicator();
   workAccordion();
 });

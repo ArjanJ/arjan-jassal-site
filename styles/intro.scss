@@ -104,6 +104,12 @@
     position: absolute;
     bottom: 0;
     left: 30px;
+    transition: all 0.35s var(--ease-out-cubic);
+
+    &--hide {
+      opacity: 0;
+      transform: translateY(18%);
+    }
 
     &-line {
       background: rgba(255, 255, 255, 0.5);
