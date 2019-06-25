@@ -3,8 +3,23 @@
 
   &-wrapper {
     margin: auto;
-    max-width: 1500px;
     padding: 0 30px;
+
+    @include mq($from: desktop) {
+      max-width: 924px;
+    }
+
+    @include mq($from: largeDesktop) {
+      max-width: 1080px;
+    }
+
+    @include mq($from: wide) {
+      max-width: 1280px;
+    }
+
+    @include mq($from: superwide) {
+      max-width: 1500px;
+    }
   }
 
   &-header {
@@ -23,7 +38,7 @@
   }
 
   &-list {
-    @include mq($from: desktop) {
+    @include mq($from: largeDesktop) {
       display: flex;
     }
   }
@@ -47,7 +62,7 @@
     }
 
     &--last {
-      @include mq($from: desktop) {
+      @include mq($from: largeDesktop) {
         margin-left: 64px;
       }
     }
@@ -96,10 +111,13 @@
     font-size: 16px;
     max-width: 216px;
 
+    @include mq($from: tablet) {
+      max-width: none;
+    }
+
     @include mq($from: desktop) {
       font-size: 20px;
       letter-spacing: -0.5px;
-      max-width: none;
     }
   }
 
@@ -142,7 +160,19 @@
     width: 100%;
     z-index: -2;
 
+    @include mq($from: tablet) {
+      padding: 0 90px;
+    }
+
     @include mq($from: desktop) {
+      padding: 0 120px;
+    }
+
+    @include mq($from: largeDesktop) {
+      padding: 0 60px;
+    }
+
+    @include mq($from: wide) {
       padding: 0 90px;
     }
 
