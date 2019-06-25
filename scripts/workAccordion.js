@@ -1,3 +1,5 @@
+import { debounce } from "./utils";
+
 /**
  * workAccordion
  * This code toggles the sections under "Work Experience".
@@ -24,20 +26,21 @@ export const workAccordion = () => {
     children: getChildren(accordionElement)
   };
 
+  const handleResize = debounce(() => {
+    state.heights = getHeights();
+    state.openShelves = [];
+    collapseHeightOfShelves();
+  }, 100);
+
   init();
 
-  function init() {
-    // Store the original heights of each section.
-    state.heights = getHeights();
-
-    // Add an index to the DOM so we know which one is which.
-    addIndexAttr();
-
-    // Set the height to 0 on all sections.
-    collapseHeightOfShelves();
-
-    // Make clicking do things.
-    setupEventListeners();
+  /**
+   * Add one event listener to the accordion element instead
+   * of each section within.
+   */
+  function setupEventListeners() {
+    elements.parent.addEventListener("click", handleClick, false);
+    window.addEventListener("resize", handleResize);
   }
 
   function getChildren(parent) {
@@ -46,14 +49,6 @@ export const workAccordion = () => {
     } else {
       return [];
     }
-  }
-
-  /**
-   * Add one event listener to the accordion element instead
-   * of each section within.
-   */
-  function setupEventListeners() {
-    elements.parent.addEventListener("click", handleClick, false);
   }
 
   /**
@@ -173,5 +168,19 @@ export const workAccordion = () => {
 
   function removeBackgroundColor() {
     document.body.removeAttribute("style");
+  }
+
+  function init() {
+    // Store the original heights of each section.
+    state.heights = getHeights();
+
+    // Add an index to the DOM so we know which one is which.
+    addIndexAttr();
+
+    // Set the height to 0 on all sections.
+    collapseHeightOfShelves();
+
+    // Make clicking do things.
+    setupEventListeners();
   }
 };
