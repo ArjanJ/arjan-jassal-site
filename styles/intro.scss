@@ -2,7 +2,7 @@
   align-items: flex-end;
   display: flex;
   height: 480px;
-  padding-bottom: 60px;
+  padding-bottom: 36px;
 
   @include mq($from: desktop) {
     align-items: center;

@@ -8,12 +8,12 @@
     background: #04002f;
     height: auto;
     max-height: 256px;
-    padding: 24px 12px;
-    width: 48px;
+    padding: 2vh 2vw;
+    width: 10vw;
 
     @include mq($from: desktop) {
-      padding: 45px 16px;
-      width: 180px;
+      padding: 4vh 1vw;
+      width: 8vw;
     }
 
     &-line {
@@ -43,24 +43,16 @@
 
   &-main {
     flex: 1;
-    padding: 12px;
+    padding: 2vh 2vw;
 
     @include mq($from: desktop) {
-      padding: 45px;
+      padding: 4vh 4vw;
     }
   }
 
   &-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
-
-    @include mq($from: tablet) {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    @include mq($from: desktop) {
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
+    grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
   }
 
   &-item {
