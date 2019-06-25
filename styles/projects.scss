@@ -11,7 +11,7 @@
     margin-bottom: 18px;
 
     @include mq($from: desktop) {
-      margin-bottom: 84px;
+      margin-bottom: 48px;
     }
   }
 
@@ -70,6 +70,7 @@
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0.7) 86.46%
       );
+      border-radius: 8px;
       content: "";
       height: 100%;
       left: 0;
