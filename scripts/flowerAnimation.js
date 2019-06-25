@@ -3,12 +3,7 @@ import svg from "svg.js";
 import { delay, svgUtils } from "./utils";
 
 export const flowerAnimation = () => {
-  const flowerSvgId = "flower";
-  const flowerSvg = document.getElementById(flowerSvgId);
-
-  if (flowerSvg === null) {
-    throw new Error(`No SVG with id '${flowerSvgId}' found.`);
-  }
+  const flowerSvg = document.querySelector(".intro-flower-svg");
 
   // The SVG located in index.html
   const flower = svg.adopt(flowerSvg);
