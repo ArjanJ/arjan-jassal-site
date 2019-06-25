@@ -86,11 +86,12 @@
       font-size: 42px;
       letter-spacing: -2px;
       line-height: 1;
-      padding: 36px 0;
+      padding: 24px 0;
       position: relative;
 
       @include mq($from: tablet) {
         font-size: 60px;
+        padding: 36px 0;
       }
 
       @include mq($from: largeDesktop) {
@@ -113,7 +114,7 @@
 
     &-info,
     &-body {
-      margin-top: 24px;
+      margin-top: 18px;
     }
 
     &-info {
@@ -156,7 +157,15 @@
     &-highlights {
       list-style-type: disc;
       margin-left: 17px;
-      padding-bottom: 84px;
+      padding-bottom: 48px;
+
+      @include mq($from: desktop) {
+        padding-bottom: 60px;
+      }
+
+      @include mq($from: wide) {
+        padding-bottom: 84px;
+      }
     }
 
     &-highlight {
