@@ -47,6 +47,7 @@
     align-items: flex-end;
     border-radius: 8px;
     box-shadow: 0 2px 18px rgba(black, 0.2);
+    cursor: pointer;
     display: flex;
     flex: 1;
     height: 228px;
@@ -83,16 +84,24 @@
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.7) 86.46%
+        rgba(0, 0, 0, 0.85) 86.46%
       );
       border-radius: 8px;
       content: "";
       height: 100%;
       left: 0;
+      opacity: 0.85;
       position: absolute;
       top: 0;
+      transition: opacity 0.25s var(--ease-out-cubic);
       width: 100%;
       z-index: -1;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
@@ -148,6 +157,13 @@
     svg {
       height: 18px;
       width: 18px;
+      transition: transform 0.25s var(--ease-out-cubic);
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.25) rotate(360deg);
+      }
     }
   }
 
