@@ -6,8 +6,13 @@
 
   &-sidebar {
     background: #04002f;
-    padding: 45px 16px;
-    width: 180px;
+    padding: 24px 12px;
+    width: 72px;
+
+    @include mq($from: desktop) {
+      padding: 45px 16px;
+      width: 180px;
+    }
 
     &-line {
       background: rgba(white, 0.25);
@@ -31,27 +36,43 @@
 
   &-main {
     flex: 1;
-    padding: 45px;
+    padding: 24px;
+
+    @include mq($from: desktop) {
+      padding: 45px;
+    }
   }
 
   &-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    @include mq($from: desktop) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
   }
 
   &-item {
     align-items: center;
     background: rgba(black, 0.25);
     display: flex;
-    height: 80px;
-    margin: 0 20px 30px;
+    height: 60px;
+    margin: 0 0 24px;
     padding: 0 16px;
+
+    @include mq($from: desktop) {
+      height: 80px;
+      margin: 0 20px 30px;
+    }
 
     &-circle {
       background: rgba(white, 0.35);
       border-radius: 50%;
-      height: 32px;
-      width: 32px;
+      height: 24px;
+      width: 24px;
+
+      @include mq($from: desktop) {
+        height: 32px;
+        width: 32px;
+      }
     }
   }
 }

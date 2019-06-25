@@ -3,26 +3,39 @@
   background: white;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  display: flex;
-  flex-direction: column;
   margin: auto;
-  min-height: 300px;
+  height: 192px;
   max-width: 1260px;
   overflow: hidden;
 
+  @include mq($from: desktop) {
+    height: auto;
+    min-height: 300px;
+  }
+
   &-header {
     align-items: center;
-    background: #e7e7e7;
+    background: linear-gradient(#ffffff 10%, #e7e7e7);
     display: flex;
-    height: 48px;
-    padding: 0 16px;
+    height: 36px;
+    padding: 0 12px;
+
+    @include mq($from: desktop) {
+      padding: 0 16px;
+      height: 48px;
+    }
 
     &-dot {
       background: #c4c4c4;
       border-radius: 50%;
       margin-left: 8px;
-      height: 16px;
-      width: 16px;
+      height: 12px;
+      width: 12px;
+
+      @include mq($from: desktop) {
+        height: 16px;
+        width: 16px;
+      }
 
       &:first-child {
         margin-left: 0;

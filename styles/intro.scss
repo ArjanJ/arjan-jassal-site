@@ -1,11 +1,13 @@
 .intro {
   align-items: flex-end;
   display: flex;
-  height: 396px;
+  height: 480px;
+  padding-bottom: 60px;
 
   @include mq($from: desktop) {
     align-items: center;
     height: 100vh;
+    padding-bottom: 0;
   }
 
   &-wrapper {
@@ -66,8 +68,7 @@
 
     @include mq($from: largeDesktop) {
       font-size: 60px;
-      letter-spacing: -2px;
-      line-height: 1.125;
+      letter-spacing: -1.5px;
     }
 
     @include mq($from: wide) {

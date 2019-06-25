@@ -1,12 +1,20 @@
 .react-camera {
   background: #7a08fa;
   flex: 1;
-  max-height: 256px;
-  padding: 45px;
+  height: 252px;
+  padding: 24px;
+
+  @include mq($from: desktop) {
+    padding: 48px;
+  }
 
   svg {
     display: block;
     margin: auto;
-    width: 90px;
+    width: 72px;
+
+    @include mq($from: desktop) {
+      width: 90px;
+    }
   }
 }

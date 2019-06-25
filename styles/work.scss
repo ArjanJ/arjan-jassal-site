@@ -9,7 +9,7 @@
   }
 
   &-header {
-    margin-bottom: 84px;
+    margin-bottom: 18px;
   }
 
   &-title {
@@ -23,8 +23,6 @@
     border-bottom: 1px solid white;
 
     &-content {
-      display: flex;
-      justify-content: space-between;
       opacity: 0;
       overflow: hidden;
       transform: translateY(5%);
@@ -35,6 +33,11 @@
       &--open {
         opacity: 1;
         transform: none;
+      }
+
+      @include mq($from: desktop) {
+        display: flex;
+        justify-content: space-between;
       }
     }
 
@@ -62,11 +65,15 @@
 
     &-name {
       display: inline-block;
-      font-size: 72px;
+      font-size: 42px;
       letter-spacing: -2px;
       line-height: 1;
       padding: 36px 0;
       position: relative;
+
+      @include mq($from: desktop) {
+        font-size: 72px;
+      }
 
       &::before {
         background: white;
@@ -93,7 +100,11 @@
       width: 100%;
 
       &-block {
-        margin-left: 84px;
+        margin-left: 48px;
+
+        @include mq($from: desktop) {
+          margin-left: 84px;
+        }
 
         &:first-child {
           margin-left: 0;
