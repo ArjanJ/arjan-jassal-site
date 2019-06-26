@@ -5,7 +5,7 @@ import { delay, svgUtils } from "./utils";
 export const flowerAnimation = () => {
   const flowerSvg = document.querySelector(".intro-flower-svg");
 
-  // The SVG located in index.html
+  // The SVG located in intro.pug
   const flower = svg.adopt(flowerSvg);
 
   const [
@@ -32,26 +32,35 @@ export const flowerAnimation = () => {
   const originalRadius = 106;
 
   // Flower is hidden to start with.
-  hideFlower(async () => {
-    await delay(600);
-    showFlower();
-  });
+  // hideFlower(async () => {
+  //   // await delay(600);
+  //   // showFlower();
+  // });
+
+  hideFlower();
+  flower.mouseover(() => showFlower());
+  // flower.mouseout(() => {
+  //   flower.each(async function(i) {
+  //     this.animate({
+  //       duration: 600,
+  //       ease: svgUtils.easeInOutCubic
+  //     }).center(originX, originY);
+  //   });
+  // });
 
   function hideFlower(callback) {
-    flower.rotate(-540, 0, 0);
+    // flower.rotate(-540, 0, 0);
     flower.each(async function(i) {
-      const isCenterPetal = i === 5;
-
       // Make the center petal a small white circle.
-      if (isCenterPetal) {
-        return this.attr({
-          r: 10,
-          fill: "white"
-        });
-      }
+      // if (isCenterPetal) {
+      //   return this.attr({
+      //     r: 10,
+      //     fill: "white"
+      //   });
+      // }
 
       // Hide each petal/circle and position them in the center of the svg.
-      this.attr({ fill: "white", r: 0, opacity: 0 });
+      // this.attr({ fill: "white", r: 0, opacity: 0 });
       this.center(originX, originY);
     });
 
@@ -66,42 +75,47 @@ export const flowerAnimation = () => {
 
       // Grow center petal first.
       if (isCenterPetal) {
-        return this.animate({
-          duration: 450,
-          ease: svgUtils.easeOutCubic
-        }).attr({
-          r: originalRadius,
-          "fill-opacity": 0
-        });
+        // return this.animate({
+        //   duration: 450,
+        //   ease: svgUtils.easeOutCubic
+        // }).attr({
+        //   r: originalRadius,
+        //   "fill-opacity": 0
+        // });
       }
 
-      await delay(100);
+      // await delay(100);
+      // flower
+      //   .animate({
+      //     duration: 1000,
+      //     ease: svgUtils.easeOutCubic
+      //   })
+      //   .rotate(0, 0, 0);
 
       // Grow the rest of the petals and rotate the whole svg.
       this.animate({
-        duration: 500,
-        ease: svgUtils.easeInCubic
+        duration: 600,
+        ease: svgUtils.easeInOutCubic
       })
         .center(originalPetalPositions[i][0], originalPetalPositions[i][1])
         .attr({
-          opacity: 1,
-          r: 10
+          opacity: 1
+          // r: 10
         })
         .after(() => {
-          flower
-            .animate({
-              duration: 1000,
-              ease: svgUtils.easeInOutCubic
-            })
-            .rotate(0, 0, 0);
-
-          this.animate({
-            duration: 1000,
-            ease: svgUtils.easeInOutCubic
-          }).attr({
-            r: originalRadius,
-            "fill-opacity": 0
-          });
+          // flower
+          //   .animate({
+          //     duration: 1000,
+          //     ease: svgUtils.easeInOutCubic
+          //   })
+          //   .rotate(0, 0, 0);
+          // this.animate({
+          //   duration: 1000,
+          //   ease: svgUtils.easeInOutCubic
+          // }).attr({
+          //   r: originalRadius,
+          //   "fill-opacity": 0
+          // });
         });
     });
   }

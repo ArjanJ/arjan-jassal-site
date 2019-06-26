@@ -31,7 +31,7 @@
     }
 
     @include mq($from: superwide) {
-      max-width: 1500px;
+      max-width: 1440px;
     }
   }
 
@@ -47,6 +47,7 @@
       display: flex;
       flex: 1;
       justify-content: center;
+      position: relative;
     }
   }
 
@@ -79,9 +80,10 @@
 
   &-flower-svg {
     display: none;
+    overflow: visible;
 
     @include mq($from: desktop) {
-      animation: fadeIn 0.5s var(--ease-out-cubic) forwards;
+      animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
       display: block;
       opacity: 0;
       width: 300px;
@@ -104,14 +106,16 @@
     display: none;
 
     @include mq($from: desktop) {
+      animation: fadeIn 1.4s var(--ease-out-cubic) forwards;
       bottom: 0;
       display: block;
       left: 30px;
+      opacity: 0;
       position: absolute;
       transition: all 0.35s var(--ease-out-cubic);
 
       &--hide {
-        opacity: 0;
+        animation: fadeOut 0.35s var(--ease-out-cubic) forwards;
         transform: translateY(18%);
       }
 

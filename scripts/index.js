@@ -6,7 +6,7 @@ import { workAccordion } from "./workAccordion";
 
 window.addEventListener("DOMContentLoaded", event => {
   sal({
-    threshold: 0.36
+    threshold: 0.24
   });
   flowerAnimation();
   toggleScrollIndicator();

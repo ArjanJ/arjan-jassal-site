@@ -47,3 +47,8 @@ svg {
 strong {
   font-weight: 700;
 }
+
+::selection {
+  background-color: blue;
+  color: white;
+}
