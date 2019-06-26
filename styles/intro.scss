@@ -101,44 +101,49 @@
   }
 
   &-scroll-indicator {
-    position: absolute;
-    bottom: 0;
-    left: 30px;
-    transition: all 0.35s var(--ease-out-cubic);
+    display: none;
 
-    &--hide {
-      opacity: 0;
-      transform: translateY(18%);
-    }
-
-    &-line {
-      background: rgba(255, 255, 255, 0.5);
-      height: 84px;
-      overflow: hidden;
-      position: relative;
-      width: 1px;
-
-      &::before {
-        animation: scrollIndicator 1.2s linear infinite;
-        background: white;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 1px;
-      }
-    }
-
-    &-text {
+    @include mq($from: desktop) {
+      bottom: 0;
+      display: block;
+      left: 30px;
       position: absolute;
-      top: -36px;
-      left: 0;
-      width: 130px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      transition: all 0.35s var(--ease-out-cubic);
+
+      &--hide {
+        opacity: 0;
+        transform: translateY(18%);
+      }
+
+      &-line {
+        background: rgba(255, 255, 255, 0.5);
+        height: 84px;
+        overflow: hidden;
+        position: relative;
+        width: 1px;
+
+        &::before {
+          animation: scrollIndicator 1.2s linear infinite;
+          background: white;
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 1px;
+        }
+      }
+
+      &-text {
+        position: absolute;
+        top: -36px;
+        left: 0;
+        width: 130px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
     }
   }
 }
