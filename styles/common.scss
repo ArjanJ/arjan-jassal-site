@@ -1,0 +1,22 @@
+.common {
+  &-wrapper {
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @include mq($from: desktop) {
+      max-width: 924px;
+    }
+
+    @include mq($from: largeDesktop) {
+      max-width: 1080px;
+    }
+
+    @include mq($from: wide) {
+      max-width: 1280px;
+    }
+
+    @include mq($from: superwide) {
+      max-width: 1440px;
+    }
+  }
+}
