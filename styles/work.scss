@@ -43,6 +43,10 @@
         opacity: 1;
         transform: none;
       }
+
+      svg {
+        transform: rotate(135deg);
+      }
     }
 
     &-content {
@@ -68,7 +72,7 @@
 
       svg {
         opacity: 0.5;
-        transition: opacity 0.5s var(--ease-out-cubic);
+        transition: all 0.5s var(--ease-out-cubic);
       }
 
       &:hover {
