@@ -13,6 +13,10 @@
     font-weight: 700;
     transition: opacity 0.35s var(--ease-out-cubic);
 
+    &:hover {
+      opacity: 0.75;
+    }
+
     &:focus,
     &:active {
       opacity: 0.75;
