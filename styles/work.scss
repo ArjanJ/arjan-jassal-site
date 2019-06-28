@@ -15,7 +15,7 @@
   }
 
   &-group {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
 
     &[data-expanded="true"] {
       .work-group-content {
@@ -80,6 +80,7 @@
 
       @include mq($from: largeDesktop) {
         font-size: 72px;
+        padding: 48px 0;
       }
 
       &::before {
