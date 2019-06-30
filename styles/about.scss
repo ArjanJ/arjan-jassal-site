@@ -3,9 +3,7 @@
   background: rgba(black, 0.86);
   display: flex;
   left: 0;
-  min-height: 100vh;
   opacity: 0;
-  padding: 276px 0 0;
   position: fixed;
   top: 0;
   transform: translateY(-100%);
@@ -14,8 +12,8 @@
   width: 100vw;
   z-index: 10;
 
-  @include mq($from: desktop) {
-    padding: 60px 0;
+  .common-wrapper {
+    padding: 0;
   }
 
   &--open {
@@ -29,13 +27,17 @@
   }
 
   &-wrapper {
+    height: 100vh;
     opacity: 0;
+    overflow-y: scroll;
+    padding: 120px 30px 0;
 
     @include mq($from: desktop) {
       align-items: center;
       display: flex;
       justify-content: space-around;
       margin: auto;
+      padding: 60px 30px;
     }
   }
 
@@ -61,11 +63,11 @@
   }
 
   &-right {
-    margin-bottom: 60px;
+    margin: 0 auto 60px;
+    max-width: 600px;
 
     @include mq($from: desktop) {
-      margin-bottom: 0;
-      margin-left: 144px;
+      margin: 0 0 84px;
     }
   }
 
@@ -76,7 +78,7 @@
 
   &-subheading {
     font-family: "Karla", sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 24px;
 
     @include mq($from: desktop) {
@@ -86,8 +88,12 @@
   }
 
   &-copy {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 24px;
+
+    @include mq($from: desktop) {
+      font-size: 20px;
+    }
 
     a {
       color: white;
@@ -106,12 +112,16 @@
     font-weight: 700;
     position: absolute;
     top: 36px;
-    right: 36px;
+    right: 18px;
     text-decoration: none;
     transition: all 0.25s var(--ease-out-cubic);
 
     &:hover {
       opacity: 0.75;
+    }
+
+    @include mq($from: desktop) {
+      right: 36px;
     }
   }
 }

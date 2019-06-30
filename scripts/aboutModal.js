@@ -21,14 +21,14 @@ export const aboutModal = () => {
 
   function close() {
     const { about, main } = elements;
-
+    document.body.removeAttribute("style");
     about.classList.remove(ABOUT_OPEN_CLASSNAME);
     main.classList.remove(MAIN_OPEN_CLASSNAME);
   }
 
   function open() {
     const { about, main } = elements;
-
+    document.body.style.overflow = "hidden";
     about.classList.add(ABOUT_OPEN_CLASSNAME);
     main.classList.add(MAIN_OPEN_CLASSNAME);
   }
