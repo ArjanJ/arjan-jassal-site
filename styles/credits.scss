@@ -6,9 +6,8 @@
   opacity: 0;
   position: absolute;
   padding: 18px;
-  transform: translateY(6%) scaleY(0.95);
-  transform-origin: center bottom;
-  transition: all 0.35s var(--ease-out-cubic);
+  transform: translateY(6%);
+  transition: all 0.25s var(--ease-out-cubic);
 
   &-name {
     font-size: 18px;

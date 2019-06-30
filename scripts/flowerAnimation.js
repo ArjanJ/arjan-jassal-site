@@ -56,7 +56,7 @@ export const flowerAnimation = () => {
       this.animate({
         delay: `${i * 0.05}s`,
         duration: 600,
-        ease: svgUtils.easeInOutCubic
+        ease: svgUtils.easeInCubic
       })
         .center(originX, originY)
         .opacity(0);
@@ -71,7 +71,7 @@ export const flowerAnimation = () => {
       this.animate({
         delay: `${i * 0.05}s`,
         duration: 600,
-        ease: svgUtils.easeInOutCubic
+        ease: svgUtils.easeOutCubic
       })
         .center(originalPetalPositions[i][0], originalPetalPositions[i][1])
         .attr({

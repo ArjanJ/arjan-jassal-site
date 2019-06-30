@@ -1,0 +1,60 @@
+.about {
+  padding: 120px 0;
+
+  &-wrapper {
+    display: flex;
+    margin: auto;
+    max-width: 960px;
+  }
+
+  &-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-right {
+  }
+
+  &-pic {
+    animation: rotate 30s linear infinite;
+    border-radius: 50%;
+    height: 252px;
+    width: 252px;
+  }
+
+  &-right {
+    margin-left: 84px;
+  }
+
+  &-bio {
+    margin: auto;
+    max-width: 600px;
+  }
+
+  &-heading {
+    font-size: 60px;
+    letter-spacing: -1.5px;
+    margin-bottom: 36px;
+  }
+
+  &-subheading {
+    font-family: "Karla", sans-serif;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  &-copy {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

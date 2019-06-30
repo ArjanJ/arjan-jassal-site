@@ -1,0 +1,18 @@
+.nav {
+  position: fixed;
+  right: 48px;
+  top: 24px;
+  z-index: 10;
+
+  &-link {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out-cubic);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
