@@ -1,3 +1,9 @@
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks
+} from "body-scroll-lock";
+
 export const aboutModal = () => {
   const elements = {
     about: document.querySelector(".about"),
@@ -21,14 +27,15 @@ export const aboutModal = () => {
 
   function close() {
     const { about, main } = elements;
-    document.body.removeAttribute("style");
+    enableBodyScroll(about);
     about.classList.remove(ABOUT_OPEN_CLASSNAME);
     main.classList.remove(MAIN_OPEN_CLASSNAME);
   }
 
   function open() {
     const { about, main } = elements;
-    document.body.style.overflow = "hidden";
+
+    disableBodyScroll(about);
     about.classList.add(ABOUT_OPEN_CLASSNAME);
     main.classList.add(MAIN_OPEN_CLASSNAME);
   }

@@ -27,6 +27,7 @@
   }
 
   &-wrapper {
+    -webkit-overflow-scrolling: touch;
     height: 100vh;
     opacity: 0;
     overflow-y: scroll;
@@ -111,9 +112,9 @@
     font-size: 18px;
     font-weight: 700;
     position: absolute;
-    top: 36px;
     right: 18px;
     text-decoration: none;
+    top: 24px;
     transition: all 0.25s var(--ease-out-cubic);
 
     &:hover {
@@ -122,6 +123,7 @@
 
     @include mq($from: desktop) {
       right: 36px;
+      top: 36px;
     }
   }
 }
