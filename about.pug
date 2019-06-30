@@ -10,14 +10,16 @@ html
       .common-wrapper
         .about-wrapper
           .about-left
-            img.about-pic(src="./img/arjan-jassal-sq.jpg")
-          .about-right
-            .about-bio
-              h1.about-heading Hello, I'm Arjan.
-              h2.about-subheading I’m a frontend developer based in Vancouver, Canada with over 5 years of experience making simple, fast, clean web experiences.
+            .about-bio(data-sal="slide-down" data-sal-duration="1000" data-sal-easing="ease-out-cubic")
+              h2.about-subheading My name is Arjan and I’m a frontend developer from Vancouver, Canada. I have over 5 years of experience making simple, fast, clean, web experiences.
               p.about-copy
                 | I’ve worked at small to medium sized startups and agencies, on a wide array of projects, including apps for some of Canada’s largest financial institutions. I’ve been fortunate enough to wear the hat of a product designer and team lead in addition to engineering user interfaces. As a problem solver, I strive to make a positive difference in peoples lives through the software I help design, build, and ship.
               p.about-copy
-                | Outside of the internet, you can find me at the gym, playing Dragonball Legends, or reading about the nature of consciousness.
-
+                | Outside of the internet, you can find me at the gym, playing Dragonball Legends, enjoying a cold beer, or reading about the nature of reality.
+              p.about-copy.about-plug
+                | <strong>Get in touch at <a href="">hello@arjanjassal.com</a></strong>
+          .about-right
+            img.about-pic(src="./img/arjan-jassal-sq.jpg" data-sal="slide-up" data-sal-duration="1000" data-sal-easing="ease-out-cubic")
+            
+    
     script(src='./scripts/index.js')

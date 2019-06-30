@@ -1,29 +1,48 @@
 .about {
-  padding: 120px 0;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  padding: 276px 0 0;
+
+  @include mq($from: desktop) {
+    padding: 60px 0;
+  }
 
   &-wrapper {
-    display: flex;
-    margin: auto;
-    max-width: 960px;
+    @include mq($from: desktop) {
+      display: flex;
+      margin: auto;
+    }
   }
 
   &-left {
     display: flex;
     justify-content: center;
-  }
+    margin-bottom: 24px;
 
-  &-right {
+    @include mq($from: desktop) {
+      margin-bottom: 0;
+    }
   }
 
   &-pic {
-    animation: rotate 30s linear infinite;
     border-radius: 50%;
-    height: 252px;
-    width: 252px;
+    height: 192px;
+    width: 192px;
+
+    @include mq($from: desktop) {
+      height: 252px;
+      width: 252px;
+    }
   }
 
   &-right {
-    margin-left: 84px;
+    margin-bottom: 60px;
+
+    @include mq($from: desktop) {
+      margin-bottom: 0;
+      margin-left: 144px;
+    }
   }
 
   &-bio {
@@ -31,30 +50,26 @@
     max-width: 600px;
   }
 
-  &-heading {
-    font-size: 60px;
-    letter-spacing: -1.5px;
-    margin-bottom: 36px;
-  }
-
   &-subheading {
     font-family: "Karla", sans-serif;
     font-size: 24px;
     margin-bottom: 24px;
+
+    @include mq($from: desktop) {
+      font-size: 32px;
+    }
   }
 
   &-copy {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 24px;
-  }
-}
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
+    a {
+      color: white;
+    }
   }
 
-  100% {
-    transform: rotate(360deg);
+  &-plug {
+    padding-top: 24px;
   }
 }
