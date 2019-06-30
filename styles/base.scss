@@ -38,6 +38,11 @@ h6 {
 
 button {
   cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
 svg {
@@ -49,6 +54,6 @@ strong {
 }
 
 ::selection {
-  background-color: blue;
+  background-color: #1cd760;
   color: white;
 }
