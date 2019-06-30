@@ -1,0 +1,7 @@
+.main {
+  transition: filter 1s var(--ease-out-cubic);
+
+  &--blur {
+    filter: blur(6px);
+  }
+}

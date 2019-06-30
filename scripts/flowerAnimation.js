@@ -5,6 +5,10 @@ import { delay, svgUtils } from "./utils";
 export const flowerAnimation = () => {
   const flowerSvg = document.querySelector(".intro-flower-svg");
 
+  if (!flowerSvg) {
+    return null;
+  }
+
   // The SVG located in intro.pug
   const flower = svg.adopt(flowerSvg);
 

@@ -1,10 +1,12 @@
 .nav {
   position: fixed;
-  right: 48px;
-  top: 24px;
-  z-index: 10;
+  right: 36px;
+  top: 36px;
+  z-index: 5;
 
   &-link {
+    background: none;
+    border: none;
     color: white;
     font-size: 18px;
     font-weight: 700;

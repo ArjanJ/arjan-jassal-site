@@ -10,6 +10,10 @@ export const workAccordion = () => {
     accordion: document.getElementById("workAccordion")
   };
 
+  if (!elements.accordion) {
+    return null;
+  }
+
   function expandSection(element) {
     element.setAttribute("data-expanded", "true");
     const content = element.querySelector(CONTENT_SELECTOR);

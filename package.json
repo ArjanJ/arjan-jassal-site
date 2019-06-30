@@ -4,8 +4,8 @@
   "description": "My personal website.",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.pug about.pug",
-    "build": "parcel build index.pug about.pug",
+    "dev": "parcel index.pug",
+    "build": "parcel build index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

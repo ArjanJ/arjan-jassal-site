@@ -1,15 +1,38 @@
 .about {
   align-items: center;
+  background: rgba(black, 0.86);
   display: flex;
+  left: 0;
   min-height: 100vh;
+  opacity: 0;
   padding: 276px 0 0;
+  position: fixed;
+  top: 0;
+  transform: translateY(-100%);
+  transition: all 0.6s var(--ease-out-cubic);
+  visibility: hidden;
+  width: 100vw;
+  z-index: 10;
 
   @include mq($from: desktop) {
     padding: 60px 0;
   }
 
+  &--open {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+
+    .about-wrapper {
+      animation: fadeInUp 1s 0.5s var(--ease-out-cubic) forwards;
+    }
+  }
+
   &-wrapper {
+    opacity: 0;
+
     @include mq($from: desktop) {
+      align-items: center;
       display: flex;
       justify-content: space-around;
       margin: auto;
@@ -73,5 +96,22 @@
 
   &-plug {
     padding-top: 24px;
+  }
+
+  &-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out-cubic);
+
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }
