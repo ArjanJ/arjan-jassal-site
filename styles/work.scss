@@ -48,6 +48,7 @@
       cursor: pointer;
       display: flex;
       justify-content: space-between;
+      overflow: hidden;
 
       svg {
         opacity: 0.5;
@@ -59,8 +60,21 @@
           opacity: 1;
         }
 
-        .work-group-name::before {
-          transform: scaleX(1);
+        .work-group-name {
+          transform: translateY(-232%);
+
+          @include mq($from: tablet) {
+            transform: translateY(-162%);
+          }
+
+          @include mq($from: largeDesktop) {
+            transform: translateY(-133%);
+          }
+
+          &::after {
+            opacity: 1;
+            top: 97px;
+          }
         }
       }
     }
@@ -68,32 +82,41 @@
     &-name {
       display: inline-block;
       font-size: 42px;
-      letter-spacing: -2px;
+      letter-spacing: -1.5px;
       line-height: 1;
-      padding: 24px 0;
+      margin: 24px 0;
       position: relative;
+      transition: transform 0.5s var(--ease-out-cubic);
 
       @include mq($from: tablet) {
         font-size: 60px;
-        padding: 36px 0;
+        margin: 36px 0;
       }
 
       @include mq($from: largeDesktop) {
         font-size: 72px;
-        padding: 48px 0;
+        margin: 40px 0;
       }
 
-      &::before {
-        background: white;
-        content: "";
-        height: 4px;
+      &::after {
+        color: white;
+        content: attr(data-name);
+        font-size: 42px;
         left: 0;
+        letter-spacing: -1.5px;
+        line-height: 1;
+        opacity: 0;
         position: absolute;
-        top: calc(50% - 2px);
-        transform: scaleX(0);
-        transition: transform 0.25s var(--ease-out-cubic);
-        transform-origin: left center;
-        width: 100%;
+        top: 115px;
+        transition: opacity 0.5s var(--ease-out-cubic);
+
+        @include mq($from: tablet) {
+          font-size: 60px;
+        }
+
+        @include mq($from: largeDesktop) {
+          font-size: 72px;
+        }
       }
     }
 
