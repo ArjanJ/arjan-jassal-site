@@ -1,0 +1,184 @@
+.work {
+  padding: 60px 0;
+  min-height: 100vh;
+
+  &-header {
+    margin-bottom: 18px;
+  }
+
+  &-title {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &-group {
+    border-bottom: 2px solid white;
+
+    &[data-expanded="true"] {
+      .work-group-content {
+        opacity: 1;
+        transform: none;
+      }
+
+      svg {
+        transform: rotate(135deg);
+      }
+    }
+
+    &-content {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(5%);
+      transition: height 0.6s var(--ease-in-out-cubic),
+        opacity 0.6s 0.35s var(--ease-out-cubic),
+        transform 0.6s 0.35s var(--ease-out-cubic);
+
+      @include mq($from: desktop) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-header {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+
+      svg {
+        opacity: 0.5;
+        transition: all 0.5s var(--ease-out-cubic);
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+
+        .work-group-name {
+          transform: translateY(-232%);
+
+          @include mq($from: tablet) {
+            transform: translateY(-162%);
+          }
+
+          @include mq($from: largeDesktop) {
+            transform: translateY(-133%);
+          }
+
+          &::after {
+            opacity: 1;
+            top: 97px;
+          }
+        }
+      }
+    }
+
+    &-name {
+      display: inline-block;
+      font-size: 42px;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin: 24px 0;
+      position: relative;
+      transition: transform 0.5s var(--ease-out-cubic);
+
+      @include mq($from: tablet) {
+        font-size: 60px;
+        margin: 36px 0;
+      }
+
+      @include mq($from: largeDesktop) {
+        font-size: 72px;
+        margin: 40px 0;
+      }
+
+      &::after {
+        color: white;
+        content: attr(data-name);
+        font-size: 42px;
+        left: 0;
+        letter-spacing: -1.5px;
+        line-height: 1;
+        opacity: 0;
+        position: absolute;
+        top: 115px;
+        transition: opacity 0.5s var(--ease-out-cubic);
+
+        @include mq($from: tablet) {
+          font-size: 60px;
+        }
+
+        @include mq($from: largeDesktop) {
+          font-size: 72px;
+        }
+      }
+    }
+
+    &-info,
+    &-body {
+      margin-top: 18px;
+    }
+
+    &-info {
+      display: flex;
+      max-width: 600px;
+      width: 100%;
+
+      &-block {
+        margin-left: 48px;
+
+        @include mq($from: desktop) {
+          margin-left: 84px;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      &-heading,
+      &-value {
+        font-family: "Karla", sans-serif;
+        font-size: 18px;
+      }
+
+      &-heading {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-body {
+      flex: 1;
+
+      &-copy {
+        font-size: 18px;
+        margin-bottom: 36px;
+      }
+    }
+
+    &-highlights {
+      list-style-type: disc;
+      margin-left: 17px;
+      padding-bottom: 48px;
+
+      @include mq($from: desktop) {
+        padding-bottom: 60px;
+      }
+
+      @include mq($from: wide) {
+        padding-bottom: 84px;
+      }
+    }
+
+    &-highlight {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.nav {
+  position: fixed;
+  right: 30px;
+  top: 24px;
+  z-index: 5;
+
+  @include mq($from: desktop) {
+    right: 36px;
+    top: 36px;
+  }
+
+  &-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out-cubic);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}

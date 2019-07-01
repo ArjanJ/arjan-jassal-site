@@ -1,0 +1,60 @@
+:root {
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #040404;
+  color: white;
+  font-family: "Karla", sans-serif;
+  margin: 0;
+  transition: background 0.35s var(--ease-in-out-cubic);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+svg {
+  vertical-align: middle;
+}
+
+strong {
+  font-weight: 700;
+}
+
+::selection {
+  background-color: #1cd760;
+  color: white;
+}

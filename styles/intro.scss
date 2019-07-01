@@ -1,0 +1,146 @@
+.intro {
+  align-items: flex-end;
+  display: flex;
+  height: 480px;
+  padding-bottom: 36px;
+
+  @include mq($from: desktop) {
+    align-items: center;
+    height: 100vh;
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  &-wrapper {
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      flex: 1;
+    }
+  }
+
+  &-left {
+    @include mq($from: desktop) {
+      flex: 2;
+      padding-right: 60px;
+    }
+  }
+
+  &-right {
+    @include mq($from: desktop) {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      position: relative;
+    }
+  }
+
+  &-heading {
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0;
+
+    span {
+      color: white;
+    }
+
+    @include mq($from: desktop) {
+      font-size: 52px;
+      max-width: 768px;
+    }
+
+    @include mq($from: largeDesktop) {
+      font-size: 60px;
+      letter-spacing: -1.5px;
+    }
+
+    @include mq($from: wide) {
+      font-size: 72px;
+    }
+  }
+
+  &-flower-svg {
+    display: none;
+
+    @include mq($from: desktop) {
+      display: block;
+      width: 300px;
+    }
+
+    @include mq($from: largeDesktop) {
+      width: 312px;
+    }
+
+    @include mq($from: wide) {
+      width: 360px;
+    }
+
+    @include mq($from: superwide) {
+      width: 396px;
+    }
+  }
+
+  &-scroll-indicator {
+    display: none;
+
+    @include mq($from: desktop) {
+      animation: fadeIn 1.4s var(--ease-out-cubic) forwards;
+      bottom: 0;
+      display: block;
+      left: 30px;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.35s var(--ease-out-cubic);
+
+      &--hide {
+        animation: fadeOut 0.35s var(--ease-out-cubic) forwards;
+        transform: translateY(18%);
+      }
+
+      &-line {
+        background: rgba(255, 255, 255, 0.5);
+        height: 84px;
+        overflow: hidden;
+        position: relative;
+        width: 1px;
+
+        &::before {
+          animation: scrollIndicator 1.2s linear infinite;
+          background: white;
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 1px;
+        }
+      }
+
+      &-text {
+        position: absolute;
+        top: -36px;
+        left: 0;
+        width: 130px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}

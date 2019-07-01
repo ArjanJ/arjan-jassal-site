@@ -1,0 +1,178 @@
+.projects {
+  padding: 60px 0;
+
+  &-header {
+    margin-bottom: 18px;
+
+    @include mq($from: desktop) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &-title {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &-list {
+    @include mq($from: largeDesktop) {
+      display: flex;
+    }
+  }
+
+  &-box {
+    align-items: flex-end;
+    border-radius: 8px;
+    box-shadow: 0 2px 18px rgba(black, 0.2);
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    height: 228px;
+    margin-bottom: 30px;
+    padding: 0 18px 18px;
+    position: relative;
+    z-index: 1;
+
+    @include mq($from: desktop) {
+      height: 348px;
+      margin-bottom: 64px;
+      padding: 0 48px 36px;
+    }
+
+    &--last {
+      @include mq($from: largeDesktop) {
+        margin-left: 64px;
+      }
+    }
+
+    &--sunset {
+      background: linear-gradient(354.05deg, #ff6f6f 29.89%, #f9d749 100%);
+    }
+
+    &--cyan {
+      background: linear-gradient(0deg, #69ffe4 0%, #9a19ff 100%);
+    }
+
+    &--redsky {
+      background: linear-gradient(360deg, #7e51ff 0%, #f94949 100%);
+    }
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.85) 86.46%
+      );
+      border-radius: 8px;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0.85;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.25s var(--ease-out-cubic);
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-name {
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1.125;
+
+    @include mq($from: desktop) {
+      font-size: 36px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &-desc {
+    font-size: 16px;
+    max-width: 216px;
+
+    @include mq($from: tablet) {
+      max-width: none;
+    }
+
+    @include mq($from: desktop) {
+      font-size: 18px;
+    }
+  }
+
+  &-gh {
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    bottom: 18px;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    right: 18px;
+    width: 30px;
+
+    @include mq($from: desktop) {
+      bottom: 36px;
+      height: 36px;
+      right: 48px;
+      width: 36px;
+
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    svg {
+      height: 18px;
+      width: 18px;
+      transition: transform 0.25s var(--ease-out-cubic);
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.25) rotate(360deg);
+      }
+    }
+  }
+
+  &-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0 30px;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -2;
+
+    @include mq($from: tablet) {
+      padding: 0 90px;
+    }
+
+    @include mq($from: desktop) {
+      padding: 0 120px;
+    }
+
+    @include mq($from: largeDesktop) {
+      padding: 0 60px;
+    }
+
+    @include mq($from: wide) {
+      padding: 0 90px;
+    }
+
+    svg {
+      width: 100%;
+    }
+  }
+}
