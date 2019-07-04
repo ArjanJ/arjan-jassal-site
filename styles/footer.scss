@@ -5,27 +5,20 @@
     position: relative;
   }
 
-  &-button {
-    background: none;
-    border: none;
+  &-link {
     color: white;
     font-size: 18px;
-    font-weight: 700;
+    text-decoration: none;
     transition: opacity 0.35s var(--ease-out-cubic);
 
     &:hover {
       opacity: 0.75;
     }
+  }
 
-    &:focus,
-    &:active {
-      opacity: 0.75;
-      outline: none;
-
-      + .credits {
-        opacity: 1;
-        transform: none;
-      }
-    }
+  code {
+    background: #001523;
+    color: #a1d35b;
+    font-weight: bold;
   }
 }
