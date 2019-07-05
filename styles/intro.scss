@@ -36,10 +36,12 @@
   }
 
   &-heading {
+    animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
     font-size: 32px;
     letter-spacing: -1px;
     line-height: 1.2;
     margin: 0;
+    opacity: 0;
 
     span {
       color: white;
@@ -64,7 +66,9 @@
     display: none;
 
     @include mq($from: desktop) {
+      animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
       display: block;
+      opacity: 0;
       width: 300px;
     }
 
@@ -108,7 +112,7 @@
         &::before {
           animation: scrollIndicator 1.2s linear infinite;
           background: white;
-          content: "";
+          content: '';
           height: 100%;
           left: 0;
           position: absolute;

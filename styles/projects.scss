@@ -10,7 +10,7 @@
   }
 
   &-title {
-    font-family: "Karla", sans-serif;
+    font-family: 'Karla', sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -34,7 +34,17 @@
     margin-bottom: 30px;
     padding: 0 18px 18px;
     position: relative;
+    transform: translateY(-40%);
+    transition: all 1s var(--ease-out-cubic);
     z-index: 1;
+
+    &.js-scroll-animate {
+      transform: none;
+
+      &::after {
+        transform: scaleY(0);
+      }
+    }
 
     @include mq($from: desktop) {
       height: 348px;
@@ -60,25 +70,43 @@
       background: linear-gradient(360deg, #7e51ff 0%, #f94949 100%);
     }
 
+    &::after {
+      background: var(--background-color);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      transform-origin: center bottom;
+      transition: all 1s var(--ease-in-out-cubic);
+      width: 100%;
+      z-index: 2;
+    }
+
     &::before {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.85) 86.46%
+        rgba(0, 0, 0, 0.9) 86.46%
       );
       border-radius: 8px;
-      content: "";
+      content: '';
       height: 100%;
       left: 0;
       opacity: 0.85;
       position: absolute;
       top: 0;
-      transition: opacity 0.25s var(--ease-out-cubic);
+      transition: opacity 0.45s var(--ease-out-cubic);
       width: 100%;
       z-index: -1;
     }
 
     &:hover {
+      .projects-img {
+        opacity: 0.85;
+      }
+
       &::before {
         opacity: 1;
       }
@@ -147,11 +175,12 @@
   }
 
   &-img {
-    position: absolute;
     bottom: 0;
     left: 50%;
     padding: 0 30px;
-    transform: translateX(-50%);
+    position: absolute;
+    transform: translate(-50%, 0);
+    transition: opacity 0.45s var(--ease-out-cubic);
     width: 100%;
     z-index: -2;
 
