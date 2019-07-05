@@ -38,6 +38,8 @@ export const aboutModal = () => {
 
     about.classList.remove(ABOUT_OPEN_CLASSNAME);
     main.classList.remove(MAIN_OPEN_CLASSNAME);
+
+    document.removeEventListener('keydown', handleKeyDown, false);
   }
 
   function open() {
@@ -47,5 +49,7 @@ export const aboutModal = () => {
 
     about.classList.add(ABOUT_OPEN_CLASSNAME);
     main.classList.add(MAIN_OPEN_CLASSNAME);
+
+    document.addEventListener('keydown', handleKeyDown, false);
   }
 };
