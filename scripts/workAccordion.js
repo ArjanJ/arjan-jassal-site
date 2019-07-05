@@ -3,21 +3,17 @@
  * This code expands/collapses the work sections.
  */
 export const workAccordion = () => {
-  const SECTION_SELECTOR = ".work-group";
-  const CONTENT_SELECTOR = ".work-group-content";
+  const SECTION_SELECTOR = '.work-group';
+  const CONTENT_SELECTOR = '.work-group-content';
 
   const elements = {
-    accordion: document.getElementById("workAccordion")
+    accordion: document.getElementById('workAccordion'),
   };
 
-  if (!elements.accordion) {
-    return null;
-  }
-
   function expandSection(element) {
-    element.setAttribute("data-expanded", "true");
+    element.setAttribute('data-expanded', 'true');
     const content = element.querySelector(CONTENT_SELECTOR);
-    const backgroundColor = element.getAttribute("data-color");
+    const backgroundColor = element.getAttribute('data-color');
 
     /**
      * scrollHeight is the height of the content
@@ -28,10 +24,10 @@ export const workAccordion = () => {
   }
 
   function collapseSection(element) {
-    element.setAttribute("data-expanded", "false");
+    element.setAttribute('data-expanded', 'false');
     const content = element.querySelector(CONTENT_SELECTOR);
-    content.removeAttribute("style");
-    document.body.removeAttribute("style");
+    content.removeAttribute('style');
+    document.body.removeAttribute('style');
   }
 
   function handleClick(event) {
@@ -48,7 +44,7 @@ export const workAccordion = () => {
     }
 
     const section = target.closest(SECTION_SELECTOR);
-    const isExpanded = section.getAttribute("data-expanded") === "true";
+    const isExpanded = section.getAttribute('data-expanded') === 'true';
 
     if (isExpanded) {
       return collapseSection(section);
@@ -62,7 +58,7 @@ export const workAccordion = () => {
   }
 
   function init() {
-    elements.accordion.addEventListener("click", handleClick, false);
+    elements.accordion.addEventListener('click', handleClick, false);
   }
 
   init();

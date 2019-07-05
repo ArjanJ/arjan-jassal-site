@@ -1,4 +1,6 @@
 .nav {
+  animation: fadeIn 1.4s var(--ease-out-cubic) forwards;
+  opacity: 0;
   position: fixed;
   right: 30px;
   top: 24px;

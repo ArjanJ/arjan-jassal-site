@@ -1,13 +1,14 @@
-import svg from "svg.js";
+import svg from 'svg.js';
 
-import { delay, svgUtils } from "./utils";
+import { delay, svgUtils } from './utils';
 
+/**
+ * flowerAnimation
+ * The circle that when you hover over it expands into the
+ * flower of life pattern.
+ */
 export const flowerAnimation = () => {
-  const flowerSvg = document.querySelector(".intro-flower-svg");
-
-  if (!flowerSvg) {
-    return null;
-  }
+  const flowerSvg = document.querySelector('.intro-flower-svg');
 
   // The SVG located in intro.pug
   const flower = svg.adopt(flowerSvg);
@@ -19,11 +20,11 @@ export const flowerAnimation = () => {
     petal4,
     petal5,
     petalCenter,
-    petal7
+    petal7,
   ] = flower.children();
 
-  flowerSvg.addEventListener("mouseenter", () => showFlower());
-  flowerSvg.addEventListener("mouseleave", () => hideFlowerAnimate());
+  flowerSvg.addEventListener('mouseenter', () => showFlower());
+  flowerSvg.addEventListener('mouseleave', () => hideFlowerAnimate());
 
   /**
    * Store the original positions because we will move the petals
@@ -60,7 +61,7 @@ export const flowerAnimation = () => {
       this.animate({
         delay: `${i * 0.05}s`,
         duration: 600,
-        ease: svgUtils.easeInCubic
+        ease: svgUtils.easeInCubic,
       })
         .center(originX, originY)
         .opacity(0);
@@ -75,11 +76,11 @@ export const flowerAnimation = () => {
       this.animate({
         delay: `${i * 0.05}s`,
         duration: 600,
-        ease: svgUtils.easeOutCubic
+        ease: svgUtils.easeOutCubic,
       })
         .center(originalPetalPositions[i][0], originalPetalPositions[i][1])
         .attr({
-          opacity: 1
+          opacity: 1,
         });
     });
   }
