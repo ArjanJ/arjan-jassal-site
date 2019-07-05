@@ -88,12 +88,13 @@
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.75) 86.46%
+        rgba(0, 0, 0, 0.9) 86.46%
       );
       border-radius: 8px;
       content: '';
       height: 100%;
       left: 0;
+      opacity: 0.85;
       position: absolute;
       top: 0;
       transition: opacity 0.45s var(--ease-out-cubic);
@@ -102,14 +103,12 @@
     }
 
     &:hover {
-      // filter: grayscale(0);
-
       .projects-img {
-        // transform: translateX(-50%) translateY(0);
+        opacity: 0.85;
       }
 
       &::before {
-        // opacity: 1;
+        opacity: 1;
       }
     }
   }
@@ -181,7 +180,7 @@
     padding: 0 30px;
     position: absolute;
     transform: translate(-50%, 0);
-    transition: transform 0.45s var(--ease-out-cubic);
+    transition: opacity 0.45s var(--ease-out-cubic);
     width: 100%;
     z-index: -2;
 
