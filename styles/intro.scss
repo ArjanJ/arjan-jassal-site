@@ -98,8 +98,15 @@
       transition: all 0.35s var(--ease-out-cubic);
 
       &--hide {
-        animation: fadeOut 0.35s var(--ease-out-cubic) forwards;
         transform: translateY(18%);
+
+        .intro-scroll-indicator-line {
+          transform: scaleY(0);
+        }
+
+        .intro-scroll-indicator-text {
+          opacity: 0;
+        }
       }
 
       &-line {
@@ -107,6 +114,8 @@
         height: 84px;
         overflow: hidden;
         position: relative;
+        transform-origin: center bottom;
+        transition: all 0.6s var(--ease-out-cubic);
         width: 1px;
 
         &::before {
@@ -130,6 +139,7 @@
         font-weight: 700;
         letter-spacing: 1.5px;
         text-transform: uppercase;
+        transition: all 0.5s var(--ease-out-cubic);
       }
     }
   }
