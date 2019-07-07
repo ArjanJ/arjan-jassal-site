@@ -115,7 +115,7 @@
         overflow: hidden;
         position: relative;
         transform-origin: center bottom;
-        transition: all 0.6s var(--ease-out-cubic);
+        transition: all 0.6s var(--ease-in-out-cubic);
         width: 1px;
 
         &::before {
