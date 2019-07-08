@@ -3,6 +3,7 @@
   display: flex;
   flex: 1;
   height: 256px;
+  position: relative;
 
   &-sidebar {
     background: #04002f;
@@ -44,7 +45,6 @@
   &-main {
     flex: 1;
     padding: 2vh 2vw;
-    position: relative;
 
     @include mq($from: desktop) {
       padding: 4vh 4vw;
@@ -75,10 +75,10 @@
       display: none;
 
       @include mq($from: desktop) {
-        background: #020035;
+        background: white;
         border-radius: 4px;
         display: block;
-        height: 108px;
+        height: 96px;
         opacity: 0;
         padding: 4px 0;
         position: absolute;
@@ -90,7 +90,7 @@
         z-index: 1;
 
         &-item {
-          background: rgba(white, 0.2);
+          background: rgba(black, 0.15);
           height: 24px;
           opacity: 0;
         }
@@ -132,6 +132,7 @@
         left: 50%;
         margin-left: -20vw;
         margin-top: -5vh;
+        opacity: 0;
         padding: 4vh 2vw;
         position: absolute;
         top: 10%;
@@ -158,20 +159,16 @@
       }
 
       &-heading {
-        height: 20px;
+        height: 16px;
         margin-bottom: 16px;
         width: 10vw;
       }
 
       &-subheading {
-        height: 12px;
-        margin-bottom: 12px;
+        height: 16px;
+        margin-bottom: 16px;
         opacity: 0.5;
         width: 18vw;
-
-        &--sm {
-          width: 14vw;
-        }
       }
 
       &-circle {
@@ -182,7 +179,7 @@
         height: 100px;
         border-radius: 50%;
         background: rgb(248, 207, 131);
-        margin-top: 30px;
+        margin-top: 36px;
 
         svg {
           height: 48px;
