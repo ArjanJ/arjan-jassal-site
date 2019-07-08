@@ -17,4 +17,9 @@
       width: 90px;
     }
   }
+
+  &-person {
+    transform-origin: center;
+    opacity: 0;
+  }
 }
