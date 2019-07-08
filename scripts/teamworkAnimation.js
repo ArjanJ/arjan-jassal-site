@@ -85,13 +85,17 @@ export const teamworkAnimation = async () => {
     hideModal.onfinish = onHideModalFinish;
   };
 
+  const startAnimation = () => {
+    const showMenu = showMenuAnimation();
+    showMenu.onfinish = menuItemAnimation;
+  };
+
   const onHideModalFinish = () => {
     // Hide inner modal Dialog
     hideModalDialogAnimation();
 
     // This triggers the entire animation to play again.
-    const showMenu = showMenuAnimation();
-    showMenu.onfinish = menuItemAnimation;
+    startAnimation();
   };
 
   const unhighlightMenuItemsAnimation = () => {
@@ -142,8 +146,7 @@ export const teamworkAnimation = async () => {
       return null;
     }
 
-    const showMenu = showMenuAnimation();
-    showMenu.onfinish = menuItemAnimation;
+    startAnimation();
   };
 
   init();
