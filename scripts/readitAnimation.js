@@ -1,3 +1,5 @@
+import isMobile from 'is-mobile';
+
 /**
  * readitAnimation
  * This is the animation that plays in the background
@@ -8,6 +10,10 @@ export const readitAnimation = () => {
   const list = root.querySelector('.readit-wrapper');
 
   const init = () => {
+    if (isMobile()) {
+      return null;
+    }
+
     // Looks like you're scrolling up/down.
     list.animate(
       [
