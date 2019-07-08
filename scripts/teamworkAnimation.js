@@ -1,6 +1,6 @@
 import isMobile from 'is-mobile';
 
-import { delay } from './utils';
+import { animations, delay } from './utils';
 
 const easeOutCubic = 'cubic-bezier(0.215, 0.61, 0.355, 1)';
 const easeInOutCubic = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
@@ -17,31 +17,8 @@ export const teamworkAnimation = async () => {
   const modal = root.querySelector('.teamwork-modal');
   const modalDialog = modal.querySelector('.teamwork-modal-dialog');
 
-  const scaleIn = [
-    { transform: 'scale(0)', opacity: 0 },
-    { transform: 'scale(1)', opacity: 1 },
-  ];
-
-  const fadeOutDown = [
-    { transform: 'translateY(0)', opacity: 1 },
-    { transform: 'translateY(5%)', opacity: 0 },
-  ];
-
-  const fadeInUp = [
-    { transform: 'translateY(25%)', opacity: 0 },
-    { transform: 'translateY(0)', opacity: 1 },
-  ];
-
-  const fadeIn = [{ opacity: 0 }, { opacity: 1 }];
-  const fadeOut = [{ opacity: 1 }, { opacity: 0 }];
-
-  const tapMenuItemFrames = [
-    { background: 'rgba(0,0,0, 0.08)' },
-    { background: 'rgba(0,0,0, 0.15)' },
-  ];
-
   const showMenuAnimation = () =>
-    menu.animate(scaleIn, {
+    menu.animate(animations.scaleUp, {
       delay: 1600,
       duration: 400,
       fill: 'forwards',
@@ -49,7 +26,7 @@ export const teamworkAnimation = async () => {
     });
 
   const hideMenuAnimation = () =>
-    menu.animate(fadeOutDown, {
+    menu.animate(animations.fadeOutDown, {
       delay: 500,
       duration: 400,
       fill: 'forwards',
@@ -57,7 +34,7 @@ export const teamworkAnimation = async () => {
     });
 
   const showModalAnimation = () =>
-    modal.animate(fadeIn, {
+    modal.animate(animations.fadeIn, {
       delay: 500,
       duration: 600,
       fill: 'forwards',
@@ -65,7 +42,7 @@ export const teamworkAnimation = async () => {
     });
 
   const hideModalAnimation = () =>
-    modal.animate(fadeOut, {
+    modal.animate(animations.fadeOut, {
       delay: 1600,
       duration: 500,
       fill: 'forwards',
@@ -73,14 +50,14 @@ export const teamworkAnimation = async () => {
     });
 
   const showModalDialogAnimation = () =>
-    modalDialog.animate(fadeInUp, {
+    modalDialog.animate(animations.fadeInUp, {
       duration: 400,
       fill: 'forwards',
       easing: easeOutCubic,
     });
 
   const hideModalDialogAnimation = () =>
-    modalDialog.animate(fadeOutDown, {
+    modalDialog.animate(animations.fadeOutDown, {
       duration: 250,
       fill: 'forwards',
       easing: easeInOutCubic,
@@ -119,7 +96,7 @@ export const teamworkAnimation = async () => {
 
   const unhighlightMenuItemsAnimation = () => {
     for (let i = 0; i < menuItems.length; i++) {
-      menuItems[i].animate(fadeIn, {
+      menuItems[i].animate(animations.fadeIn, {
         duration: 0,
         direction: 'reverse',
         fill: 'forwards',
@@ -133,7 +110,7 @@ export const teamworkAnimation = async () => {
     for (let i = 0; i < menuItems.length; i++) {
       const isLastIndex = i === menuItems.length - 1;
 
-      const menuItemAnimationI = menuItems[i].animate(fadeIn, {
+      const menuItemAnimationI = menuItems[i].animate(animations.fadeIn, {
         delay: i * 180,
         duration: 300,
         fill: isLastIndex ? 'forwards' : 'none',
@@ -143,7 +120,10 @@ export const teamworkAnimation = async () => {
       menuItemAnimationI.onfinish = () => {
         if (isLastIndex) {
           const lastMenuItemAnimation = menuItems[menuItems.length - 1].animate(
-            tapMenuItemFrames,
+            [
+              { background: 'rgba(0,0,0, 0.08)' },
+              { background: 'rgba(0,0,0, 0.15)' },
+            ],
             {
               delay: 50,
               duration: 500,
