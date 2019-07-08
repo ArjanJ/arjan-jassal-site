@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "body-scroll-lock": "^2.6.3",
+    "is-mobile": "^2.0.1",
     "sass-mq": "^5.0.0",
     "svg.js": "^2.7.1"
   }
