@@ -39,27 +39,29 @@ export const flowerAnimation = () => {
   const originY = petalCenter.cy();
   const originalRadius = 106;
 
-  hideFlower();
+  hideFlowerAnimate();
 
   function hideFlower() {
-    flower.each(async function(i) {
+    flower.each(function(i) {
+      // Center petal is already in the correct position.
       if (i === 5) {
         return null;
       }
 
+      // Move the outer petals to the center.
       this.center(originX, originY);
       this.opacity(0);
     });
   }
 
   function hideFlowerAnimate() {
-    flower.each(async function(i) {
+    flower.each(function(i) {
       if (i === 5) {
         return null;
       }
 
       this.animate({
-        delay: `${i * 0.05}s`,
+        delay: `${i * 0.06}s`,
         duration: 600,
         ease: svgUtils.easeInCubic,
       })
@@ -69,7 +71,7 @@ export const flowerAnimation = () => {
   }
 
   function showFlower() {
-    flower.each(async function(i) {
+    flower.each(function(i) {
       const isCenterPetal = i === 5;
 
       // Grow the rest of the petals and rotate the whole svg.
