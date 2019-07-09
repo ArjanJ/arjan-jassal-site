@@ -9,14 +9,6 @@
     }
   }
 
-  &-title {
-    font-family: 'Karla', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
   &-list {
     @include mq($from: largeDesktop) {
       display: flex;
@@ -94,7 +86,7 @@
       content: '';
       height: 100%;
       left: 0;
-      opacity: 0.85;
+      opacity: 0.75;
       position: absolute;
       top: 0;
       transition: opacity 0.45s var(--ease-out-cubic);
@@ -115,7 +107,6 @@
 
   &-name {
     font-size: 24px;
-    letter-spacing: -1px;
     line-height: 1.125;
 
     @include mq($from: desktop) {

@@ -38,7 +38,6 @@
   &-heading {
     animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
     font-size: 32px;
-    letter-spacing: -1px;
     line-height: 1.2;
     margin: 0;
     opacity: 0;
@@ -54,7 +53,6 @@
 
     @include mq($from: largeDesktop) {
       font-size: 60px;
-      letter-spacing: -1.5px;
     }
 
     @include mq($from: wide) {
