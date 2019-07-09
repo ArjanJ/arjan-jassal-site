@@ -2,30 +2,46 @@ section.projects
   .projects-wrapper.common-wrapper
     header.projects-header
       h2.common-section-title 01. Side Projects
+
     .projects-list
-      .projects-box.projects-box--sunset.js-scroll
-        .projects-box-info
+      .projects-box.js-scroll
+        .projects-info
           h3.projects-name Teamwork
-          p.projects-desc An app to help manage your team.
+          p.projects-desc An app to keep track of feedback, schedule 1-on-1 meetings, and keep your team happy.
+          ul.projects-tech-list
+            li.projects-tech-list-item React
+            li.projects-tech-list-item Redux
+            li.projects-tech-list-item TypeScript
+            li.projects-tech-list-item Node.js
+            li.projects-tech-list-item Firebase
           a.projects-gh(href="https://github.com/ArjanJ/teamwork" rel="noopener" aria-label="GitHub repository for Teamwork" target="_blank") 
             include ./icons/gh-icon.pug
-        .projects-img
+        .projects-img.projects-box--sunset
           include ./teamwork.pug
-    .projects-list
-      .projects-box.projects-box--redsky.js-scroll
-        .projects-box-info
+
+      .projects-box.projects-box--reverse.js-scroll
+        .projects-info
           h3.projects-name React Camera
-          p.projects-desc A flexible camera component for React DOM.
+          p.projects-desc A flexible camera component for React DOM. Take photos using the latest WebRTC API's.
+          ul.projects-tech-list
+            li.projects-tech-list-item React
+            li.projects-tech-list-item Media Stream
+            li.projects-tech-list-item Styled Components
           a.projects-gh(href="https://github.com/ArjanJ/react-camera" rel="noopener" aria-label="GitHub repository for React Camera" target="_blank") 
             include ./icons/gh-icon.pug
-        .projects-img
+        .projects-img.projects-box--redsky
           include ./react-camera.pug
 
-      .projects-box.projects-box--last.projects-box--cyan.js-scroll
-        .projects-box-info
+      .projects-box.js-scroll
+        .projects-info
           h3.projects-name Readit
-          p.projects-desc A single page Reddit app.
+          p.projects-desc Browse Reddit without visual noise. Built with React + Flux.
+          ul.projects-tech-list
+            li.projects-tech-list-item React
+            li.projects-tech-list-item Flux
+            li.projects-tech-list-item Node.js
+            li.projects-tech-list-item Reddit API
           a.projects-gh(href="https://github.com/ArjanJ/readit" rel="noopener" aria-label="GitHub repository for Readit" target="_blank") 
             include ./icons/gh-icon.pug
-        .projects-img
+        .projects-img.projects-box--cyan
           include ./readit.pug

@@ -13,16 +13,11 @@
     }
 
     @include mq($from: wide) {
-      max-width: 1280px;
-    }
-
-    @include mq($from: superwide) {
-      max-width: 1440px;
+      max-width: 1157px;
     }
   }
 
   &-section-title {
-    font-family: 'Karla', sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;

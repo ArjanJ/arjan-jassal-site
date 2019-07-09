@@ -9,11 +9,11 @@ import { workAccordion } from './workAccordion';
 
 window.addEventListener('DOMContentLoaded', event => {
   aboutModal();
-  flowerAnimation();
-  reactCameraAnimation();
-  readitAnimation();
+  // flowerAnimation();
+  // reactCameraAnimation();
+  // readitAnimation();
   scrollAnimation();
-  teamworkAnimation();
+  // teamworkAnimation();
   toggleScrollIndicator();
   workAccordion();
 });

@@ -1,7 +1,5 @@
 .readit {
   flex: 1;
-  max-height: 256px;
-  overflow-y: scroll;
   padding: 18px;
 
   @include mq($from: desktop) {

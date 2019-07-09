@@ -2,19 +2,16 @@
   background: #0900c3;
   display: flex;
   flex: 1;
-  height: 256px;
   position: relative;
 
   &-sidebar {
     background: #04002f;
-    height: auto;
-    max-height: 256px;
     padding: 2vh 2vw;
-    width: 10vw;
+    width: 8vw;
 
     @include mq($from: desktop) {
       padding: 4vh 1vw;
-      width: 8vw;
+      width: 5vw;
     }
 
     &-line {
