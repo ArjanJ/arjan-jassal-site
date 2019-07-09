@@ -9,36 +9,15 @@ export const readitAnimation = () => {
   const root = document.getElementById('readit-graphic');
   const list = root.querySelector('.readit-wrapper');
 
-  const init = () => {
+  const init = async () => {
     if (isMobile()) {
       return null;
     }
 
-    // Looks like you're scrolling up/down.
     list.animate(
-      [
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(-200px)' },
-        { transform: 'translateY(-200px)' },
-        { transform: 'translateY(-200px)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(-200px)' },
-        { transform: 'translateY(-250px)' },
-        { transform: 'translateY(-250px)' },
-        { transform: 'translateY(-250px)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-        { transform: 'translateY(0)' },
-      ],
+      [{ transform: 'translateY(0)' }, { transform: 'translateY(-43%)' }],
       {
-        delay: 2000,
-        duration: 10000,
+        duration: 2400,
         iterations: Infinity,
       }
     );

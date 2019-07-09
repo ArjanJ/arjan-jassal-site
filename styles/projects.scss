@@ -26,7 +26,7 @@
     margin-bottom: 30px;
     padding: 0 18px 18px;
     position: relative;
-    transform: translateY(-40%);
+    transform: translateY(24%);
     transition: all 1s var(--ease-out-cubic);
     z-index: 1;
 
@@ -65,11 +65,11 @@
     &::after {
       background: var(--background-color);
       content: '';
-      height: 100%;
+      height: 101%;
       left: 0;
       position: absolute;
       pointer-events: none;
-      top: 0;
+      top: -1px;
       transform-origin: center bottom;
       transition: all 1s var(--ease-in-out-cubic);
       width: 100%;
@@ -100,7 +100,7 @@
       }
 
       &::before {
-        opacity: 1;
+        opacity: 0.9;
       }
     }
   }
