@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', event => {
   // reactCameraAnimation();
   // readitAnimation();
   scrollAnimation();
-  // teamworkAnimation();
+  teamworkAnimation();
   toggleScrollIndicator();
   workAccordion();
 });

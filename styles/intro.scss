@@ -1,7 +1,7 @@
 .intro {
   align-items: flex-end;
   display: flex;
-  height: 480px;
+  height: 564px;
   padding-bottom: 36px;
 
   @include mq($from: desktop) {
@@ -32,18 +32,11 @@
   &-heading {
     font-size: 32px;
     line-height: 1.2;
-    margin: 0 0 36px;
-
-    span {
-      color: white;
-    }
+    margin: 0 0 24px;
 
     @include mq($from: desktop) {
       font-size: 52px;
-    }
-
-    @include mq($from: largeDesktop) {
-      font-size: 60px;
+      margin: 0 0 36px;
     }
 
     @include mq($from: wide) {
@@ -52,8 +45,16 @@
   }
 
   &-subheading {
-    font-size: 48px;
+    font-size: 24px;
     opacity: 0.75;
+
+    @include mq($from: desktop) {
+      font-size: 40px;
+    }
+
+    @include mq($from: wide) {
+      font-size: 48px;
+    }
   }
 
   &-flower-svg {

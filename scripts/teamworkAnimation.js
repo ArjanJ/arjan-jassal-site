@@ -19,7 +19,7 @@ export const teamworkAnimation = async () => {
 
   const showMenuAnimation = () =>
     menu.animate(animations.scaleUp, {
-      delay: 1600,
+      delay: 500,
       duration: 400,
       fill: 'forwards',
       easing: easeOutCubic,
