@@ -1,6 +1,6 @@
 import isMobile from 'is-mobile';
 
-import { animations } from './utils';
+import { animations, supportsAnimate } from './utils';
 
 /**
  * reactCameraAnimation
@@ -46,7 +46,7 @@ export const reactCameraAnimation = () => {
   };
 
   const init = () => {
-    if (isMobile()) {
+    if (isMobile() || !supportsAnimate()) {
       return null;
     }
 

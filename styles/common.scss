@@ -13,11 +13,14 @@
     }
 
     @include mq($from: wide) {
-      max-width: 1280px;
+      max-width: 1157px;
     }
+  }
 
-    @include mq($from: superwide) {
-      max-width: 1440px;
-    }
+  &-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
   }
 }

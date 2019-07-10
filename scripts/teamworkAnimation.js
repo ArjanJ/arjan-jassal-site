@@ -1,6 +1,6 @@
 import isMobile from 'is-mobile';
 
-import { animations, delay } from './utils';
+import { animations, delay, supportsAnimate } from './utils';
 
 const easeOutCubic = 'cubic-bezier(0.215, 0.61, 0.355, 1)';
 const easeInOutCubic = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
@@ -19,7 +19,7 @@ export const teamworkAnimation = async () => {
 
   const showMenuAnimation = () =>
     menu.animate(animations.scaleUp, {
-      delay: 1600,
+      delay: 500,
       duration: 400,
       fill: 'forwards',
       easing: easeOutCubic,
@@ -142,7 +142,7 @@ export const teamworkAnimation = async () => {
   };
 
   const init = () => {
-    if (isMobile()) {
+    if (isMobile() || !supportsAnimate()) {
       return null;
     }
 

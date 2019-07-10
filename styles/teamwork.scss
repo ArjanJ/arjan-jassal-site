@@ -2,23 +2,21 @@
   background: #0900c3;
   display: flex;
   flex: 1;
-  height: 256px;
   position: relative;
 
   &-sidebar {
     background: #04002f;
-    height: auto;
-    max-height: 256px;
     padding: 2vh 2vw;
-    width: 10vw;
+    width: 8vw;
 
     @include mq($from: desktop) {
-      padding: 4vh 1vw;
-      width: 8vw;
+      padding: 24px 12px;
+      width: 84px;
     }
 
     &-line {
       background: rgba(white, 0.25);
+      border-radius: 2px;
       height: 4px;
       margin-bottom: 8px;
 
@@ -47,18 +45,26 @@
     padding: 2vh 2vw;
 
     @include mq($from: desktop) {
-      padding: 4vh 4vw;
+      padding: 24px 12px;
     }
+  }
+
+  &-heading {
+    background: #f8ce83;
+    border-radius: 2px;
+    height: 8px;
+    margin: 0 10px 18px;
   }
 
   &-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 
   &-item {
     align-items: center;
     background: rgba(black, 0.25);
+    border-radius: 4px;
     display: flex;
     height: 24px;
     margin: 0 8px 12px;
@@ -66,32 +72,31 @@
     position: relative;
 
     @include mq($from: desktop) {
-      height: 80px;
-      margin: 0 20px 30px;
-      padding: 0 16px;
+      height: 48px;
+      margin: 0 8px 16px;
+      padding: 0 12px;
     }
 
     &-menu {
       display: none;
 
       @include mq($from: desktop) {
-        background: white;
+        background: #020035;
         border-radius: 4px;
         display: block;
-        height: 96px;
+        height: 54px;
         opacity: 0;
         padding: 4px 0;
         position: absolute;
-        right: 12px;
-        top: 12px;
+        right: 8px;
+        top: 8px;
         transform-origin: right top;
-        transform: scale(0);
-        width: 120px;
+        width: 60px;
         z-index: 1;
 
         &-item {
-          background: rgba(black, 0.15);
-          height: 24px;
+          background: rgba(white, 0.15);
+          height: 14px;
           opacity: 0;
         }
       }
@@ -104,8 +109,8 @@
       width: 8px;
 
       @include mq($from: desktop) {
-        height: 32px;
-        width: 32px;
+        height: 16px;
+        width: 16px;
       }
     }
   }
@@ -126,25 +131,23 @@
 
       &-dialog {
         background: #020035;
-        border-radius: 12px 12px 0 0;
+        border-radius: 6px;
         box-shadow: 0 6px 18px rgba(black, 0.1);
-        height: 10vh;
         left: 50%;
-        margin-left: -20vw;
-        margin-top: -5vh;
         opacity: 0;
         padding: 4vh 2vw;
         position: absolute;
-        top: 10%;
-        width: 40vw;
+        top: 50%;
+        width: 200px;
 
         @include mq($from: desktop) {
-          bottom: 0;
-          height: 20vh;
-          margin-left: -13vw;
-          margin-top: 0;
-          top: auto;
-          width: 26vw;
+          $height: 168px;
+          $width: 252px;
+          height: $height;
+          margin-left: -$width / 2;
+          margin-top: -$height / 2;
+          padding: 24px;
+          width: $width;
         }
 
         > * {
@@ -156,34 +159,32 @@
       &-subheading {
         background: white;
         border-radius: 2px;
+        height: 8px;
+        margin-bottom: 12px;
       }
 
       &-heading {
-        height: 16px;
-        margin-bottom: 16px;
-        width: 10vw;
+        width: 50%;
       }
 
       &-subheading {
-        height: 16px;
-        margin-bottom: 16px;
         opacity: 0.5;
-        width: 18vw;
+        width: 75%;
       }
 
       &-circle {
-        display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
         background: rgb(248, 207, 131);
-        margin-top: 36px;
+        border-radius: 50%;
+        display: flex;
+        height: 54px;
+        justify-content: center;
+        margin-top: 24px;
+        width: 54px;
 
         svg {
-          height: 48px;
-          width: 48px;
+          height: 24px;
+          width: 24px;
         }
       }
     }

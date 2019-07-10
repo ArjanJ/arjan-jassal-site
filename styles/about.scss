@@ -78,13 +78,12 @@
   }
 
   &-subheading {
-    font-family: "Karla", sans-serif;
     font-size: 22px;
     margin-bottom: 24px;
 
     @include mq($from: desktop) {
       font-size: 30px;
-      line-height: 1.25;
+      line-height: 1.3;
     }
   }
 

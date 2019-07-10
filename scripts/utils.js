@@ -26,3 +26,9 @@ export const animations = {
     { transform: 'scale(1)', opacity: 1 },
   ],
 };
+
+export const supportsAnimate = () => {
+  const el = document.createElement('div');
+
+  return !!el.animate;
+};

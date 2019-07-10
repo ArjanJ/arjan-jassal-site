@@ -20,7 +20,7 @@ export const workAccordion = () => {
      * inside of the element.
      */
     content.style.height = `${content.scrollHeight}px`;
-    setBackgroundColor(backgroundColor);
+    // setBackgroundColor(backgroundColor);
   }
 
   function collapseSection(element) {
