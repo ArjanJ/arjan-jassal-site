@@ -17,7 +17,7 @@ export const readitAnimation = () => {
     list.animate(
       [{ transform: 'translateY(0)' }, { transform: 'translateY(-43%)' }],
       {
-        duration: 2400,
+        duration: 2800,
         iterations: Infinity,
       }
     );
