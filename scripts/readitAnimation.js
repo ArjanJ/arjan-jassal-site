@@ -12,7 +12,7 @@ export const readitAnimation = () => {
   const list = root.querySelector('.readit-wrapper');
 
   const init = async () => {
-    if (isMobile() || supportsAnimate()) {
+    if (isMobile() || !supportsAnimate()) {
       return null;
     }
 
