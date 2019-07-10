@@ -1,6 +1,10 @@
 .work {
-  min-height: 100vh;
+  min-height: 75vh;
   padding: 60px 0;
+
+  @include mq($from: desktop) {
+    min-height: 100vh;
+  }
 
   &-header {
     margin-bottom: 18px;

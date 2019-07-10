@@ -1,5 +1,6 @@
 .footer {
-  padding: 24px 0 60px;
+  padding: 24px 0 48px;
+  text-align: center;
 
   .common-wrapper {
     position: relative;
@@ -7,17 +8,61 @@
 
   &-link {
     color: white;
-    font-size: 18px;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 36px;
     text-decoration: none;
     transition: opacity 0.35s var(--ease-out-cubic);
 
     &:hover {
       opacity: 0.75;
     }
+
+    @include mq($from: desktop) {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
   }
 
   code {
-    color: #a1d35b;
     font-weight: bold;
+  }
+
+  &-plugs {
+    @include mq($from: desktop) {
+      display: none;
+    }
+
+    .plugs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      position: static;
+
+      a {
+        padding: 0 24px;
+      }
+
+      a span {
+        display: none;
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  &-email {
+    color: white;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+
+    @include mq($from: desktop) {
+      display: none;
+    }
   }
 }
