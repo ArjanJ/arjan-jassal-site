@@ -19,7 +19,6 @@
 
   &-person {
     @include mq($from: desktop) {
-      opacity: 0;
       transform-origin: center;
     }
   }

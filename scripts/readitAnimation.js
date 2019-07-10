@@ -1,5 +1,7 @@
 import isMobile from 'is-mobile';
 
+import { supportsAnimate } from './utils';
+
 /**
  * readitAnimation
  * This is the animation that plays in the background
@@ -10,7 +12,7 @@ export const readitAnimation = () => {
   const list = root.querySelector('.readit-wrapper');
 
   const init = async () => {
-    if (isMobile()) {
+    if (isMobile() || supportsAnimate()) {
       return null;
     }
 
