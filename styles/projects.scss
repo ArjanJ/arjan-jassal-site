@@ -10,9 +10,7 @@
   }
 
   &-box {
-    align-items: center;
-    display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 48px;
     position: relative;
     transform: translateY(50%);
     transition: all 1s var(--ease-out-cubic);
@@ -28,7 +26,8 @@
     }
 
     @include mq($from: desktop) {
-      height: 348px;
+      align-items: center;
+      display: flex;
       margin-bottom: 180px;
     }
 
@@ -36,8 +35,10 @@
       flex-direction: row-reverse;
 
       .projects-img {
-        margin-left: 0;
-        margin-right: 84px;
+        @include mq($from: desktop) {
+          margin-left: 0;
+          margin-right: 84px;
+        }
       }
     }
 
@@ -70,14 +71,21 @@
 
   &-info {
     flex: 1;
+    height: 224px;
+    padding: 24px;
+
+    @include mq($from: desktop) {
+      height: auto;
+      padding: 0;
+    }
   }
 
   &-name {
     font-size: 24px;
+    margin-bottom: 4px;
 
     @include mq($from: desktop) {
       font-size: 40px;
-      margin-bottom: 4px;
     }
   }
 
@@ -92,37 +100,65 @@
 
   &-tech-list {
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
 
     &-item {
       background: rgba(white, 0.2);
       border-radius: 2px;
       font-size: 14px;
       font-weight: 700;
+      margin-bottom: 8px;
       margin-right: 12px;
       padding: 0 6px;
+      white-space: nowrap;
+
+      @include mq($from: desktop) {
+        margin-bottom: 0;
+      }
     }
   }
 
   &-img {
     border-radius: 10px;
     flex: 1;
-    margin-left: 84px;
-    padding: 30px;
+    left: 0;
+    opacity: 0.3;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+
+    @include mq($from: desktop) {
+      margin-left: 72px;
+      opacity: 1;
+      padding: 30px;
+      position: static;
+      width: auto;
+    }
+
+    @include mq($from: wide) {
+      margin-left: 84px;
+    }
   }
 
   &-gh {
     align-items: center;
     border-radius: 50%;
     border: 2px solid white;
+    bottom: 12px;
     display: flex;
     height: 30px;
     justify-content: center;
+    position: absolute;
+    right: 12px;
     width: 30px;
 
     @include mq($from: desktop) {
       height: 36px;
+      position: static;
       width: 36px;
 
       svg {

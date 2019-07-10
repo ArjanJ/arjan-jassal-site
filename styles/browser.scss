@@ -41,6 +41,10 @@
     align-items: stretch;
     display: flex;
     flex: 1;
-    height: 240px;
+    height: 164px;
+
+    @include mq($from: desktop) {
+      height: 240px;
+    }
   }
 }

@@ -57,29 +57,6 @@
     }
   }
 
-  &-flower-svg {
-    display: none;
-
-    @include mq($from: desktop) {
-      animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
-      display: block;
-      opacity: 0;
-      width: 300px;
-    }
-
-    @include mq($from: largeDesktop) {
-      width: 312px;
-    }
-
-    @include mq($from: wide) {
-      width: 360px;
-    }
-
-    @include mq($from: superwide) {
-      width: 396px;
-    }
-  }
-
   &-scroll-indicator {
     display: none;
 

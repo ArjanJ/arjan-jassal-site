@@ -130,6 +130,14 @@
       margin-top: 18px;
     }
 
+    &-body {
+      margin-top: 36px;
+
+      @include mq($from: desktop) {
+        margin-top: 18px;
+      }
+    }
+
     &-info {
       display: flex;
       max-width: 516px;
