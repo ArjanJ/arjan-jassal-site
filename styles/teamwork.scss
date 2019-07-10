@@ -2,22 +2,21 @@
   background: #0900c3;
   display: flex;
   flex: 1;
-  height: 256px;
+  position: relative;
 
   &-sidebar {
     background: #04002f;
-    height: auto;
-    max-height: 256px;
     padding: 2vh 2vw;
-    width: 10vw;
+    width: 8vw;
 
     @include mq($from: desktop) {
-      padding: 4vh 1vw;
-      width: 8vw;
+      padding: 24px 12px;
+      width: 84px;
     }
 
     &-line {
       background: rgba(white, 0.25);
+      border-radius: 2px;
       height: 4px;
       margin-bottom: 8px;
 
@@ -46,27 +45,61 @@
     padding: 2vh 2vw;
 
     @include mq($from: desktop) {
-      padding: 4vh 4vw;
+      padding: 24px 12px;
     }
+  }
+
+  &-heading {
+    background: #f8ce83;
+    border-radius: 2px;
+    height: 8px;
+    margin: 0 10px 18px;
   }
 
   &-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 
   &-item {
     align-items: center;
     background: rgba(black, 0.25);
+    border-radius: 4px;
     display: flex;
     height: 24px;
     margin: 0 8px 12px;
     padding: 0 6px;
+    position: relative;
 
     @include mq($from: desktop) {
-      height: 80px;
-      margin: 0 20px 30px;
-      padding: 0 16px;
+      height: 48px;
+      margin: 0 8px 16px;
+      padding: 0 12px;
+    }
+
+    &-menu {
+      display: none;
+
+      @include mq($from: desktop) {
+        background: #020035;
+        border-radius: 4px;
+        display: block;
+        height: 54px;
+        opacity: 0;
+        padding: 4px 0;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        transform-origin: right top;
+        width: 60px;
+        z-index: 1;
+
+        &-item {
+          background: rgba(white, 0.15);
+          height: 14px;
+          opacity: 0;
+        }
+      }
     }
 
     &-circle {
@@ -76,9 +109,95 @@
       width: 8px;
 
       @include mq($from: desktop) {
-        height: 32px;
-        width: 32px;
+        height: 16px;
+        width: 16px;
       }
     }
+  }
+
+  &-modal {
+    display: none;
+
+    @include mq($from: desktop) {
+      background: rgba(9, 0, 195, 0.65);
+      display: block;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      &-dialog {
+        background: #020035;
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(black, 0.1);
+        left: 50%;
+        opacity: 0;
+        padding: 4vh 2vw;
+        position: absolute;
+        top: 50%;
+        width: 200px;
+
+        @include mq($from: desktop) {
+          $height: 168px;
+          $width: 252px;
+          height: $height;
+          margin-left: -$width / 2;
+          margin-top: -$height / 2;
+          padding: 24px;
+          width: $width;
+        }
+
+        > * {
+          margin: auto;
+        }
+      }
+
+      &-heading,
+      &-subheading {
+        background: white;
+        border-radius: 2px;
+        height: 8px;
+        margin-bottom: 12px;
+      }
+
+      &-heading {
+        width: 50%;
+      }
+
+      &-subheading {
+        opacity: 0.5;
+        width: 75%;
+      }
+
+      &-circle {
+        align-items: center;
+        background: rgb(248, 207, 131);
+        border-radius: 50%;
+        display: flex;
+        height: 54px;
+        justify-content: center;
+        margin-top: 24px;
+        width: 54px;
+
+        svg {
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes showMenu {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

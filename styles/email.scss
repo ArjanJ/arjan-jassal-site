@@ -1,0 +1,31 @@
+.email {
+  display: none;
+
+  @include mq($from: desktop) {
+    animation: fadeIn 1.4s var(--ease-out-cubic) forwards;
+    bottom: 24px;
+    display: block;
+    opacity: 0;
+    position: fixed;
+    right: 30px;
+    z-index: 5;
+
+    @include mq($from: desktop) {
+      bottom: 36px;
+      right: 36px;
+    }
+
+    &-link {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s var(--ease-out-cubic);
+      writing-mode: vertical-rl;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}

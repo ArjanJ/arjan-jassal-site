@@ -9,32 +9,10 @@
     }
   }
 
-  &-title {
-    font-family: 'Karla', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  &-list {
-    @include mq($from: largeDesktop) {
-      display: flex;
-    }
-  }
-
   &-box {
-    align-items: flex-end;
-    border-radius: 8px;
-    box-shadow: 0 2px 18px rgba(black, 0.2);
-    cursor: pointer;
-    display: flex;
-    flex: 1;
-    height: 228px;
-    margin-bottom: 30px;
-    padding: 0 18px 18px;
+    margin-bottom: 48px;
     position: relative;
-    transform: translateY(-40%);
+    transform: translateY(50%);
     transition: all 1s var(--ease-out-cubic);
     z-index: 1;
 
@@ -43,18 +21,24 @@
 
       &::after {
         transform: scaleY(0);
+        visibility: hidden;
       }
     }
 
     @include mq($from: desktop) {
-      height: 348px;
-      margin-bottom: 64px;
-      padding: 0 48px 36px;
+      align-items: center;
+      display: flex;
+      margin-bottom: 180px;
     }
 
-    &--last {
-      @include mq($from: largeDesktop) {
-        margin-left: 64px;
+    &--reverse {
+      flex-direction: row-reverse;
+
+      .projects-img {
+        @include mq($from: desktop) {
+          margin-left: 0;
+          margin-right: 84px;
+        }
       }
     }
 
@@ -67,7 +51,7 @@
     }
 
     &--redsky {
-      background: linear-gradient(360deg, #7e51ff 0%, #f94949 100%);
+      background: linear-gradient(360deg, #9451ff 0%, #f94949 100%);
     }
 
     &::after {
@@ -75,65 +59,88 @@
       content: '';
       height: 100%;
       left: 0;
-      position: absolute;
       pointer-events: none;
+      position: absolute;
       top: 0;
       transform-origin: center bottom;
       transition: all 1s var(--ease-in-out-cubic);
       width: 100%;
       z-index: 2;
     }
+  }
 
-    &::before {
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.9) 86.46%
-      );
-      border-radius: 8px;
-      content: '';
-      height: 100%;
-      left: 0;
-      opacity: 0.85;
-      position: absolute;
-      top: 0;
-      transition: opacity 0.45s var(--ease-out-cubic);
-      width: 100%;
-      z-index: -1;
-    }
+  &-info {
+    flex: 1;
+    height: 224px;
+    padding: 24px;
 
-    &:hover {
-      .projects-img {
-        opacity: 0.85;
-      }
-
-      &::before {
-        opacity: 1;
-      }
+    @include mq($from: desktop) {
+      height: auto;
+      padding: 0;
     }
   }
 
   &-name {
     font-size: 24px;
-    letter-spacing: -1px;
-    line-height: 1.125;
+    margin-bottom: 4px;
 
     @include mq($from: desktop) {
-      font-size: 36px;
-      margin-bottom: 4px;
+      font-size: 40px;
     }
   }
 
   &-desc {
     font-size: 16px;
-    max-width: 216px;
-
-    @include mq($from: tablet) {
-      max-width: none;
-    }
+    margin-bottom: 18px;
 
     @include mq($from: desktop) {
       font-size: 18px;
+    }
+  }
+
+  &-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-bottom: 24px;
+
+    &-item {
+      background: rgba(white, 0.2);
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      margin-right: 12px;
+      padding: 0 6px;
+      white-space: nowrap;
+
+      @include mq($from: desktop) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-img {
+    border-radius: 10px;
+    flex: 1;
+    left: 0;
+    opacity: 0.3;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+
+    @include mq($from: desktop) {
+      margin-left: 72px;
+      opacity: 1;
+      padding: 30px;
+      position: static;
+      width: auto;
+    }
+
+    @include mq($from: wide) {
+      margin-left: 84px;
     }
   }
 
@@ -141,18 +148,17 @@
     align-items: center;
     border-radius: 50%;
     border: 2px solid white;
-    bottom: 18px;
+    bottom: 12px;
     display: flex;
     height: 30px;
     justify-content: center;
     position: absolute;
-    right: 18px;
+    right: 12px;
     width: 30px;
 
     @include mq($from: desktop) {
-      bottom: 36px;
       height: 36px;
-      right: 48px;
+      position: static;
       width: 36px;
 
       svg {
@@ -171,37 +177,6 @@
       svg {
         transform: scale(1.25) rotate(360deg);
       }
-    }
-  }
-
-  &-img {
-    bottom: 0;
-    left: 50%;
-    padding: 0 30px;
-    position: absolute;
-    transform: translate(-50%, 0);
-    transition: opacity 0.45s var(--ease-out-cubic);
-    width: 100%;
-    z-index: -2;
-
-    @include mq($from: tablet) {
-      padding: 0 90px;
-    }
-
-    @include mq($from: desktop) {
-      padding: 0 120px;
-    }
-
-    @include mq($from: largeDesktop) {
-      padding: 0 60px;
-    }
-
-    @include mq($from: wide) {
-      padding: 0 90px;
-    }
-
-    svg {
-      width: 100%;
     }
   }
 }

@@ -1,7 +1,6 @@
 .react-camera {
   background: #7a08fa;
   flex: 1;
-  height: 252px;
   padding: 24px;
 
   @include mq($from: desktop) {
@@ -15,6 +14,12 @@
 
     @include mq($from: desktop) {
       width: 90px;
+    }
+  }
+
+  &-person {
+    @include mq($from: desktop) {
+      transform-origin: center;
     }
   }
 }

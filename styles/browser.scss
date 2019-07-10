@@ -1,17 +1,11 @@
 // Literally looks like a browser window.
 .browser {
   background: white;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(black, 0.14);
   margin: auto;
-  height: 192px;
   max-width: 1260px;
   overflow: hidden;
-
-  @include mq($from: desktop) {
-    height: auto;
-    min-height: 300px;
-  }
 
   &-header {
     align-items: center;
@@ -21,8 +15,8 @@
     padding: 0 12px;
 
     @include mq($from: desktop) {
-      padding: 0 16px;
-      height: 48px;
+      padding: 0 12px;
+      height: 40px;
     }
 
     &-dot {
@@ -33,8 +27,8 @@
       width: 12px;
 
       @include mq($from: desktop) {
-        height: 16px;
-        width: 16px;
+        height: 14px;
+        width: 14px;
       }
 
       &:first-child {
@@ -47,5 +41,10 @@
     align-items: stretch;
     display: flex;
     flex: 1;
+    height: 164px;
+
+    @include mq($from: desktop) {
+      height: 240px;
+    }
   }
 }

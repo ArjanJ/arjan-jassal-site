@@ -1,7 +1,7 @@
 .intro {
   align-items: flex-end;
   display: flex;
-  height: 480px;
+  height: 564px;
   padding-bottom: 36px;
 
   @include mq($from: desktop) {
@@ -20,68 +20,41 @@
   }
 
   &-left {
+    animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
+    opacity: 0;
+
     @include mq($from: desktop) {
       flex: 2;
       padding-right: 60px;
     }
   }
 
-  &-right {
-    @include mq($from: desktop) {
-      display: flex;
-      flex: 1;
-      justify-content: center;
-      position: relative;
-    }
-  }
-
   &-heading {
-    animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
     font-size: 32px;
-    letter-spacing: -1px;
     line-height: 1.2;
-    margin: 0;
-    opacity: 0;
-
-    span {
-      color: white;
-    }
+    margin: 0 0 24px;
 
     @include mq($from: desktop) {
       font-size: 52px;
-      max-width: 768px;
-    }
-
-    @include mq($from: largeDesktop) {
-      font-size: 60px;
-      letter-spacing: -1.5px;
+      margin: 0 0 36px;
     }
 
     @include mq($from: wide) {
-      font-size: 72px;
+      font-size: 64px;
     }
   }
 
-  &-flower-svg {
-    display: none;
+  &-subheading {
+    font-size: 24px;
+    line-height: 1.4;
+    opacity: 0.75;
 
     @include mq($from: desktop) {
-      animation: fadeInDown 1.4s var(--ease-out-cubic) forwards;
-      display: block;
-      opacity: 0;
-      width: 300px;
-    }
-
-    @include mq($from: largeDesktop) {
-      width: 312px;
+      font-size: 40px;
     }
 
     @include mq($from: wide) {
-      width: 360px;
-    }
-
-    @include mq($from: superwide) {
-      width: 396px;
+      font-size: 48px;
     }
   }
 
@@ -98,8 +71,15 @@
       transition: all 0.35s var(--ease-out-cubic);
 
       &--hide {
-        animation: fadeOut 0.35s var(--ease-out-cubic) forwards;
         transform: translateY(18%);
+
+        .intro-scroll-indicator-line {
+          transform: scaleY(0);
+        }
+
+        .intro-scroll-indicator-text {
+          opacity: 0;
+        }
       }
 
       &-line {
@@ -107,6 +87,8 @@
         height: 84px;
         overflow: hidden;
         position: relative;
+        transform-origin: center bottom;
+        transition: all 0.6s var(--ease-in-out-cubic);
         width: 1px;
 
         &::before {
@@ -130,6 +112,7 @@
         font-weight: 700;
         letter-spacing: 1.5px;
         text-transform: uppercase;
+        transition: all 0.5s var(--ease-out-cubic);
       }
     }
   }
