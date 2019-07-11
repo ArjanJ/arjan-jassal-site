@@ -13,21 +13,18 @@ export const workAccordion = () => {
   function expandSection(element) {
     element.setAttribute('data-expanded', 'true');
     const content = element.querySelector(CONTENT_SELECTOR);
-    const backgroundColor = element.getAttribute('data-color');
 
     /**
      * scrollHeight is the height of the content
      * inside of the element.
      */
     content.style.height = `${content.scrollHeight}px`;
-    // setBackgroundColor(backgroundColor);
   }
 
   function collapseSection(element) {
     element.setAttribute('data-expanded', 'false');
     const content = element.querySelector(CONTENT_SELECTOR);
     content.removeAttribute('style');
-    document.body.removeAttribute('style');
   }
 
   function handleClick(event) {
@@ -51,10 +48,6 @@ export const workAccordion = () => {
     }
 
     return expandSection(section);
-  }
-
-  function setBackgroundColor(color) {
-    document.body.style.backgroundColor = color;
   }
 
   function init() {
