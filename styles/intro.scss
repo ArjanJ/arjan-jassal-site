@@ -20,12 +20,35 @@
   }
 
   &-left {
-    animation: fadeInUp 1.4s var(--ease-out-cubic) forwards;
+    animation: fadeInUp 1s var(--ease-out-cubic) forwards;
     opacity: 0;
 
     @include mq($from: desktop) {
       flex: 2;
       padding-right: 60px;
+    }
+  }
+
+  &-heading,
+  &-subheading {
+    position: relative;
+
+    &.js-scroll-animate {
+      &::before {
+        transform: scaleY(0);
+      }
+    }
+
+    &::before {
+      background: var(--background-color);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform-origin: center bottom;
+      transition: all 1s var(--ease-in-out-cubic);
+      width: 100%;
     }
   }
 
