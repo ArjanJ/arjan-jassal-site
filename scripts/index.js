@@ -6,7 +6,7 @@ import { teamworkAnimation } from './teamworkAnimation';
 import { toggleScrollIndicator } from './toggleScrollIndicator';
 import { workAccordion } from './workAccordion';
 
-window.addEventListener('DOMContentLoaded', event => {
+window.addEventListener('DOMContentLoaded', () => {
   aboutModal();
   reactCameraAnimation();
   readitAnimation();
