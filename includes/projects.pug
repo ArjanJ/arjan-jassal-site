@@ -4,7 +4,7 @@ section.projects
       h2.common-section-title 01. Side Projects
 
     .projects-list
-      .projects-box.js-scroll
+      .projects-box.js-scroll(data-link="https://github.com/ArjanJ/teamwork")
         .projects-info
           h3.projects-name Teamwork
           p.projects-desc An app to keep track of feedback, schedule 1-on-1 meetings, and keep your team happy.
@@ -16,10 +16,11 @@ section.projects
             li.projects-tech-list-item Firebase
           a.projects-gh(href="https://github.com/ArjanJ/teamwork" rel="noopener" aria-label="GitHub repository for Teamwork" target="_blank") 
             include ./icons/gh-icon.pug
+            span See GitHub
         .projects-img.projects-box--sunset
           include ./teamwork.pug
 
-      .projects-box.projects-box--reverse.js-scroll
+      .projects-box.projects-box--reverse.js-scroll(data-link="https://github.com/ArjanJ/react-camera")
         .projects-info
           h3.projects-name React Camera
           p.projects-desc A flexible camera component for React DOM. Take photos using the latest WebRTC API's.
@@ -29,10 +30,11 @@ section.projects
             li.projects-tech-list-item Styled Components
           a.projects-gh(href="https://github.com/ArjanJ/react-camera" rel="noopener" aria-label="GitHub repository for React Camera" target="_blank") 
             include ./icons/gh-icon.pug
+            span See GitHub
         .projects-img.projects-box--redsky
           include ./react-camera.pug
 
-      .projects-box.js-scroll
+      .projects-box.js-scroll(data-link="https://github.com/ArjanJ/readit")
         .projects-info
           h3.projects-name Readit
           p.projects-desc Browse Reddit without visual noise. Built with React + Flux.
@@ -43,5 +45,6 @@ section.projects
             li.projects-tech-list-item Reddit API
           a.projects-gh(href="https://github.com/ArjanJ/readit" rel="noopener" aria-label="GitHub repository for Readit" target="_blank") 
             include ./icons/gh-icon.pug
+            span See GitHub
         .projects-img.projects-box--cyan
           include ./readit.pug
