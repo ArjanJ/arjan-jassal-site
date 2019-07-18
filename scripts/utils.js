@@ -29,6 +29,5 @@ export const animations = {
 
 export const supportsAnimate = () => {
   const el = document.createElement('div');
-
   return !!el.animate;
 };

@@ -10,7 +10,7 @@ export const workAccordion = () => {
     accordion: document.getElementById('workAccordion'),
   };
 
-  function expandSection(element) {
+  const expandSection = element => {
     element.setAttribute('data-expanded', 'true');
     const content = element.querySelector(CONTENT_SELECTOR);
 
@@ -19,15 +19,15 @@ export const workAccordion = () => {
      * inside of the element.
      */
     content.style.height = `${content.scrollHeight}px`;
-  }
+  };
 
-  function collapseSection(element) {
+  const collapseSection = element => {
     element.setAttribute('data-expanded', 'false');
     const content = element.querySelector(CONTENT_SELECTOR);
     content.removeAttribute('style');
-  }
+  };
 
-  function handleClick(event) {
+  const handleClick = event => {
     const { target } = event;
     const isCollapsibleContent = target.closest(CONTENT_SELECTOR);
 
@@ -48,11 +48,11 @@ export const workAccordion = () => {
     }
 
     return expandSection(section);
-  }
+  };
 
-  function init() {
+  const init = () => {
     elements.accordion.addEventListener('click', handleClick, false);
-  }
+  };
 
   init();
 };

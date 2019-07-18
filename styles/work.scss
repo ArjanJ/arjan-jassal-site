@@ -13,12 +13,16 @@
   &-group {
     border-bottom: 2px solid white;
     opacity: 0;
-    transform: translateY(70%);
+    transform: translateY(50%);
     transition: all 1s var(--ease-in-out-cubic);
 
     &.js-scroll-animate {
       opacity: 1;
       transform: none;
+
+      .work-group-header::after {
+        transform: scaleY(0);
+      }
     }
 
     &[data-expanded='true'] {
@@ -52,6 +56,21 @@
       cursor: pointer;
       display: flex;
       justify-content: space-between;
+      position: relative;
+
+      &::after {
+        background: var(--background-color);
+        content: '';
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transform-origin: center bottom;
+        transition: all 1s var(--ease-in-out-cubic);
+        width: 100%;
+        z-index: 2;
+      }
 
       svg {
         opacity: 0.5;
