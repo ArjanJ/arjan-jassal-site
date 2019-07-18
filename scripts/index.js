@@ -1,4 +1,5 @@
 import { aboutModal } from './aboutModal';
+import { introScrollFade } from './introScrollFade';
 import { projectLinks } from './projectLinks';
 import { reactCameraAnimation } from './reactCameraAnimation';
 import { readitAnimation } from './readitAnimation';
@@ -9,6 +10,7 @@ import { workAccordion } from './workAccordion';
 
 window.addEventListener('DOMContentLoaded', () => {
   aboutModal();
+  introScrollFade();
   projectLinks();
   reactCameraAnimation();
   readitAnimation();

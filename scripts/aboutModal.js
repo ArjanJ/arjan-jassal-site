@@ -21,17 +21,14 @@ export const aboutModal = () => {
   const ABOUT_OPEN_CLASSNAME = 'about--open';
   const MAIN_OPEN_CLASSNAME = 'main--blur';
 
-  elements.openButton.addEventListener('click', open);
-  elements.closeButton.addEventListener('click', close);
-
-  function handleKeyDown({ keyCode }) {
+  const handleKeyDown = ({ keyCode }) => {
     // Close modal when esc key is pressed.
     if (keyCode === 27) {
       close();
     }
-  }
+  };
 
-  function close() {
+  const close = () => {
     const { about, aboutWrapper, main } = elements;
 
     enableBodyScroll(aboutWrapper);
@@ -40,9 +37,9 @@ export const aboutModal = () => {
     main.classList.remove(MAIN_OPEN_CLASSNAME);
 
     document.removeEventListener('keydown', handleKeyDown, false);
-  }
+  };
 
-  function open() {
+  const open = () => {
     const { about, aboutWrapper, main } = elements;
 
     disableBodyScroll(aboutWrapper);
@@ -50,6 +47,14 @@ export const aboutModal = () => {
     about.classList.add(ABOUT_OPEN_CLASSNAME);
     main.classList.add(MAIN_OPEN_CLASSNAME);
 
+    // Only listen for keydown events when modal is open.
     document.addEventListener('keydown', handleKeyDown, false);
-  }
+  };
+
+  const init = () => {
+    elements.openButton.addEventListener('click', open);
+    elements.closeButton.addEventListener('click', close);
+  };
+
+  init();
 };
