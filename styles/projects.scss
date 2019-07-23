@@ -101,7 +101,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    margin-bottom: 30px;
+    margin-bottom: 36px;
 
     &-item {
       background: rgba(white, 0.2);
@@ -143,45 +143,53 @@
     }
   }
 
-  &-gh {
+  &-links {
     display: none;
 
     @include mq($from: desktop) {
-      color: white;
-      display: block;
-      font-weight: 700;
-      text-decoration: none;
+      align-items: center;
+      display: flex;
 
-      span {
-        display: inline-block;
-        margin-left: 12px;
-        position: relative;
+      &-link {
+        color: white;
+        margin-left: 36px;
+        text-decoration: none;
 
-        &::before {
-          background: white;
-          bottom: 0;
-          content: '';
-          height: 1px;
-          left: 0;
-          position: absolute;
-          transform-origin: left center;
-          transform: scaleX(0);
-          transition: transform 0.35s var(--ease-out-cubic);
-          width: 100%;
+        &:first-child {
+          margin-left: 0;
         }
-      }
 
-      svg {
-        transition: transform 0.35s var(--ease-out-cubic);
-      }
+        span {
+          display: inline-block;
+          margin-left: 12px;
+          position: relative;
 
-      &:hover {
+          &::before {
+            background: white;
+            bottom: 0;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: transform 0.35s var(--ease-out-cubic);
+            width: 100%;
+          }
+        }
+
         svg {
-          transform: rotateY(180deg);
+          transition: transform 0.35s var(--ease-out-cubic);
         }
 
-        span::before {
-          transform: none;
+        &:hover {
+          svg {
+            transform: rotateY(180deg);
+          }
+
+          span::before {
+            transform: none;
+          }
         }
       }
     }
