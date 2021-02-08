@@ -19,17 +19,17 @@
   },
   "homepage": "https://github.com/ArjanJ/arjan-jassal-site#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "pug": "^2.0.4",
-    "sass": "^1.21.0"
+    "sass": "^1.32.6"
   },
   "browserslist": [
-    "since 2017-06"
+    "since 2019-06"
   ],
   "dependencies": {
-    "body-scroll-lock": "^2.6.3",
-    "is-mobile": "^2.0.1",
-    "sass-mq": "^5.0.0",
+    "body-scroll-lock": "^2.7.1",
+    "is-mobile": "^2.2.2",
+    "sass-mq": "^5.0.1",
     "svg.js": "^2.7.1"
   }
 }
