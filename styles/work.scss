@@ -202,17 +202,17 @@
 
       &-copy {
         font-size: 18px;
-        margin-bottom: 36px;
+        padding-bottom: 36px;
 
         &:last-child {
-          margin-bottom: 48px;
+          padding-bottom: 48px;
 
           @include mq($from: desktop) {
-            margin-bottom: 60px;
+            padding-bottom: 60px;
           }
 
           @include mq($from: wide) {
-            margin-bottom: 84px;
+            padding-bottom: 84px;
           }
         }
       }
