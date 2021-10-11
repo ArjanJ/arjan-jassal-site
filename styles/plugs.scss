@@ -13,18 +13,17 @@
   &-link {
     align-items: center;
     display: flex;
+    opacity: 0.75;
     padding: 12px;
     text-decoration: none;
     transition: all 0.35s var(--ease-out-cubic);
 
     &:hover {
+      opacity: 1;
+
       .plugs-name {
         opacity: 1;
         transform: none;
-      }
-
-      .plugs-icon {
-        opacity: 0.75;
       }
     }
   }
@@ -32,9 +31,9 @@
   &-name {
     color: white;
     font-size: 16px;
-    margin-left: 12px;
+    margin-left: 10px;
     opacity: 0;
-    transform: translateY(-20%);
+    transform: translateX(-20%);
     transition: all 0.35s var(--ease-out-cubic);
   }
 

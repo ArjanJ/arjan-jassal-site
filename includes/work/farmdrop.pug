@@ -1,0 +1,45 @@
+.work-group.js-scroll(data-color="#218972" data-expanded="false")
+    header.work-group-header
+      h2.work-group-name(data-name="Farmdrop") <span>Farmdrop</span>
+      include ../icons/add-icon.pug
+    .work-group-content
+      .work-group-info
+        .work-group-info-row
+          .work-group-info-block
+            h3.work-group-info-heading When
+            p.work-group-info-value 2019/2021
+          .work-group-info-block
+            h3.work-group-info-heading Role
+            p.work-group-info-value Sr. Frontend Engineer
+        .work-group-info-row
+          .work-group-info-block
+            h3.work-group-info-heading Website
+            p.work-group-info-value
+              a(href="https://farmdrop.com" target="_blank" rel="noopener") farmdrop.com
+          .work-group-info-block
+            h3.work-group-info-heading Tech
+            p.work-group-info-value React, Redux, Apollo, Graphql, TypeScript, Emotion, Expresss
+      .work-group-body
+        h3.work-group-info-heading Highlights
+        ul.work-group-highlights
+          li.work-group-highlight Refactored legacy Ruby on Rails codebase into <strong>Node.js</strong> and <strong>React</strong> web app
+          li.work-group-highlight Built revamped "Recipes" section of website as a microfrontend (React, TypeScript)
+          li.work-group-highlight Developed and maintained <a href="https://ui.farmdrop.com" target="_blank" rel="noopener">UI Component library</a> used across frontend apps
+          li.work-group-highlight Introduced <strong<TypeScript</strong> to the frontend web-stack
+          li.work-group-highlight Implemented 3DS payment protocols using Stripe
+        p.work-group-body-copy
+          | After working in Vancouver for sometime, I felt a change was needed and I was craving a new challenge.
+          | This led me to moving to London and thereby joining Farmdrop. The first few months were exciting, 
+          | staying in airbnbs, exploring unfamiliar areas, and meeting new people. However, that quickly went to shit because of covid. 
+          | The next year and half was spent working from home, which was my flat in North West London.
+        p.work-group-body-copy
+          | Upon joining Farmdrop, I was introduced to an enormous amount of tech debt in the frontend web app. It was a mixture of Ruby on Rails and outdated React.
+          | My first few months were mostly a mix of refactoring legacy Ruby into JavaScript, and eventually I was able to remove Ruby
+          | from our frontend tech stack. This increases performance on various parts of the website, as well as speeding up 
+          | our dev processes because we no longer has to compile or maintain Ruby code.
+        p.work-group-body-copy
+          | After paying off a lot of tech debt we were in a decent spot to build some new features as well as 
+          | introduce some new libraries and tools to our workflow. I rebuilt the #[a(href="https://farmdrop.com/recipes" target="_blank" rel="noopener") Recipes]
+          | feature of the website from the ground up using TypeScript, React, and Emotion for styling.
+          | During this time we built a #[a(href="https://ui.farmdrop.com" target="_blank" rel="noopener") component library]
+          | using TypeScript, React, and Emotion and slowly scaled it across multiple repos.
