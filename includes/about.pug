@@ -2,7 +2,7 @@ section.about(aria-modal="true" aria-labelledby="dialog1Title" role="dialog")
   .common-wrapper
     .about-wrapper
       .about-left
-        .about-bio
+        .about-bio(data-sal="slide-down" data-sal-duration="1000" data-sal-easing="ease-out-cubic")
           h2.about-subheading(id="dialog1Title")
             | My name is Arjan and I’m a frontend developer currently based in Vancouver.
             | I have over 7 years of experience building simple, fast, and useful, websites and apps.
@@ -16,5 +16,5 @@ section.about(aria-modal="true" aria-labelledby="dialog1Title" role="dialog")
           p.about-copy.about-plug
             | <strong>Get in touch at <a href="mailto:hello@arjanjassal.com">hello@arjanjassal.com</a></strong>
       .about-right
-        img.about-pic(loading="lazy" alt="Arjan's smiling face." src="./img/arjan-jassal-sq-min.jpg")
+        img.about-pic(load="lazy" alt="Arjan's smiling face." src="./img/arjan-jassal-sq-min.jpg" data-sal="slide-up" data-sal-duration="1000" data-sal-easing="ease-out-cubic")
   button.about-btn(type="button" id="about-btn-close") Close
