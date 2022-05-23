@@ -13,16 +13,13 @@
   &-link {
     align-items: center;
     display: flex;
-    opacity: 0.75;
     padding: 12px;
     text-decoration: none;
     transition: all 0.35s var(--ease-out-cubic);
 
     &:hover {
-      opacity: 1;
 
       .plugs-name {
-        opacity: 1;
         transform: none;
       }
     }
