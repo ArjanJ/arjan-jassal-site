@@ -12,20 +12,11 @@
     font-size: 16px;
     margin-bottom: 36px;
     text-decoration: none;
-    transition: opacity 0.35s var(--ease-out-cubic);
-
-    &:hover {
-      opacity: 0.75;
-    }
 
     @include mq($from: desktop) {
       font-size: 18px;
       margin-bottom: 0;
     }
-  }
-
-  code {
-    font-weight: bold;
   }
 
   &-plugs {

@@ -1,20 +1,17 @@
 .intro {
   align-items: flex-end;
   display: flex;
-  height: 564px;
+  min-height: 480px;
   padding-bottom: 36px;
 
-  @include mq($from: desktop) {
-    align-items: center;
-    height: 100vh;
-    padding-bottom: 0;
-    position: relative;
+  @include mq($from: tablet) {
+    padding-bottom: 48px;
   }
 
-  &-wrapper {
-    @include mq($from: desktop) {
-      text-align: center;
-    }
+  @include mq($from: desktop) {
+    min-height: 680px;
+    padding-bottom: 120px;
+    position: relative;
   }
 
   &-left {
@@ -46,17 +43,19 @@
   }
 
   &-heading {
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 0 0 24px;
+    font-size: 36px;
+    line-height: 1.3;
+
+    @include mq($from: tablet) {
+      font-size: 46px;
+    }
 
     @include mq($from: desktop) {
       font-size: 52px;
-      margin: 0 0 36px;
     }
 
     @include mq($from: wide) {
-      font-size: 64px;
+      font-size: 68px;
     }
   }
 

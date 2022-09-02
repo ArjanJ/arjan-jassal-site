@@ -5,7 +5,6 @@ import { reactCameraAnimation } from './reactCameraAnimation';
 import { readitAnimation } from './readitAnimation';
 import { scrollAnimation } from './scrollAnimation';
 import { teamworkAnimation } from './teamworkAnimation';
-import { toggleScrollIndicator } from './toggleScrollIndicator';
 import { workAccordion } from './workAccordion';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
   readitAnimation();
   scrollAnimation();
   teamworkAnimation();
-  toggleScrollIndicator();
   workAccordion();
 });

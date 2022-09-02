@@ -13,6 +13,7 @@
   &-link {
     align-items: center;
     display: flex;
+    margin-bottom: 2px;
     padding: 12px;
     text-decoration: none;
     transition: all 0.35s var(--ease-out-cubic);
@@ -20,6 +21,7 @@
     &:hover {
 
       .plugs-name {
+        opacity: 1;
         transform: none;
       }
     }

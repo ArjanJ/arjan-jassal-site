@@ -13,7 +13,7 @@
 }
 
 :root {
-  --background-color: #3e00ff;
+  --background-color: #111112;
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
@@ -37,6 +37,7 @@ body {
   background-color: var(--background-color);
   color: white;
   font-family: 'apc', sans-serif;
+  font-display: swap;
   margin: 0;
 }
 
@@ -75,6 +76,6 @@ strong {
 }
 
 ::selection {
-  background-color: #1cd760;
+  background-color: #2925ed;
   color: white;
 }

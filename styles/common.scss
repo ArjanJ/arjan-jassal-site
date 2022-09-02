@@ -4,6 +4,10 @@
     margin: 0 auto;
     padding: 0 30px;
 
+    @include mq($from: tablet) {
+      max-width: 660px;
+    }
+
     @include mq($from: desktop) {
       max-width: 924px;
     }
@@ -22,5 +26,9 @@
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+
+    @include mq($from: tablet) {
+      font-size: 14px;
+    }
   }
 }
