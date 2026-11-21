@@ -1,29 +1,15 @@
 doctype html
-html(lang="en")
+html(lang='en')
   include ./includes/head.pug
 
   body
-    include ./includes/nav.pug
-    main.main
-      include ./includes/intro.pug
-      include ./includes/work.pug
-      include ./includes/projects.pug
-      include ./includes/plugs.pug
-      include ./includes/footer.pug
-    include ./includes/about.pug
-    
-    script.
-      const host = window.location.host;
-      const isProduction = host.indexOf('arjanjassal.me') >= 0;
+    main
+      .copy
+        //- Copy and links per the design spec. Each [data-s] span is decoded on load;
+        //- the real text stays available to screen readers.
+        <p><span class="name" data-s>Arjan Jassal</span> <span data-s>is a product engineer in Vancouver, Canada, currently Senior Frontend Engineer at Onfleet.</span></p>
+        <p><span data-s>Say hello by</span> <a href="mailto:hello@arjanjassal.com" data-dest="hello@arjanjassal.com" aria-label="Email hello@arjanjassal.com"><span class="k" data-s>email</span></a><span data-s>, or find Arjan on</span> <a href="https://github.com/ArjanJ" data-dest="github.com/ArjanJ" aria-label="GitHub"><span class="k" data-s>GitHub</span></a> <span data-s>and</span> <a href="https://ca.linkedin.com/in/arjan-jassal-27569597" data-dest="linkedin.com/in/arjan-jassal-27569597" aria-label="LinkedIn"><span class="k" data-s>LinkedIn</span></a><span data-s>.</span></p>
+        .cap(aria-hidden='true')
+    include ./includes/theme-toggle.pug
 
-      if (isProduction) {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-75018733-1', 'auto');
-        ga('send', 'pageview');
-      }
-
-    script(defer src='./scripts/index.js')
+    script(src='./scripts/index.js')

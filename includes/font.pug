@@ -1,0 +1,9 @@
+//- The site's only typeface, loaded in one place. To swap fonts, change the
+//- stylesheet URL and the --font-mono value below (nothing else references it).
+//- Weights used: 400 (body) and 500 (name). Keep it monospaced: the decode effect
+//- relies on every glyph having the same advance.
+link(rel='preconnect' href='https://fonts.googleapis.com')
+link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap')
+style.
+  :root { --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
