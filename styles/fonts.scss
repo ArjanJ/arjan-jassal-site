@@ -1,0 +1,24 @@
+// The site's typefaces, defined in one place. Self-hosted Latin subsets of
+// Geist (variable, used at 400 and 500) and Geist Mono 400, both under the
+// SIL Open Font License 1.1 (fonts/OFL.txt). To swap fonts, change the files
+// here, the two variables below and the preload links in includes/head.pug.
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('../fonts/geist-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/geist-mono-latin.woff2') format('woff2');
+}
+
+:root {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;  // sentences
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;    // decode caption
+}
