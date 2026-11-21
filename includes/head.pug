@@ -1,9 +1,38 @@
 head
   meta(charset='utf-8')
-  title Arjan Jassal
-  meta(name='description' content='Arjan Jassal is a frontend engineer based in Vancouver.')
   meta(name='viewport' content='width=device-width, initial-scale=1')
-  meta(name='theme-color' content='#000000')
-  link(href='./styles/index.scss' rel='stylesheet')
-  
+  title Arjan Jassal
+  meta(name='description' content='Arjan Jassal is a product engineer based in Vancouver, Canada.')
+  meta(name='theme-color' content='#fafafa' media='(prefers-color-scheme: light)')
+  meta(name='theme-color' content='#0a0a0a' media='(prefers-color-scheme: dark)')
+  //- Runs before any CSS or fonts: sets <html data-theme> synchronously, so there is no theme flash.
+  script.
+    /* no-flash theme: ?theme= (forced, not stored) → localStorage "theme" → system */
+    (function () {
+      try {
+        var d = document.documentElement, t = null, manual = false;
+        try { t = new URLSearchParams(location.search).get('theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') { t = null; try { t = localStorage.getItem('theme'); } catch (e) {} }
+        if (t === 'light' || t === 'dark') manual = true;
+        else t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        d.setAttribute('data-theme', t);
+        if (manual) {
+          var c = t === 'dark' ? '#0a0a0a' : '#fafafa', m = document.querySelectorAll('meta[name="theme-color"]');
+          for (var i = 0; i < m.length; i++) m[i].setAttribute('content', c);
+        }
+      } catch (e) {}
+    })();
+    /* decode guard: hide the final copy until the decode script has swapped in its
+       blank cells (removed by scripts/decode.js; 3s failsafe if it never runs) */
+    (function () {
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var d = document.documentElement;
+        d.classList.add('pre');
+        setTimeout(function () { d.classList.remove('pre'); }, 3000);
+      } catch (e) {}
+    })();
+  include ./font.pug
+  link(rel='stylesheet' href='./styles/index.scss')
+
   include ./favicon/favicon.pug

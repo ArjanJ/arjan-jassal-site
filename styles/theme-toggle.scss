@@ -1,0 +1,40 @@
+// Theme toggle (icon button). Isolated so the control can be swapped without
+// touching the rest of the page. Markup: includes/theme-toggle.pug
+
+/* theme toggle: one quiet line icon, top-right. Shows the theme you'd switch TO:
+   moon in light, sun in dark. 18px glyph centred in a 44×44 hit area whose glyph
+   sits on the --edge gutter. */
+.theme {
+  position: absolute;
+  top: calc(var(--edge) - 13px);
+  right: calc(var(--edge) - 13px);
+  width: 44px; height: 44px;
+  margin: 0; padding: 0;
+  display: grid; place-items: center;
+  border: 0; border-radius: 2px;
+  background: none;
+  color: var(--quiet);
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .12s;
+}
+:root:not([data-theme]) .theme { display: none; }   /* JS off: nothing to toggle */
+.theme:hover { color: var(--ink); }
+.theme svg {
+  grid-area: 1 / 1;
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: opacity .15s ease, transform .15s ease;
+}
+:root[data-theme="light"] .theme .i-sun,
+:root[data-theme="dark"] .theme .i-moon { opacity: 0; transform: rotate(-45deg) scale(.8); }
+/* same inverted focus as the links: a small ink square around the glyph */
+.theme:focus-visible { outline: 2px solid transparent; outline-offset: -2px; }
+.theme:focus-visible::before {
+  content: ""; position: absolute; inset: 9px;
+  background: var(--ink); border-radius: 2px;
+}
+.theme:focus-visible svg { position: relative; color: var(--bg); }
+@media (prefers-reduced-motion: reduce) { .theme, .theme svg { transition: none; } }

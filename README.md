@@ -1,12 +1,15 @@
 # Arjan Jassal
 
-My website to showcase side projects, work experience, and myself. 
+My personal website: two sentences on an empty page, in black and white mono type.
 
-## What kind of website is this?
-It's a static website. I choose to go the static website route because there isn't any dynamic content, nor is there any complex state to manage. Using a CMS would be overkill, and using a JS framework or lib (like React) would also be overkill. Static websites, if done right, are the fastest to load and most accessible.
+## How it works
+- `index.pug` is the only page. `includes/head.pug` holds the meta tags and an inline script that sets the theme (`<html data-theme>`) before first paint, so there's no flash.
+- `styles/index.scss` is the whole look. The theme toggle is isolated in `includes/theme-toggle.pug` and `styles/theme-toggle.scss`.
+- `scripts/decode.js` runs the load "decode" sweep and the hover/focus caption that decodes each link's destination. `scripts/theme.js` wires the light/dark toggle (system default, remembered choice).
+- Everything respects `prefers-reduced-motion`.
 
-## What build tool did you use?
-I used Parcel to compile everything. Parcel's a simple alternative to Webpack and Rollup that really shines for simple use cases like a static website. There was nothing to configure, which is rare these days, and it supports SCSS, Pug, ES6 out of the box (which I used heavily).
+## Build
+Parcel 1 compiles Pug, SCSS and JS with no config: `npm install`, then `npm run dev` or `npm run build` (output in `dist/`).
 
-## Hosting?
-Netlify! I'm blown away by how great of a service Netlify is. I setup CI/CD with Netlify, a custom domain, and branch subdomains (for dev and staging) all in an hour. I highly recommend it, and the free version is very good.
+## Hosting
+Netlify.
