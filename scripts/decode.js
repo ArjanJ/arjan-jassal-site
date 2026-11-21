@@ -1,6 +1,7 @@
-/* Decode: one load sweep through both sentences, and a caption that decodes each
-   link's destination on hover/focus. rAF only, paused when the tab is hidden,
-   instant under prefers-reduced-motion. */
+/* Caption decode: on hover/focus, the caption line under the sentences decodes
+   the link's destination (in the mono face, so there's no layout shift). rAF
+   only, paused when the tab is hidden, instant under prefers-reduced-motion.
+   The sentences themselves only fade in (CSS, styles/index.scss). */
 export function decode() {
   'use strict';
   const mqRM = matchMedia('(prefers-reduced-motion: reduce)');
@@ -19,13 +20,12 @@ export function decode() {
   const GL = '01_=<>[]*+';
   const NB = ' ';
 
-  /* a glyph "front" sweeps left → right; char g resolves at t0 + (off+i)·stagger */
+  /* a glyph "front" sweeps left → right; char i resolves at t0 + (off+i)·stagger */
   let uid = 1;
   class Scramble {
     constructor(el, final) {
       this.el = el; this.id = uid++; this.gen = 0;
       this.final = final != null ? final : el.textContent.replace(/\s+/g, ' ');
-      this.blank = this.final.replace(/\S/g, NB);
       this.from = this.to = this.shown = this.final;
       this.t0 = -1e9; this.o = {};
       el.textContent = this.final;
@@ -55,19 +55,6 @@ export function decode() {
     }
   }
 
-  /* text nodes: screen readers get real text (links carry aria-label) */
-  const nodes = [...document.querySelectorAll('[data-s]')];
-  const S = new Map();
-  for (const el of nodes) {
-    S.set(el, new Scramble(el));
-    if (!el.closest('a')) {
-      const sr = document.createElement('span');
-      sr.className = 'sr-only'; sr.textContent = el.textContent;
-      el.setAttribute('aria-hidden', 'true');
-      el.parentNode.insertBefore(sr, el);
-    }
-  }
-
   /* links + destination labels */
   const links = [...document.querySelectorAll('a[data-dest]')].map(a => {
     const tip = document.createElement('span');
@@ -90,18 +77,6 @@ export function decode() {
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { cancelAnimationFrame(raf); raf = 0; } else kick();
   });
-
-  /* load: one continuous sweep through the whole sentence, ≈ 450ms */
-  function sweep(base) {
-    const total = nodes.reduce((n, el) => n + S.get(el).final.length, 0) || 1;
-    const stagger = 380 / total;
-    let off = 0;
-    for (const el of nodes) {
-      const s = S.get(el);
-      s.set(s.final, base, { off, stagger, win: 70, jitter: 14 }, s.blank);
-      off += s.final.length;
-    }
-  }
 
   /* hover / focus: word → destination, ≈ 200ms; back on leave */
   const HOVER = len => ({ stagger: Math.min(12, 170 / len), win: 50, jitter: 8 });
@@ -146,19 +121,4 @@ export function decode() {
 
   /* boot */
   addEventListener('resize', () => { if (hot) place(hot); });
-  // Ask for the web font explicitly (fonts.ready can resolve before it's even requested).
-  // The family comes from --font-mono (includes/font.pug), so a font swap stays one change.
-  const fam = (getComputedStyle(document.documentElement).getPropertyValue('--font-mono').split(',')[0] || '').trim();
-  const fontsReady = fam && document.fonts && document.fonts.load
-    ? Promise.all([document.fonts.load('400 1em ' + fam), document.fonts.load('500 1em ' + fam)]).catch(() => {})
-    : Promise.resolve();
-  const settled = Promise.race([fontsReady, new Promise(r => setTimeout(r, 400))]);
-
-  if (!RM) {
-    // hold same-width blanks until the web font is in, so the sweep plays in the real face
-    for (const s of S.values()) s.show(s.blank);
-    settled.then(() => sweep(performance.now() + 20));
-  }
-  // the <head> script hid the final copy until now (no flash of final text before the sweep)
-  document.documentElement.classList.remove('pre');
 }

@@ -22,17 +22,9 @@ head
         }
       } catch (e) {}
     })();
-    /* decode guard: hide the final copy until the decode script has swapped in its
-       blank cells (removed by scripts/decode.js; 3s failsafe if it never runs) */
-    (function () {
-      try {
-        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var d = document.documentElement;
-        d.classList.add('pre');
-        setTimeout(function () { d.classList.remove('pre'); }, 3000);
-      } catch (e) {}
-    })();
-  include ./font.pug
+  //- Self-hosted Geist (sentences) + Geist Mono (caption); @font-face in styles/fonts.scss.
+  link(rel='preload' href='./fonts/geist-latin.woff2' as='font' type='font/woff2' crossorigin)
+  link(rel='preload' href='./fonts/geist-mono-latin.woff2' as='font' type='font/woff2' crossorigin)
   link(rel='stylesheet' href='./styles/index.scss')
 
   include ./favicon/favicon.pug

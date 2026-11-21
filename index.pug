@@ -5,10 +5,10 @@ html(lang='en')
   body
     main
       .copy
-        //- Copy and links per the design spec. Each [data-s] span is decoded on load;
-        //- the real text stays available to screen readers.
-        <p><span class="name" data-s>Arjan Jassal</span> <span data-s>is a product engineer in Vancouver, Canada, currently Senior Frontend Engineer at Onfleet.</span></p>
-        <p><span data-s>Say hello by</span> <a href="mailto:hello@arjanjassal.com" data-dest="hello@arjanjassal.com" aria-label="Email hello@arjanjassal.com"><span class="k" data-s>email</span></a><span data-s>, or find Arjan on</span> <a href="https://github.com/ArjanJ" data-dest="github.com/ArjanJ" aria-label="GitHub"><span class="k" data-s>GitHub</span></a> <span data-s>and</span> <a href="https://ca.linkedin.com/in/arjan-jassal-27569597" data-dest="linkedin.com/in/arjan-jassal-27569597" aria-label="LinkedIn"><span class="k" data-s>LinkedIn</span></a><span data-s>.</span></p>
+        //- Copy and links per the design spec. The .k label is where the caption
+        //- decode starts from (scripts/decode.js).
+        <p><span class="name">Arjan Jassal</span> <span>is a product engineer in Vancouver, Canada, currently Senior Software Engineer at Onfleet.</span></p>
+        <p><span>Say hello by</span> <a href="mailto:hello@arjanjassal.com" data-dest="hello@arjanjassal.com" aria-label="Email hello@arjanjassal.com"><span class="k">email</span></a><span>, or find Arjan on</span> <a href="https://github.com/ArjanJ" data-dest="github.com/ArjanJ" aria-label="GitHub"><span class="k">GitHub</span></a> <span>and</span> <a href="https://ca.linkedin.com/in/arjan-jassal-27569597" data-dest="linkedin.com/in/arjan-jassal-27569597" aria-label="LinkedIn"><span class="k">LinkedIn</span></a><span>.</span></p>
         .cap(aria-hidden='true')
     include ./includes/theme-toggle.pug
 
